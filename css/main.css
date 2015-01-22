@@ -1,0 +1,281 @@
+/**************
+GENERAL
+**************/
+/* links */
+
+body {font-family: 'Open Sans', sans-serif} /* sans-serif is a backup in case the user doesn't have Open Sans */
+
+#wrapper {max-width: 940px;
+margin: 0 auto;
+padding: 0 5%; 
+}
+
+a {text-decoration: none;
+color: #6ab47b;}
+
+img {max-width: 100%;}
+
+h3 {margin: 0 auto 1em auto;
+	font-weight: 700;
+	font-size: 1.17em;
+	text-align: center;
+}
+
+p {font-weight: 300;}
+
+
+/**************
+HEADING
+**************/
+
+header {
+margin: 0 0 30px 0;
+padding: 5px 0 0 0;
+width: 100%;
+display: block;
+min-width: 525px;}
+
+/*#index-header {
+	min-width: 475px;
+}*/
+
+#logo {text-align: center;
+margin: 0;}
+
+h1 {font-family: 'Changa One', sans-serif;
+margin: 15px 0;
+font-size: 1.75em; 
+font-weight: normal; 
+line-height: 0.8em; }
+
+h2 {font-size: 0.75em;
+margin: -5px 0 0;
+font-weight: normal;}
+
+/**************
+NAVIGATION
+**************/
+nav {text-align: center;
+padding: 10px 0;
+margin: 20px 0 0}
+
+nav ul {list-style: none;
+margin: 0 10px;
+padding: 0;}
+
+nav li {display: inline-block;}
+
+nav a {font-weight: 800;
+padding: 15px 10px;}
+
+/**************
+FOOTER
+**************/
+footer{font-size: 0.75em;
+text-align: center;
+clear: both;
+padding-top: 50px;
+color: #ccc;}
+
+.social-icon {width: 20px;
+height: 20px;
+margin: 0 5px;}
+
+
+/**************
+PHOTO
+**************/
+.profile-photo {
+	display: block; /* by doing this, the image will take up space, with height, and weight; otherwise, the default display for images is inline, like text,
+	and we don't want that */
+	max-width: 150px;
+	margin: 0 auto 30px; /*when you only have 3 values, it means: top right&left bottom */
+border-radius: 100%; /* it will convert the image into a center */}
+
+
+/**************
+COLORS
+**************/
+/*site body */
+body {background-color: #fff;
+color: #999;}
+
+/* green header */
+header {background: #6ab47b;
+border-color: #599a68;}
+
+/* nav background on mobile */
+nav {background: #599a68;}
+
+/* logo text */
+h1, h2 {color: #fff;}
+
+/* nav links */
+nav a, nav a:visited {color: #fff;}
+
+/* selected nav link */
+nav a.selected, a:hover {color: #32673f;}
+
+/**************
+FORM
+**************/
+table {margin-left: auto;
+margin-right: auto;
+}
+
+table td {
+	padding: 7px;
+	border: 1px solid #808080;
+	background-color: #d9d9d9;
+	color: #676767;
+	font-size: 0.8em;
+	/*max-width: 300px;*/
+	}
+
+.left_col {
+	font-weight: bold;
+	width: 77px;
+	font-size: 0.8em;
+	}
+
+
+#name, #email, #message, #background {
+	width: 130px;
+	padding: 2px;
+	border: 1px;
+	box-sizing: content-box;
+	color: #676767;
+	font-size: 100%;
+	}
+
+#message {height: 80px;}
+
+#form-button {
+	padding-right: auto;
+	padding-left: auto;
+	width: 226px;
+	border: none;
+	padding: 5px;
+	background: gray;
+	color: white; 
+}
+
+/**************
+RESUME
+**************/
+
+.left { 
+	float: left;
+	width: 150px;
+	height: 50px;
+	display: block;
+	}
+
+.left h2, .right h2 {
+	color: #999;
+	font-size: 1em;
+	font-weight: bold;
+	margin: 0.83em 0 0.3em 0;
+}
+
+p.left, .right p, .time-ref span {
+	color: #999;
+	font-size: 0.9em;
+	margin-top: 0;
+	font-weight: normal;
+}
+
+p.left {
+	margin-bottom: 0;
+}
+
+
+.time-ref {
+	float: none;
+}
+
+.resume-section {
+	margin-bottom: 20px;
+}
+
+.resume-section li {
+	font-size: 0.9em;
+}
+
+.resume-section ul {
+	margin: 0;
+	padding-left: 165px;
+}
+
+.right p, .right h2, .resume-section {
+	min-width: 499px;
+}
+
+/**************
+BLOG
+**************/
+#cover {
+	width: 940px;
+}
+
+#blog-header {
+	min-width: 0;
+}
+
+#blog-title h1 {
+	font-size: 1.17em;
+	color: #999;
+	font-family: "Open Sans";
+	font-weight: bold;
+	text-align: center;
+}
+
+#blog-title h1, #blog-title p {
+	margin-top: 1em;
+}
+
+.blog-post h2 {
+	color: #999;
+	margin-bottom: 10px;
+	font-size: 1.17em;
+	font-weight: bold;
+	text-align: center;
+}
+
+.blog-post h3 {
+	font-size: 0.8em;
+	font-weight: normal;
+}
+
+section.blog-post {
+	margin-top: 40px;
+}
+
+.blog-post img {
+	width: 100%;
+	max-width: 750px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.video {
+	position: relative;
+	height:0;
+	padding-bottom: 56.25%;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	max-width: 750px;
+	}
+
+.video iframe {
+
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	
+	left: 0;
+	top: 0;
+	
+}

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Manuel Bedacarratz</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link href='http://fonts.googleapis.com/css?family=Changa+One|Open+Sans:400italic,700italic,400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/main.css">  <!--- this overwrites normalize.css --> 
+    <link rel="stylesheet" href="css/responsive.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <header id="blog-header">
+      <a href="index.html" id="logo">
+        <h1>Manuel Bedacarratz</h1>
+        <h2>Web Entrepreneur &amp; Product Manager</h2>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="index.html" class="selected">Welcome</a></li>
+          <li><a href="resume.html">Resume</a></li>
+          <li><a href="blog.html">Blog</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div id="wrapper">
+      <section>
+        <img src="img/manuel.jpg" alt="Photo of Manuel Bedacarratz" class="profile-photo">
+        <h3>Welcome to my page!</h3>
+        <p>Hi, I'm Manuel Bedacarratz, and you have landed into my personal page. This is where I share a bit about my professional work in the <a href="resume.html">resume</a> section, and also some of my personal life in the <a href="blog.html">blog</a> section.</p>
+        <p>If you'd like to follow me on Twitter, my username is <a href="http://twitter.com/MBedacarratz">@MBedacarratz.</a></p>
+        <p> If you would like to know more about myself or ask me questions of any kind, please fill in the form below: </p>
+      </section>
+      <form action="#" method="post" name="question_form">
+        <table>
+          <tr>
+              <td class="left_col">
+                <label for="name">Name</label>
+              </td>
+              <td class="right_col">
+                <input type="text" name="name" id="name" required/>
+              </td> 
+            </tr>
+            <tr>
+              <td class="left_col">
+                <label for="email">Email</label>
+              </td>
+              <td class="right_col">
+                <input type="email" name="email" id="email" required/>
+              </td>
+            </tr>
+            <tr>
+              <td class="left_col">
+                <label for="message">Message</label>
+              </td>
+              <td class="right_col">
+                <textarea name="message" id="message" required>Express whatever you feel...</textarea>
+              </td>
+            </tr>  
+            <tr>
+              <td class="left_col">
+                <label for="background">Background</label>
+              </td>
+              <td class="right_col">
+                <select name="background" id="background">
+                  <option>Finance</option>
+                  <option>Marketing</option>
+                  <option>HHRR</option>
+                  <option>Legal</option>
+                  <option>Accounting</option>
+                  <option>IT/Tech</option>
+                </select>
+              </td>
+            </tr> 
+            <tr>
+              <td colspan="2" >
+                <input type="checkbox" name="newsletter" value="subscribed" id="newsletter"><label for="newsletter"> I would like to subscribe to the <br id="line"> weekly newsletter</label>
+              </td> 
+            </tr>
+            <td colspan="2">
+                <input type="submit" value="SEND" id="form-button">
+            </td> 
+        </table>     
+      </form>
+      <footer>
+        <a href="http://twitter.com/MBedacar"><img src="img/twitter-wrap.png" alt="twitter logo" class="social-icon"></a>
+        <a href="http://facebook.com/manuelbedacarratz"><img src="img/facebook-wrap.png" alt="facebook logo" class="social-icon"></a>
+        <p>&copy; 2015 Manuel Bedacarratz.</p>
+      </footer>
+    </div>
+  </body>
+</html>
