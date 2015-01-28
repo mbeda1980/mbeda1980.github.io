@@ -8,24 +8,17 @@
 		<link rel="stylesheet" href="css/main.css">  
 		<link rel="stylesheet" href="css/responsive.css">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script>
+		var page ='resume';
+		</script>
 	</head>
 	<body>
 		<header>
-			<a href="index.html" id="logo">
-				<h1>Manuel Bedacarratz</h1>
-				<h2>Web Entrepreneur &amp; Product Manager</h2>
-			</a>
-			<nav>
-				<ul>
-					<li><a href="index.html">Welcome</a></li>
-					<li><a href="resume.html" class="selected">Resume</a></li>
-					<li><a href="blog.html">Blog</a></li>
-				</ul>
-			</nav>
 		</header>
 		<div id="wrapper">
-		<section class="resume-section">
+		<section class="resume-section" id="education">
 			<h3>Education</h3>
+			<button>(Hide)</button>
 			<div class="time-ref">
 				<p class="left">2014-present</p>
 				<div class="right">
@@ -56,8 +49,9 @@
 				<li>Google Analytics Certification</li>
 			</ul>
 		</section>
-		<section class="resume-section">
+		<section class="resume-section" id="experience">
 			<h3>Experience</h3>
+			<button>(Hide)</button>
 			<div class="time-ref">
 				<p class="left">2014-present</p>
 				<div class="right">
@@ -150,10 +144,9 @@
 			</ul>
 		</section>         
 		<footer>
-			<a href="http://twitter.com/MBedacar"><img src="img/twitter-wrap.png" alt="twitter logo" class="social-icon"></a>
-			<a href="http://facebook.com/manuelbedacarratz"><img src="img/facebook-wrap.png" alt="facebook logo" class="social-icon"></a>
-			<p>&copy; 2015 Manuel Bedacarratz.</p>
 		</footer>
 		</div>
+		<script async src="js/header-footer.js"></script>
+		<script async src="js/resume-collapse.js"></script>
 	</body>
 </html>

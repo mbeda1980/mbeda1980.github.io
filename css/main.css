@@ -3,7 +3,7 @@ GENERAL
 **************/
 /* links */
 
-body {font-family: 'Open Sans', sans-serif} /* sans-serif is a backup in case the user doesn't have Open Sans */
+body {font-family: 'Open Sans', sans-serif;} /* sans-serif is a backup in case the user doesn't have Open Sans */
 
 #wrapper {max-width: 940px;
 margin: 0 auto;
@@ -195,7 +195,7 @@ p.left {
 }
 
 .resume-section {
-	margin-bottom: 20px;
+	margin-bottom: 0;
 }
 
 .resume-section li {
@@ -211,6 +211,26 @@ p.left {
 	min-width: 499px;
 }
 
+.hidden {
+	display: none;
+}
+
+.resume-section h3 {
+	display: inline-block;
+}
+
+button {
+	border: none;
+	font-size: 0.8em;
+	font-family: 'Open Sans', sans-serif;
+	background: none;
+	color: #6ab47b;
+	font-weight: bold;
+	padding: 0;
+}
+
+button:hover {color: #32673f;}
+
 /**************
 BLOG
 **************/
@@ -218,7 +238,7 @@ BLOG
 	width: 940px;
 }
 
-#blog-header {
+.blog-header {
 	min-width: 0;
 }
 
