@@ -2,7 +2,7 @@
 *****************/
 
 // getting a handle of header
-if (page == 'index' || page == 'blog') {
+if (page == 'index' || page == 'blog' || page == 'portfolio') {
 	var header = document.querySelector('body header.blog-header');
 }
 
@@ -23,18 +23,18 @@ headerA.appendChild(h1);
 
 //creating <h2> and appending it to <a>
 var h2 = document.createElement('h2');
-h2.textContent = "Web Entrepreneur & Product Manager";
+h2.textContent = "Web Entrepreneur & Photographer";
 headerA.appendChild(h2);
 
 //creating nav & appending it to <header>
 var nav = document.createElement('nav');
 header.appendChild(nav);
 
-//creating ul & appending it to <header>
+//creating ul & appending it to <nav>
 var ul = document.createElement('ul');
 nav.appendChild(ul);
 
-//creating <li> & appending it to <ul>
+//creating Welcome page on navigation
 var li1 = document.createElement('li');
 ul.appendChild(li1);
 var li1A = document.createElement('a');
@@ -45,7 +45,7 @@ if (page == 'index') {
 li1A.textContent = "Welcome";
 li1.appendChild(li1A);
 
-//creating <li> & appending it to <ul>
+//creating Resume page on navigation
 var li2 = document.createElement('li');
 ul.appendChild(li2);
 var li2A = document.createElement('a');
@@ -56,7 +56,7 @@ if (page == 'resume') {
 li2A.textContent = "Resume";
 li2.appendChild(li2A);
 
-//creating <li> & appending it to <ul>
+//creating Blog page on navigation
 var li3 = document.createElement('li');
 ul.appendChild(li3);
 var li3A = document.createElement('a');
@@ -66,6 +66,17 @@ if (page == 'blog') {
 }
 li3A.textContent = "Blog";
 li3.appendChild(li3A);
+
+//creating Portfolio page on navigation
+var li4 = document.createElement('li');
+ul.appendChild(li4);
+var li4A = document.createElement('a');
+li4A.setAttribute('href', 'portfolio.html');
+if (page == 'portfolio') {
+	li4A.classList.add('selected');
+}
+li4A.textContent = "Portfolio";
+li4.appendChild(li4A);
 
 /*****FOOTER******
 *****************/
@@ -96,9 +107,24 @@ imgFacebook.setAttribute('alt', 'facebook logo');
 imgFacebook.classList.add('social-icon');
 footerA2.appendChild(imgFacebook);
 
-// creating <p> & appending it to <footer>
-var p = document.createElement('p');
-p.textContent = '© 2015 Manuel Bedacarratz.';
-footer.appendChild(p);
+// Appending IP address to <footer>
+$.ajax({
+	url: 'https://httpbin.org/ip',
+	type: 'GET',
+	success: function(response) {
+		var ip = response.origin;
+		var p = document.createElement('p');
+		p.textContent = 'Your IP: ' + ip;
+		footer.appendChild(p);
+	},
+	error: function() {
+		alert("IP request didn't work");
+		var p = document.createElement('p');
+		p.textContent = '© Manuel Bedacarratz';
+		footer.appendChild(p);	
+	}
+});
+
+
 
 
