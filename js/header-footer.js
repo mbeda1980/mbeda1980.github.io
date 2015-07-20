@@ -2,7 +2,7 @@
 *****************/
 
 // getting a handle of header
-if (page == 'index' || page == 'blog' || page == 'portfolio') {
+if (page == 'index' || page == 'blog') {
 	var header = document.querySelector('body header.blog-header');
 }
 
@@ -18,23 +18,23 @@ header.appendChild(headerA);
 
 //creating <h1> and appending it to <a>
 var h1 = document.createElement('h1');
-h1.textContent = "Manuel Bedacarratz";
+h1.textContent = "Ana Bedacarratz";
 headerA.appendChild(h1);
 
 //creating <h2> and appending it to <a>
 var h2 = document.createElement('h2');
-h2.textContent = "Web Entrepreneur & Photographer";
+h2.textContent = "PhD Candidate at University of Denver";
 headerA.appendChild(h2);
 
 //creating nav & appending it to <header>
 var nav = document.createElement('nav');
 header.appendChild(nav);
 
-//creating ul & appending it to <nav>
+//creating ul & appending it to <header>
 var ul = document.createElement('ul');
 nav.appendChild(ul);
 
-//creating Welcome page on navigation
+//creating <li> & appending it to <ul>
 var li1 = document.createElement('li');
 ul.appendChild(li1);
 var li1A = document.createElement('a');
@@ -45,7 +45,7 @@ if (page == 'index') {
 li1A.textContent = "Welcome";
 li1.appendChild(li1A);
 
-//creating Resume page on navigation
+//creating <li> & appending it to <ul>
 var li2 = document.createElement('li');
 ul.appendChild(li2);
 var li2A = document.createElement('a');
@@ -56,27 +56,16 @@ if (page == 'resume') {
 li2A.textContent = "Resume";
 li2.appendChild(li2A);
 
-//creating Blog page on navigation
+//creating <li> & appending it to <ul>
 var li3 = document.createElement('li');
 ul.appendChild(li3);
 var li3A = document.createElement('a');
 li3A.setAttribute('href', 'blog.html');
-if (page == 'blog') {
+if (page == 'publications') {
 	li3A.classList.add('selected');
 }
-li3A.textContent = "Blog";
+li3A.textContent = "Publications";
 li3.appendChild(li3A);
-
-//creating Portfolio page on navigation
-var li4 = document.createElement('li');
-ul.appendChild(li4);
-var li4A = document.createElement('a');
-li4A.setAttribute('href', 'portfolio.html');
-if (page == 'portfolio') {
-	li4A.classList.add('selected');
-}
-li4A.textContent = "Portfolio";
-li4.appendChild(li4A);
 
 /*****FOOTER******
 *****************/
@@ -85,46 +74,19 @@ var footer = document.querySelector('body footer');
 
 // creating <a> & appending it to <footer>
 var footerA1 = document.createElement('a');
-footerA1.setAttribute('href', 'http://twitter.com/MBedacarratz');
+footerA1.setAttribute('href', 'http://www.linkedin.com/in/anadraghici');
 footer.appendChild(footerA1);
 
 // creating <img> & appending it to <a>
-var imgTwitter = document.createElement('img');
-imgTwitter.setAttribute('src', 'img/twitter-wrap.png');
-imgTwitter.setAttribute('alt', 'twitter logo');
-imgTwitter.classList.add('social-icon');
-footerA1.appendChild(imgTwitter);
+var imgLinkedin = document.createElement('img');
+imgLinkedin.setAttribute('src', 'img/linkedin-wrap.jpg');
+imgLinkedin.setAttribute('alt', 'linkedin logo');
+imgLinkedin.classList.add('social-icon');
+footerA1.appendChild(imgLinkedin);
 
-// creating <a> & appending it to <footer>
-var footerA2 = document.createElement('a');
-footerA2.setAttribute('href', 'http://facebook.com/manuelbedacarratz');
-footer.appendChild(footerA2);
-
-// creating <img> & appending it to <a>
-var imgFacebook = document.createElement('img');
-imgFacebook.setAttribute('src', 'img/facebook-wrap.png');
-imgFacebook.setAttribute('alt', 'facebook logo');
-imgFacebook.classList.add('social-icon');
-footerA2.appendChild(imgFacebook);
-
-// Appending IP address to <footer>
-$.ajax({
-	url: 'https://httpbin.org/ip',
-	type: 'GET',
-	success: function(response) {
-		var ip = response.origin;
-		var p = document.createElement('p');
-		p.textContent = 'Your IP: ' + ip;
-		footer.appendChild(p);
-	},
-	error: function() {
-		alert("IP request didn't work");
-		var p = document.createElement('p');
-		p.textContent = '© Manuel Bedacarratz';
-		footer.appendChild(p);	
-	}
-});
-
-
+// creating <p> & appending it to <footer>
+var p = document.createElement('p');
+p.textContent = '© 2015 Ana Bedacarratz.';
+footer.appendChild(p);
 
 

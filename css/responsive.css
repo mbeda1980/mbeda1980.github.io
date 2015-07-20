@@ -8,7 +8,7 @@
 		width: 96px;
 	}
 
-	#nameForm, #emailForm, #messageForm, #background {
+	#name, #email, #message, #background {
 	font-size: 1em;
 	width: 270px;
 	}
@@ -20,11 +20,9 @@
 	#line {
 		display: none;
 	}
-
-	
 }
 
-@media screen and (min-width: 845px) { 
+@media screen and (min-width: 830px) { 
 	
 
 	/**************
@@ -82,7 +80,7 @@
 		max-width: none;
 	}
 
-	#nameForm, #emailForm, #messageForm, #background {
+	#name, #email, #message, #background {
 	width: 398px;
 	box-sizing: content-box;
 	}	
@@ -91,7 +89,7 @@
 	width: 515px;
 	}
 
-	#messageForm {
+	#message {
 		height: 130px;
 	}
 

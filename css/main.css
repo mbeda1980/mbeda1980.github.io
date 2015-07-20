@@ -23,13 +23,6 @@ h3 {margin: 0 auto 1em auto;
 
 p {font-weight: 300;}
 
-#local-storage {
-	text-align: center;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-span {font-size: 0.8em;}
 
 /**************
 HEADING
@@ -146,7 +139,7 @@ table td {
 	}
 
 
-#nameForm, #emailForm, #messageForm, #background {
+#name, #email, #message, #background {
 	width: 130px;
 	padding: 2px;
 	border: 1px;
@@ -165,32 +158,6 @@ table td {
 	padding: 5px;
 	background: gray;
 	color: white; 
-	font-size: 1em;
-}
-
-.parsley-errors-list {
-	list-style-type: none;
-	color: #B94A48;
-	padding: 0;
-}
-
-#form-results, #localStorage {
-	margin-top: 10px;
-	color: #6ab47b;
-	font-weight: 400;
-}	
-
-#form-results ul, #localStorage ul {
-	padding-left: 0;
-}
-
-#form-results ul li, #localStorage ul li {
-	list-style-type: none;
-}
-
-#nameForm, #emailForm, #messageForm, #background {
-	position: relative;
-	top: 7px;
 }
 
 /**************
@@ -272,7 +239,7 @@ BLOG
 }
 
 .blog-header {
-	min-width: 360px;
+	min-width: 0;
 }
 
 #blog-title h1 {
@@ -332,40 +299,3 @@ section.blog-post {
 	top: 0;
 	
 }
-
-#accordion {
-	margin-top: 30px;
-	font-family: 'Open Sans', sans-serif;
-}
-
-#accordion p {
-	color: #999;
-	font-size: 0.9em;
-}
-
-
-/**************
-PAGE PORTFOLIO
-**************/
-
-#flex-container {
-	list-style: none;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-around;
-	align-items: center;
-}
-
-#flex-container li {
-	min-width: 50px;
-	max-width: 200px;
-	margin: 15px;
-}
-
-#flex-container li a p {
-	text-align: center;
-	font-size: 0.75em;
-	color: #bdc3c7;	
-}
-
-

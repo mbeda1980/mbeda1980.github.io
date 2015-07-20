@@ -2,92 +2,32 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Manuel Bedacarratz</title>
+    <title>Ana Bedacarratz</title>
     <link rel="stylesheet" href="css/normalize.css">
     <link href='http://fonts.googleapis.com/css?family=Changa+One|Open+Sans:400italic,700italic,400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/main.css">  <!--- this overwrites normalize.css --> 
     <link rel="stylesheet" href="css/responsive.css">
-    <link rel="stylesheet" href="css/jquery-ui.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.0.7/parsley.min.js"></script>
-    <script src="js/jquery-ui.min.js"></script>
-    <script>var page = 'index';</script>
+    <script>
+    var page = 'index';
+    </script>
   </head>
   <body>
     <header class="blog-header">
     </header>
     <div id="wrapper">
+      
       <section>
-        <img src="img/manuel.jpg" alt="Photo of Manuel Bedacarratz" class="profile-photo">
-        <button id="local-storage">Get local Storage</button>
+        <img src="img/ana.jpg" alt="Photo of Ana Bedacarratz" class="profile-photo">
         <h3>Welcome to my page!</h3>
-        <p>Hi, I'm Manuel Bedacarratz, and you have landed into my personal page. This is where I share a bit about my professional work in the <a href="resume.html">resume</a> section, some of my passion for squash in the <a href="blog.html">blog</a> section, and some of my <a href="portfolio.html">portfolio</a> of pictures, since I'm an avid amateur photographer!</p>
-        <p>If you'd like to follow me on Twitter, my username is <a href="http://twitter.com/MBedacarratz">@MBedacarratz.</a></p>
-        <p> If you would like to know more about myself or ask me questions of any kind, please fill in the form below: </p>
-        <div id="form-results">
-          <ul></ul>
-        </div>
+        <p>Hi, I'm Ana Bedacarratz, and you have landed into my personal page. You can see details of my background in the <a href="resume.html">Resume</a> section, and also details of my publications in the <a href="publications.html">Publications</a> section.</p>
+        <p>If you'd like to follow me on Linkedin, my profile link is <a href="http://www.linkedin.com/in/anadraghici">linkedin.com/in/anadraghici</a></p>
+        <p> If you wish to contact me, please feel free to email me to ana.draghici@gmail.com </p>
       </section>
-      <form name="question_form" id="index-form" data-parsley-validate>
-        <table>
-          <tr>
-            <td class="left_col">
-              <label for="nameForm">Name</label>
-            </td>
-            <td class="right_col">
-              <input type="text" name="nameForm" id="nameForm" required/>
-            </td> 
-          </tr>
-          <tr>
-            <td class="left_col">
-            <label for="emailForm">Email</label>
-          </td>
-            <td class="right_col">
-              <input type="email" name="emailForm" id="emailForm" data-parsley-trigger="change" required/>
-            </td>
-          </tr>
-          <tr>
-            <td class="left_col">
-              <label for="messageForm">Message</label>
-            </td>
-            <td class="right_col">
-              <textarea name="message" id="messageForm" data-parsley-trigger="keyup" data-parsley-minlength="10" data-parsley-maxlength="100" data-parsley-validation-threshold="1" data-parsley-minlength-message = "At least 10 caracters..."></textarea>
-            </td>
-          </tr>  
-          <tr>
-            <td class="left_col">
-            <label for="background">Background</label>
-            </td>
-            <td class="right_col">
-              <select name="background" id="background">
-                <option>Finance</option>
-                <option>Marketing</option>
-                <option>HHRR</option>
-                <option>Legal</option>
-                <option>Accounting</option>
-                <option>IT/Tech</option>
-              </select>
-            </td>
-          </tr> 
-          <tr>
-            <td colspan="2" >
-            <input type="checkbox" name="newsletter" value="subscribed" id="newsletter"><label for="newsletter"> I would like to subscribe to the <br id="line"> weekly newsletter</label>
-            </td> 
-          </tr>
-          <td colspan="2">
-            <button id="form-button">SEND</button>
-          </td> 
-        </table>     
-      </form>
+      
       <footer>
       </footer>
     </div>
-    <script src='js/header-footer.js'></script>
-    <script src='js/main.js'></script>
-    <script>
-      $( "#nameForm").tooltip({content: "Awesome title!"});
-      $( "#nameForm" ).tooltip("option", "content", "Awesome title!" );
-    </script>  
+    <script src='js/header-footer.js'></script>  
   </body>
 </html>
