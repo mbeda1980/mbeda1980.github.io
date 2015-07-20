@@ -1,45 +1,67 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Ana Bedacarratz</title>
-    <link rel="stylesheet" href="css/normalize.css">
-    <link href='http://fonts.googleapis.com/css?family=Changa+One|Open+Sans:400italic,700italic,400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="css/main.css">  <!--- this overwrites normalize.css --> 
-    <link rel="stylesheet" href="css/responsive.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script>
-    var page = 'index';
-    </script>
-  </head>
-  <body>
-    <header class="blog-header">
-    </header>
-    <div id="wrapper">
-      <section>
-        <img src="img/Ana.jpg" alt="Photo of Ana Bedacarratz" class="profile-photo">
-        <h3>Welcome to my page!</h3>
-        <p>Hi, I'm Ana Bedacarratz, and you have landed onto my personal page. You can see details of my background in the <a href="resume.html">CV</a> section, and also my contact information in the <a href="contact.html">Contact</a> section.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </p>
-        <ul>
-          <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</li>
-          <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</li>
-          <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</li>
-        </ul>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip.
-        </p>
-      </section>
-      <footer>
-      </footer>
-    </div>
-    <script src='js/header-footer.js'></script>  
-  </body>
+<!doctype html>
+	<head>
+		<meta charset="utf-8"> 
+		<title>jQuery Mobile</title>
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"/>
+		<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	</head>
+	<body>
+		<div data-role="page" id="home">
+		 	<header data-role="header">
+		 		<h1>Vecta Corp</h1>
+		 		<div data-role="navbar">
+		 			<ul>
+		 				<li><a href="#home">Home</a></li>
+		 				<li><a href="#solutions">Solutions</a></li>
+		 				<li><a href="#contactus">Contact Us</a></li>
+		 			</ul>
+		 		</div>
+		 	</header>
+		 	<section data-role="content">
+		 		<p>Home page content</p>
+		 	</section>
+		 	<footer data-role="footer">
+		 		<h4>&copy; 2015</h4>
+		 	</footer>
+		</div>
+
+		<div data-role="page" id="solutions">
+		 	<header data-role="header">
+		 		<h1>Vecta Corp</h1>
+		 		<div data-role="navbar">
+		 			<ul>
+		 				<li><a href="#home">Home</a></li>
+		 				<li><a href="#solutions">Solutions</a></li>
+		 				<li><a href="#contactus">Contact Us</a></li>
+		 			</ul>
+		 		</div>
+		 	</header>
+		 	<section data-role="content">
+		 		<p>Solutions page content</p>
+		 	</section>
+		 	<footer data-role="footer">
+		 		<h4>&copy; 2015</h4>
+		 	</footer>
+		</div>
+		
+		<div data-role="page" id="contactus">
+		 	<header data-role="header">
+		 		<h1>Vecta Corp</h1>
+		 		<div data-role="navbar">
+		 			<ul>
+		 				<li><a href="#home">Home</a></li>
+		 				<li><a href="#solutions">Solutions</a></li>
+		 				<li><a href="#contactus">Contact Us</a></li>
+		 			</ul>
+		 		</div>
+		 	</header>
+		 	<section data-role="content">
+		 		<p>Contact Us page content</p>
+		 	</section>
+		 	<footer data-role="footer">
+		 		<h4>&copy; 2015</h4>
+		 	</footer>
+		</div>
+	</body>
 </html>
