@@ -2,7 +2,7 @@
 *****************/
 
 // getting a handle of header
-if (page == 'index' || page == 'blog') {
+if (page == 'index' || page == 'contact') {
 	var header = document.querySelector('body header.blog-header');
 }
 
@@ -42,7 +42,7 @@ li1A.setAttribute('href', 'index.html');
 if (page == 'index') {
 	li1A.classList.add('selected');
 }
-li1A.textContent = "Welcome";
+li1A.textContent = "About Me";
 li1.appendChild(li1A);
 
 //creating <li> & appending it to <ul>
@@ -60,11 +60,11 @@ li2.appendChild(li2A);
 var li3 = document.createElement('li');
 ul.appendChild(li3);
 var li3A = document.createElement('a');
-li3A.setAttribute('href', 'blog.html');
-if (page == 'publications') {
+li3A.setAttribute('href', 'contact.html');
+if (page == 'contact') {
 	li3A.classList.add('selected');
 }
-li3A.textContent = "Publications";
+li3A.textContent = "Contact";
 li3.appendChild(li3A);
 
 /*****FOOTER******
