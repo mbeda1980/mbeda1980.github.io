@@ -3,27 +3,61 @@
 <head>
 	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"> 
-    <title>Vecta Corp Mobile</title>
+    <title>Vecta Corp. Mobile</title>
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.css">
-    <link href="styles.css" rel="stylesheet" type="text/css">
+    <link href="styles.css" rel="stylesheet" type="text/css">    
     <!-- JavaScript HTML requirements -->
 	<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script>
+    <script>
+    	$(document).ready(function(){
+        	var url = "http://api.twitter.com/1/statuses/user_timeline.json?screen_name=Microsoft&count=20&callback=?";
+        	var tweet = "";
+        
+        	$.getJSON(url, function(data) {		
+            	$.each(data, function(i,item) {
+                	tweet += convertUrlToLink(item.text) + "<br>" + 
+                         	formatTime(item.created_at) + "<br><br>";
+            	});
+            	$("#twitterfeed").html("").append(tweet);
+        	});
+        
+        	function convertUrlToLink(text) {
+            	var exp = /(\b(https?):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/i;
+            	return text.replace(exp,"<br><a href='$1'>$1</a>");  
+        	}
+    
+        	// function to calculate how long ago the tweet was posted
+			function formatTime(tweetDateTime) {
+				var tweetDate = new Date(tweetDateTime);
+				var tweetTime = tweetDate.getTime();
+				var currentTime = new Date().getTime()
+				var timeago = parseInt((currentTime - tweetTime) / 1000);
+			
+				if 		(timeago < (1*60)) 		return "less than a minute ago";
+				else if	(timeago < (2*60)) 		return "about a minute ago";
+				else if	(timeago < (45*60)) 	return (parseInt(timeago / 60)).toString() + " minutes ago";
+				else if	(timeago < (90*60)) 	return "about an hour ago";
+				else if	(timeago < (24*60*60)) 	return "about " + (parseInt(timeago / 3600)).toString() + " hours ago";
+				else if	(timeago < (48*60*60)) 	return "1 day ago";
+				else 							return (parseInt(timeago / 86400)).toString() + " days ago";
+			}
+    	});
+    </script>
 </head>
 
 <body>
-
 	<!-- HOME -->
 	<div data-role="page" id="home">
     	<header data-role="header">
-        	<h1>Vecta Corp</h1>
+        	<h1>Vecta Corp.</h1>
         	<div data-role="navbar">
 				<ul>
-					<li><a href="#home" data-icon="home" class="ui-btn-active" data-theme="b">Home</a></li>
-					<li><a href="#solutions" data-icon="star" data-theme="b">Solutions</a></li>
-	            	<li><a href="#contactus" data-icon="grid" data-theme="b">Contact Us</a></li>
+					<li><a href="#home" data-icon="home" data-theme="b" class="ui-btn-active" data-transition="slide">Home</a></li>
+					<li><a href="#solutions" data-icon="star" data-theme="b" data-transition="slide">Solutions</a></li>
+            		<li><a href="#contactus" data-icon="info" data-theme="b" data-transition="slide">Contact Us</a></li>
 				</ul>
-	    	</div>
+			</div>
     	</header>
     
     	<section data-role="content">
@@ -43,54 +77,68 @@
 	    	<q>Incredible results from an incredible effort by the Vecta Corp. team! We are very pleased with the business benefits we have received by working with them.</q>
 	    	<cite>Robin Banks, CEO<br>
 	    	Profits Financial, Inc.</cite>
-    	</section>
+  		</section>
     
-    	<footer data-role="footer">
-        	<h4>&copy; 2012</h4>
+    	<footer data-role="footer" class="ui-bar">
+    		<div data-role="controlgroup" data-type="horizontal">
+            	<a href="#twitter" data-rel="dialog" data-role="button" data-icon="info">Recent Tweets</a>
+        	</div>
     	</footer>
 	</div>
 
 	<!-- SOLUTIONS -->
 	<div data-role="page" id="solutions">
     	<header data-role="header">
-        	<h1>Vecta Corp</h1>
+        	<h1>Vecta Corp.</h1>
         	<div data-role="navbar">
 				<ul>
-					<li><a href="#home" data-icon="home" data-theme="b">Home</a></li>
-					<li><a href="#solutions" data-icon="star" class="ui-btn-active" data-theme="b">Solutions</a></li>
-            		<li><a href="#contactus" data-icon="grid" data-theme="b">Contact Us</a></li>
+					<li><a href="#home" data-icon="home" data-theme="b" data-transition="slide">Home</a></li>
+					<li><a href="#solutions" data-icon="star" class="ui-btn-active" data-theme="b" data-transition="slide">Solutions</a></li>
+            		<li><a href="#contactus" data-icon="info" data-theme="b" data-transition="slide">Contact Us</a></li>
 				</ul>
 			</div>
     	</header>
     
     	<section data-role="content">
-			<p>Vecta Corp provides scalable business solutions to help companies achieve success through revenue increase, cost management, and user satisfaction.</p>
-        
-			<h3>vProspect 2.0</h3>
-			<img src="images/logo_vprospect.gif" width="84" height="48">
-        	<p>Define and research your target audience, define your strategy to reach that audience and present a strong and memorable brand to that audience.
-        	<a href="#vprospect" data-rel="dialog" data-transition="slideup">Read more...</a></p>
-        
-      		<h3>vConvert 2.0</h3>
-      		<img src="images/logo_vconvert.gif" width="84" height="48">
-      		<p>Create a highly user-friendly and easy-to-navigate information architecture that will help your prospects interact with the company on a highly interactive level.
-        	<a href="#vconvert" data-rel="dialog" data-transition="slidedown">Read more...</a></p>
-        
-      		<h3>vRetain 1.0</h3>
-      		<img src="images/logo_vretain.gif" width="84" height="48">
-      		<p>Build on existing customer relationships to improve productivity and maximize customer loyalty, while growing revenues.
-        	<a href="#vretain" data-rel="dialog" data-transition="flip">Read more...</a></p>
+    		<div class="content-primary">	
+        		<ul data-role="listview">
+        			<li>
+            			<a href="#vprospect">
+            				<img src="images/logo_vprospect.gif" alt="vProspect 2.0">
+            				<h3>vProspect 2.0</h3>
+            				<p>Define your target audience</p>
+            			</a>
+        			</li>
+        			<li>
+            			<a href="#vconvert">
+            				<img src="images/logo_vconvert.gif" alt="vConvert 2.0">
+            				<h3>vConvert 2.0</h3>
+            				<p>Our conversion framework</p>
+            			</a>
+        			</li>
+        			<li>
+            			<a href="#vretain">
+            				<img src="images/logo_vretain.gif" alt="vRetain 1.0">
+            				<h3>vRetain 1.0</h3>
+            				<p>Maximize customer loyalty</p>
+            			</a>
+        			</li>
+        		</ul>
+    		</div>
     	</section>
     
-    	<footer data-role="footer">
-        	<h4>&copy; 2012</h4>
+    	<footer data-role="footer" class="ui-bar">
+    		<div data-role="controlgroup" data-type="horizontal">
+            	<a href="#twitter" data-rel="dialog" data-role="button" data-icon="info">Recent Tweets</a>
+        	</div>
     	</footer>
 	</div>
 
 	<!-- SOLUTIONS : VPROSPECT -->
 	<div data-role="page" id="vprospect">
     	<header data-role="header">
-        	<h1>Vecta Corp</h1>
+    		<a href="#" data-role="button" data-icon="arrow-l" data-rel="back" data-transition="slide">Back</a>
+        	<h1>vProspect 2.0</h1>
     	</header>
     
     	<section data-role="content">
@@ -113,7 +161,8 @@
 	<!-- SOLUTIONS : VCONVERT -->
 	<div data-role="page" id="vconvert">
     	<header data-role="header">
-        	<h1>Vecta Corp</h1>
+    		<a href="#" data-role="button" data-icon="arrow-l" data-rel="back" data-transition="slide">Back</a>
+        	<h1>vConvert 2.0</h1>
     	</header>
     
     	<section data-role="content">
@@ -134,7 +183,8 @@
 	<!-- SOLUTIONS : VRETAIN -->
 	<div data-role="page" id="vretain">
     	<header data-role="header">
-        	<h1>Vecta Corp</h1>
+    		<a href="#" data-role="button" data-icon="arrow-l" data-rel="back" data-transition="slide">Back</a>
+        	<h1>vRetain 1.0</h1>
     	</header>
     
     	<section data-role="content">
@@ -152,27 +202,88 @@
 	<!-- CONTACT US -->
 	<div data-role="page" id="contactus">
     	<header data-role="header">
-        	<h1>Vecta Corp</h1>
+        	<h1>Vecta Corp.</h1>
         	<div data-role="navbar">
 				<ul>
-					<li><a href="#home" data-icon="home" data-theme="b">Home</a></li>
-					<li><a href="#solutions" data-icon="star" data-theme="b">Solutions</a></li>
-	            	<li><a href="#contactus" data-icon="grid" class="ui-btn-active" data-theme="b">Contact Us</a></li>
+					<li><a href="#home" data-icon="home" data-theme="b" data-transition="slide">Home</a></li>
+					<li><a href="#solutions" data-icon="star" data-theme="b" data-transition="slide">Solutions</a></li>
+            		<li><a href="#contactus" data-icon="info" class="ui-btn-active" data-theme="b" data-transition="slide">Contact Us</a></li>
 				</ul>
-	    	</div>
+			</div>
     	</header>
     
     	<section data-role="content">
-    		<h4>Please contact us by phone, mail, or email...whatever works best for you</h4>
-			<h4>Phone</h4><p><a href="tel:555-555-5555">555-555-5555</a></p>
-        	<h4>Mail</h4><p>Vecta Corporation<br>555 Sample Dr.<br>San Diego, CA 55555</p>
-        	<h4>Email</h4><p><a href="mailto:sales@vectacorp.com">sales@vectacorp.com</a></p><br>
-        	<a href="#" data-role="button" data-rel="back" data-icon="back" data-theme="b">Back to previous page</a>
+        	<h3>Contact Us</h3>
+    		<form action="http://vectacorp.com/vc/scripts/mobile.asp" method="post" data-ajax="false">
+            	<label for="name">Name:</label>
+            	<input type="text" name="name" id="name">
+            	<label for="companyname">Company Name:</label>
+            	<input type="text" name="companyname" id="companyname">
+            	<label for="phone">Phone:</label>
+            	<input type="tel" name="phone" id="phone">
+            	<label for="email">Email:</label>
+            	<input type="email" name="email" id="email">
+            
+            	<label for="size">Company Size:</label>
+            	<input type="range" name="size" id="size" min="10" max="500" value="10" step="10" data-highlight="true"><br>
+            	<label for="currentinstall">Currently installed vSolutions?</label>
+            	<select name="currentinstall" id="currentinstall" data-role="slider">
+                	<option value="No">No</option>
+                	<option value="Yes">Yes</option>
+            	</select> 
+            
+            	<fieldset data-role="controlgroup">
+                	<legend>Which solutions are you interested in?</legend>
+                	<input type="checkbox" name="vprospect" id="vprospect">
+                	<label for="vprospect">vProspect</label>
+                	<input type="checkbox" name="vconvert" id="vconvert">
+                	<label for="vconvert">vConvert</label>
+                	<input type="checkbox" name="vretain" id="vretain">
+                	<label for="vretain">vRetain</label>
+            	</fieldset>
+            
+            	<fieldset data-role="controlgroup" data-type="horizontal">
+                	<legend>Current infrastructure?</legend>
+                	<input type="radio" name="linux" id="linux">
+                	<label for="linux">Linux</label>
+                	<input type="radio" name="mac" id="mac">
+                	<label for="mac">Mac</label>
+                	<input type="radio" name="windows" id="windows">
+                	<label for="windows">Windows</label>
+            	</fieldset>
+            
+            	<label for="hearaboutus" class="select">How did you hear about us?</label>
+            	<select name="hearaboutus" id="hearaboutus">
+               		<option value="magazine">Magazine Ad</option>
+               		<option value="radio">Radio Ad</option>
+               		<option value="tv">TV Ad</option>
+               		<option value="word">Word of Mouth</option>
+            	</select>
+            
+            	<label for="questions">Questions/Comments:</label>
+            	<textarea name="questions" id="questions"></textarea>
+            	<br>
+            	<input type="submit" value="Submit Form">
+        	</form>
     	</section>
     
-    	<footer data-role="footer">
-        	<h4>&copy; 2012</h4>
+    	<footer data-role="footer" class="ui-bar">
+    		<div data-role="controlgroup" data-type="horizontal">
+            	<a href="#twitter" data-rel="dialog" data-role="button" data-icon="info">Recent Tweets</a>
+        	</div>
     	</footer>
 	</div>
+
+	<!-- RECENT TWEETS -->
+	<div data-role="page" id="twitter">
+    	<header data-role="header">
+        	<h1>Recent Tweets</h1>
+    	</header>
+    
+    	<section data-role="content">
+			<div id="twitterfeed"></div>
+    	</section>
+	</div>
+
 </body>
 </html>
