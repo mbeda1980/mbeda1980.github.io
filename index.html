@@ -1,119 +1,44 @@
 <!doctype html>
 <html>
+	<head>
+		<title>Weather Bee</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="apple-touch-icon" href="images/icon.png"/> <!-- this will set the icon if I save the bookmark as an app icon -->
+		<meta name="apple-mobile-web-app-capable" content="yes" />  <!-- this will allow the bookmark to be shown full screen, as a native app -->
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css" />
+		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/stylesheet.css"> <!-- this links it to the style sheet for the font of weather images -->
+		<script src="mainscript.js"></script> <!-- Main Javascript code -->
+	</head>
+	<body>
+		<div data-role="page">
+			<!-- Panel  -->
+			<div data-role="panel" id="left-panel" data-theme="c">
+			    <ul data-theme="d" data-role="listview">
+			    	<li data-icon="delete"><a href="#" data-rel="close">Close</a></li>	
+			    	<li data-role="list-divider">Select a City</li>
+		            <li ><a href="#" class="city" data-rel="close">Current Location</a></li>
+		          	<li ><a href="#" class="city" data-rel="close">Chicago</a></li>
+		          	<li ><a href="#" class="city" data-rel="close">Los Angeles</a></li>
+		          	<li ><a href="#" class="city" data-rel="close">Miami</a></li>
+		          	<li ><a href="#" class="city" data-rel="close">New York</a></li>
+		          	<li ><a href="#" class="city" data-rel="close">San Francisco</a></li>
+			    </ul>
+			</div>
 
-<head>
-	<title>Weather Bee</title>
-
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="apple-touch-icon" href="images/icon.png"/> <!-- this will set the icon if I save the bookmark as an app icon -->
-	<meta name="apple-mobile-web-app-capable" content="yes" />  <!-- this will allow the bookmark to be shown full screen, as a native app -->
-	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css" />
-	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-	<script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="css/stylesheet.css"> <!-- this links it to the style sheet for the font of weather images -->
-	<script type="text/javascript">
-		
-		var icons = {	"clear-day" : "B", 
-						"clear-night" : "C", 
-						"rain" : "R", 
-						"snow" : "G", 
-						"sleet" : "X", 
-						"wind" : "S", 
-						"fog" :"N", 
-						"cloudy" : "Y",
-						"partly-cloudy-day" : "H", 
-						"partly-cloudy-night" : "I"
-					};
-
-		var cities = {	
-						"new york" 		: 	{coords: {latitude: 40.672060, longitude:-73.983898}},
-						"los angeles" 	: 	{coords: {latitude: 34.101422, longitude: -118.341224}},
-						"chicago" 		: 	{coords: {latitude: 41.879003, longitude: -87.63675}},
-						"san francisco" : 	{coords: {latitude: 37.788531, longitude: -122.407237}},
-						"miami" 		:	{coords: {latitude: 25.790176, longitude: -80.140133}},
-						"current location" : ""
-					 };
-
-		function loadWeather(cityCoords) {
-			var latlng = cityCoords.coords.latitude + "," + cityCoords.coords.longitude;
-
-			var forecastURL ="https://api.forecast.io/forecast/2db00ee1ac3c9d37be124f62c67bb9f8/" + latlng;
-
-			$.ajax({
-				url: forecastURL,
-				jsonpCallback: 'jsonCallback',
-				contentType: "application/json",
-				dataType: 'jsonp',
-				success: function(json) {
-					console.log(json);
-					$("#current_temp").html(Math.round(json.currently.temperature)+"&#176;F"); //this changes the content of the current temperature
-					$("#current_summary").html(json.currently.summary); //changes the summary description
-					$("#current_temp").attr("data-icon",icons[json.currently.icon]); // changes the icon before the temperature
-				},
-				error: function(e) {
-					console.log(e.message);
-				}
-			});
-		} // this gives the weather info of a city with its coordinates
-
-		function loadCity(city) {
-			$("#location").html(city); // changes the description of location to the input city in the content area
-
-			if (city.toLowerCase() == "current location") {
-				if (navigator.geolocation) { //this is an HTML5 API and lets you know if the browser has the capability to access the geolocation
-					navigator.geolocation.getCurrentPosition(loadWeather,loadDefaultCity); // if succesful the getCurrentPosition method returns an object, where the first 2 key values are coords.latitude and coords.longitude, and then that object will be the parameter of loadWeather, so it will work
-				} else {
-					loadDefaultCity(); // if your browser doesn't have the capabilities yóu'll see New York weather
-				}
-			} else{
-				loadWeather(cities[city.toLowerCase()]); // will run the loadweather function and will update all weather info for that city
-			}
-		}
-
-		function loadDefaultCity() {
-			loadCity("New York");
-		}	
-
-		$(document).ready(function() {
-			loadCity("Chicago"); //this is just a starting point for when the page loads, cause once a click another city in the panel that info will change, see below
+			<!-- Header -->
+			<div data-role="header" data-position="fixed" data-theme="c">
+				<h1>Weather BEE</h1>
+				<a href="#left-panel" data-icon="bars" data-role="button"  data-iconpos="notext" data-iconshadow="false">Menu</a>
+			</div>
 			
-			$("a.city").bind("click",function(){
-				loadCity($(this).html()); //If I click a city in the panel it will update all weather info for that city
-			})
-		});
-		
-	</script>
-
-</head>
-
-<body>
-
-<div data-role="page">
-	<div data-role="panel" id="left-panel" data-theme="c">
-	    <ul data-theme="d" data-role="listview">
-	    	<li data-icon="delete"><a href="#" data-rel="close">Close</a></li>	
-	    	<li data-role="list-divider">Select a City</li>
-            <li ><a href="#" class="city" data-rel="close">Current Location</a></li>
-          	<li ><a href="#" class="city" data-rel="close">Chicago</a></li>
-          	<li ><a href="#" class="city" data-rel="close">Los Angeles</a></li>
-          	<li ><a href="#" class="city" data-rel="close">Miami</a></li>
-          	<li ><a href="#" class="city" data-rel="close">New York</a></li>
-          	<li ><a href="#" class="city" data-rel="close">San Francisco</a></li>
-	    </ul>
-	</div><!-- /panel -->
-
-	<div data-role="header" data-position="fixed" data-theme="c">
-		<h1>Weather BEE</h1>
-		<a href="#left-panel" data-icon="bars" data-role="button"  data-iconpos="notext" data-iconshadow="false">Menu</a>
-	</div>
-	<div data-role="content" class="content">
-		<h1 id="current_temp" class="icon" data-icon="I">19&#176;C</h1> <!-- the icon class comes from the implementation of the icons, which is explained in http://www.alessioatzeni.com/meteocons/ -->
-		<p id="current_summary">Mostly Cloudy</p>
-		<p id="location">Denver, CO - Patitas' home</p> 
-	</div>
-</div>
- 
-
-</body>
-
+			<!-- Content -->
+			<div data-role="content" class="content">
+				<h1 id="current_temp" class="icon" data-icon="I">72&#176;F</h1> <!-- the icon class comes from the implementation of the icons, which is explained in http://www.alessioatzeni.com/meteocons/ -->
+				<p id="current_summary">Mostly Cloudy</p>
+				<p id="location">New York</p> 
+			</div>
+		</div>
+	</body> 
 </html>
