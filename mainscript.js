@@ -63,7 +63,7 @@ function loadDefaultCity() {
 
 /*** Execution of script! ***/	
 $(document).ready(function() {
-	loadCity("current location"); //this is just a starting point for when the page loads, cause once a click another city in the panel that info will change, see below
+	loadCity("Current Location"); //this is just a starting point for when the page loads, cause once a click another city in the panel that info will change, see below
 	
 	$("a.city").bind("click",function(){
 		loadCity($(this).html()); //If I click a city in the panel it will update all weather info for that city
