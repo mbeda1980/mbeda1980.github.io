@@ -52,7 +52,7 @@
 			if (navigator.geolocation) { //this is an HTML5 API and lets you know if the browser has the capability to access the geolocation
 				navigator.geolocation.getCurrentPosition(loadWeather,loadDefaultCity); // if succesful the getCurrentPosition method returns an object, where the first 2 key values are coords.latitude and coords.longitude, and then that object will be the parameter of loadWeather, so it will work
 			} else {
-				loadDefaultCity(); // if your browser doesn't have the capabilities yóu'll see New York weather
+				loadDefaultCity(); // if your browser doesn't have the capabilities yóu'll see San Francisco weather
 			}
 		} else{
 			loadWeather(cities[city.toLowerCase()]); // will run the loadweather function and will update all weather info for that city
@@ -60,12 +60,12 @@
 	}
 
 	function loadDefaultCity() {
-		loadCity("New York");
+		loadCity("San Francisco");
 	}	
 
 /*** Execution of script! ***/	
 	$(document).ready(function() {
-		loadCity("Chicago"); //this is just a starting point for when the page loads, cause once a click another city in the panel that info will change, see below
+		loadCity("current location"); //this is just a starting point for when the page loads, cause once a click another city in the panel that info will change, see below
 		
 		$("a.city").bind("click",function(){
 			loadCity($(this).html()); //If I click a city in the panel it will update all weather info for that city
