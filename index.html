@@ -37,9 +37,14 @@
 			
 			<!-- Content -->
 			<div data-role="content" class="content">
-				<h1 id="current_temp" class="icon" data-icon="I">72&#176;F</h1> <!-- the icon class comes from the implementation of the icons, which is explained in http://www.alessioatzeni.com/meteocons/ -->
-				<p id="current_summary">Mostly Cloudy</p>
-				<p id="location">New York</p> 
+				<div id="basic_info">
+					<h2 id="location">New York</h2> 
+					<h1 id="current_temp" class="icon" data-icon="I">72&#176;F</h1> <!-- the icon class comes from the implementation of the icons, which is explained in http://www.alessioatzeni.com/meteocons/ -->
+					<p id="current_summary">Mostly Cloudy</p>
+				</div>
+				<div id="more_info">
+					<h3 id="wind">5 MPH</h3><h3 id="rain">20%</h3>
+				</div>
 			</div>
 		</div>
 	</body> 
