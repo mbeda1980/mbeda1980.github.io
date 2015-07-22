@@ -17,7 +17,15 @@ var cities = {
 				"chicago" 		: 	{coords: {latitude: 41.879003, longitude: -87.63675}},
 				"san francisco" : 	{coords: {latitude: 37.788531, longitude: -122.407237}},
 				"miami" 		:	{coords: {latitude: 25.790176, longitude: -80.140133}},
-				"current location" : ""
+				"denver" 		:	{coords: {latitude: 39.739150, longitude: -104.98470}},
+				"boston" 		:	{coords: {latitude: 42.358430, longitude: -71.059770}},
+				"houston" 		:	{coords: {latitude: 29.763280, longitude: -95.363270}},
+				"philadelphia" 	:	{coords: {latitude: 39.952340, longitude: -75.163790}},
+				"phoenix" 		:	{coords: {latitude: 33.448380, longitude: -112.07404}},
+				"san antonio"	:	{coords: {latitude: 29.424120, longitude: -98.493630}},
+				"san diego"		:	{coords: {latitude: 32.715330, longitude: -117.15726}},
+				"dallas" 		:	{coords: {latitude: 32.783060, longitude: -96.806670}},
+				"san jose" 		:	{coords: {latitude: 37.339390, longitude: -121.89496}},
 			 };
 
 /*** Definition of functions ***/				 
