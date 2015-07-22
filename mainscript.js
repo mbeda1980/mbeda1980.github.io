@@ -44,7 +44,8 @@ function loadWeather(cityCoords) {
 			$("#current_temp").html(Math.round(json.currently.temperature)+"&#176;F"); //this changes the content of the current temperature
 			$("#current_summary").html(json.currently.summary); //changes the summary description
 			$("#current_temp").attr("data-icon",icons[json.currently.icon]); // changes the icon before the temperature
-			$("#wind").html(json.currently.windSpeed + " MPH");
+			var windmph=json.currently.windSpeed.toFixed(1);
+			$("#wind").html(windmph + " MPH");
 			var humidLevel = json.currently.humidity*100;
 			$("#humid").html(humidLevel + "%");
 		},
