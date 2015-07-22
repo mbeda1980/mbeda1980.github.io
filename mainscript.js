@@ -45,7 +45,8 @@ function loadWeather(cityCoords) {
 			$("#current_summary").html(json.currently.summary); //changes the summary description
 			$("#current_temp").attr("data-icon",icons[json.currently.icon]); // changes the icon before the temperature
 			$("#wind").html(json.currently.windSpeed + " MPH");
-			$("#rain").html(json.currently.precipProbability + "% PREC.");
+			var humidLevel = json.currently.humidity*100;
+			$("#humid").html(humidLevel + "%");
 		},
 		error: function(e) {
 			console.log(e.message);
@@ -68,7 +69,7 @@ function loadCity(city) {
 }
 
 function loadDefaultCity() {
-	loadCity("San Francisco");
+	loadCity("Denver");
 }	
 
 /*** Execution of script! ***/	

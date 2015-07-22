@@ -27,7 +27,7 @@
 	text-align: center;
 }
 
-#wind, #rain {
+#wind, #humid {
     display: inline-block;
     margin-right: 1em;
     margin-left: 1em;
