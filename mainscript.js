@@ -75,7 +75,8 @@ function loadWeather(cityCoords) {
 			$("#wind").html(windmph + " MPH");
 			var humidLevel = Math.round(json.currently.humidity*100);
 			$("#humid").html(humidLevel + "% H");
-			$("#recomm").html(recommendations[json.currently.icon]);
+			var recommText = '"' + recommendations[json.currently.icon] + '"';
+			$("#recomm").html(recommText);
 			$(".content img").attr("src",imageLocations[json.currently.icon]);
 		},
 		error: function(e) {
