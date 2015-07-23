@@ -1,15 +1,42 @@
 /*** Definition of variables ***/
-var icons = {	"clear-day" : "B", 
-				"clear-night" : "C", 
-				"rain" : "R", 
-				"snow" : "G", 
-				"sleet" : "X", 
-				"wind" : "S", 
-				"fog" :"N", 
-				"cloudy" : "Y",
-				"partly-cloudy-day" : "H", 
-				"partly-cloudy-night" : "I"
-			};
+var icons = {
+	"clear-day" : "B", 
+	"clear-night" : "C", 
+	"rain" : "R", 
+	"snow" : "G", 
+	"sleet" : "X", 
+	"wind" : "S", 
+	"fog" :"N", 
+	"cloudy" : "Y",
+	"partly-cloudy-day" : "H", 
+	"partly-cloudy-night" : "I"
+};
+
+var recommendations = {
+	"clear-day" : "Take a bike ride downtown!", 
+	"clear-night" : "Go count the stars!", 
+	"rain" : "Bring your umbrella if you're going out!", 
+	"snow" : "Break in your snow boots!", 
+	"sleet" : "It's slippery out, watch out!", 
+	"wind" : "Make sure you bring your wind jacket!", 
+	"fog" :"Be careful while driving!", 
+	"cloudy" : "Don't worry about getting a sun tan, you won't!",
+	"partly-cloudy-day" : "Who likes partly-cloudy-days?", 
+	"partly-cloudy-night" : "Don't bother using your telescope..."
+};
+
+var imageLocations = {
+	"clear-day" : "images/recommendations/clear-day.jpg", 
+	"clear-night" : "images/recommendations/clear-night.jpg", 
+	"rain" : "images/recommendations/rain.jpg", 
+	"snow" : "images/recommendations/snow.jpg", 
+	"sleet" : "images/recommendations/sleet.jpg", 
+	"wind" : "images/recommendations/wind.jpg", 
+	"fog" :"images/recommendations/fog.jpg", 
+	"cloudy" : "images/recommendations/cloudy.jpg",
+	"partly-cloudy-day" : "images/recommendations/partly-cloudy-day.jpg", 
+	"partly-cloudy-night" : "images/recommendations/partly-cloudy-night.jpg"
+}
 
 var cities = {	
 				"new york" 		: 	{coords: {latitude: 40.672060, longitude:-73.983898}},
@@ -46,8 +73,10 @@ function loadWeather(cityCoords) {
 			$("#current_temp").attr("data-icon",icons[json.currently.icon]); // changes the icon before the temperature
 			var windmph=json.currently.windSpeed.toFixed(1);
 			$("#wind").html(windmph + " MPH");
-			var humidLevel = json.currently.humidity*100;
-			$("#humid").html(humidLevel + "%");
+			var humidLevel = Math.round(json.currently.humidity*100);
+			$("#humid").html(humidLevel + "% H");
+			$("#recomm").html(recommendations[json.currently.icon]);
+			$(".content img").attr("src",imageLocations[json.currently.icon]);
 		},
 		error: function(e) {
 			console.log(e.message);
