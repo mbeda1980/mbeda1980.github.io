@@ -9,12 +9,12 @@
 		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
 		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 		<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-		<script src="https://cdnjs.com/libraries/chart.js"></script>
+		<script src="https://cdnjs.com/libraries/chart.js"></script> <!-- For adding charts -->
 		<link rel="stylesheet" type="text/css" href="css/stylesheet.css"> <!-- this links it to the style sheet for the font of weather images -->
 		<script src="mainscript.js"></script> <!-- Main Javascript code -->
 	</head>
 	<body>
-		<!-- *** Now Page *** -->
+		<!-- *** Basic Page *** -->
 		<div data-role="page" id="basic">
 			<!-- Panel  -->
 			<div data-role="panel" id="left-panel" data-theme="c">
@@ -111,7 +111,7 @@
 				<li data-role="list-divider">SUN &amp; MOON</li>
 				<li>Sunrise: 5:50 am</li>
 				<li>Sunset: 8:21 pm</li>
-				<li>Moon Luminance: 49%</li>
+				<li>Moon Phase: 49%</li>
 			</ul>
 
 		</div>
@@ -153,14 +153,9 @@
 					<h2 data-theme="a">Today</h2>
 					<ul data-role="listview" data-theme="c">
 						<li>Mostly cloudy throughout the day.</li>
-						<li>Temperatures: 65 - 75&#176; F</li>
-						<li>Precipitation: 30% / 0.1 - 0.4 in/hr</li>
-						<li>Wind: 8.9 MPH SE</li>
-						<li>Visibility: 8 miles</li>
-						<li>Cloud Cover: 30%</li>
-						<li>Dew Point/Humidity: 65 &#176;F / 30%</li>
-						<li>1000 mbar &amp; 300 ozone</li>
-						<li>Sun &amp; Moon: 5am 8:30pm / 56%</li>
+						<li>Low - High Temperature: 65 - 75&#176; F</li>
+						<li>Rain chance &amp; precipitation: 30% / 0.1 - 0.4 in/hr</li>
+						<li>Sunrise/Sunset &amp; Moon Phase: 5am / 8:30pm &amp; 56%</li>
 					</ul>
 				</li>
 				<li data-role="collapsible" data-iconpos="right" data-inset="false">
