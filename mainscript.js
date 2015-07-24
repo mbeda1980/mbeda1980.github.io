@@ -25,19 +25,6 @@ var recommendations = {
 	"partly-cloudy-night" : "Don't bother using your telescope..."
 };
 
-var imageLocations = {
-	"clear-day" : "images/recommendations/clear-day.jpg", 
-	"clear-night" : "images/recommendations/clear-night.jpg", 
-	"rain" : "images/recommendations/rain.jpg", 
-	"snow" : "images/recommendations/snow.jpg", 
-	"sleet" : "images/recommendations/sleet.jpg", 
-	"wind" : "images/recommendations/wind.jpg", 
-	"fog" :"images/recommendations/fog.jpg", 
-	"cloudy" : "images/recommendations/cloudy.jpg",
-	"partly-cloudy-day" : "images/recommendations/partly-cloudy-day.jpg", 
-	"partly-cloudy-night" : "images/recommendations/partly-cloudy-night.jpg"
-}
-
 var cities = {	
 				"new york" 		: 	{coords: {latitude: 40.672060, longitude:-73.983898}},
 				"los angeles" 	: 	{coords: {latitude: 34.101422, longitude: -118.341224}},
@@ -77,7 +64,6 @@ function loadWeather(cityCoords) {
 			$("#humid").html(humidLevel + "% H");
 			var recommText = '"' + recommendations[json.currently.icon] + '"';
 			$("#recomm").html(recommText);
-			$(".content img").attr("src",imageLocations[json.currently.icon]);
 		},
 		error: function(e) {
 			console.log(e.message);
