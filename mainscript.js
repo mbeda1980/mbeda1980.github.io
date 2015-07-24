@@ -43,6 +43,18 @@ var cities = {
 			 };
 
 /*** Definition of functions ***/				 
+function direction(angle) {
+	if (angle >= 0 && angle < 90) {
+		return "NE";
+	} else if (angle >= 90 && angle < 180) {
+		return "SE";
+	} else if (angle >= 180 && angle < 270) {
+		return "SW";
+	} else if (angle >=270 && angle < 360) {
+		return "NW";
+	}
+} 
+
 function loadWeather(cityCoords) {
 	var latlng = cityCoords.coords.latitude + "," + cityCoords.coords.longitude;
 
@@ -58,8 +70,8 @@ function loadWeather(cityCoords) {
 			$("#current_temp").html(Math.round(json.currently.temperature)+"&#176;F"); //this changes the content of the current temperature
 			$("#current_summary").html(json.currently.summary); //changes the summary description
 			$("#current_temp").attr("data-icon",icons[json.currently.icon]); // changes the icon before the temperature
-			var windmph=json.currently.windSpeed.toFixed(1);
-			$("#wind").html(windmph + " MPH");
+			var windInfo=json.currently.windSpeed.toFixed(1) + " MPH " + direction(json.currently.windBearing);
+			$("#wind").html(windInfo);
 			var humidLevel = Math.round(json.currently.humidity*100);
 			$("#humid").html(humidLevel + "% Humid");
 			var recommText = '"' + recommendations[json.currently.icon] + '"';

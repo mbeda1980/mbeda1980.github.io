@@ -1,6 +1,7 @@
 <!doctype html>
 <html>
 	<head>
+		 <meta http-equiv="Content-Type" content="text/html" charset="utf-8"/>
 		<title>SIMPLE Weather</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="apple-touch-icon" href="images/icon.png"/> <!-- this will set the icon if I save the bookmark as an app icon -->
@@ -8,12 +9,13 @@
 		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
 		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 		<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+		<script src="https://cdnjs.com/libraries/chart.js"></script>
 		<link rel="stylesheet" type="text/css" href="css/stylesheet.css"> <!-- this links it to the style sheet for the font of weather images -->
 		<script src="mainscript.js"></script> <!-- Main Javascript code -->
 	</head>
 	<body>
 		<!-- *** Now Page *** -->
-		<div data-role="page" id="now">
+		<div data-role="page" id="basic">
 			<!-- Panel  -->
 			<div data-role="panel" id="left-panel" data-theme="c">
 			    <ul data-theme="d" data-role="listview">
@@ -37,8 +39,8 @@
 				<a href="#left-panel" data-icon="bars" data-role="button"  data-iconpos="notext" data-iconshadow="false">Menu</a>
 				<div data-role="navbar">
 					<ul>
-						<li><a href="#now" data-icon="eye" class="ui-btn-active" data-theme="a">Now</a></li>
-						<li><a href="#details" data-icon="grid" data-theme="a">Details</a></li>
+						<li><a href="#basic" data-icon="eye" class="ui-btn-active" data-theme="a">Basic</a></li>
+						<li><a href="#detailed" data-icon="grid" data-theme="a">Detailed</a></li>
 		            	<li><a href="#forecast" data-icon="calendar" data-theme="a">Forecast</a></li>
 					</ul>
 	    		</div>
@@ -59,7 +61,7 @@
 		</div>
 
 		<!-- *** Details Page *** -->
-		<div data-role="page" id="details">
+		<div data-role="page" id="detailed">
 			<!-- Panel  -->
 			<div data-role="panel" id="left-panel" data-theme="c">
 			    <ul data-theme="d" data-role="listview">
@@ -83,8 +85,8 @@
 				<a href="#left-panel" data-icon="bars" data-role="button"  data-iconpos="notext" data-iconshadow="false">Menu</a>
 				<div data-role="navbar">
 					<ul>
-						<li><a href="#now" data-icon="eye" data-theme="a">Now</a></li>
-						<li><a href="#details" data-icon="grid" class="ui-btn-active" data-theme="a">Details</a></li>
+						<li><a href="#basic" data-icon="eye" data-theme="a">Basic</a></li>
+						<li><a href="#detailed" data-icon="grid" class="ui-btn-active" data-theme="a">Detailed</a></li>
 		            	<li><a href="#forecast" data-icon="calendar" data-theme="a">Forecast</a></li>
 					</ul>
 	    		</div>
@@ -106,11 +108,10 @@
 				<li>Dew Point: 54&#176;F</li>
 				<li>Ozone Density: 328 Dobson Units</li>
 				
-				<li data-role="list-divider">SUN &amp;MOON</li>
+				<li data-role="list-divider">SUN &amp; MOON</li>
 				<li>Sunrise: 5:50 am</li>
 				<li>Sunset: 8:21 pm</li>
 				<li>Moon Luminance: 49%</li>
-
 			</ul>
 
 		</div>
@@ -140,14 +141,128 @@
 				<a href="#left-panel" data-icon="bars" data-role="button"  data-iconpos="notext" data-iconshadow="false">Menu</a>
 				<div data-role="navbar">
 					<ul>
-						<li><a href="#now" data-icon="eye" data-theme="a">Now</a></li>
-						<li><a href="#details" data-icon="grid" data-theme="a">Details</a></li>
+						<li><a href="#basic" data-icon="eye" data-theme="a">Basic</a></li>
+						<li><a href="#detailed" data-icon="grid" data-theme="a">Detailed</a></li>
 		            	<li><a href="#forecast" data-icon="calendar" class="ui-btn-active" data-theme="a">Forecast</a></li>
 					</ul>
 	    		</div>
 			</div>
 			<!-- Content -->
-		</div>	
+			<ul data-role="listview" data-inset="true" data-shadow="false">
+				<li data-role="collapsible" data-iconpos="right" data-inset="false">
+					<h2 data-theme="a">Today</h2>
+					<ul data-role="listview" data-theme="c">
+						<li>Mostly cloudy throughout the day.</li>
+						<li>Temperatures: 65 - 75&#176; F</li>
+						<li>Precipitation: 30% / 0.1 - 0.4 in/hr</li>
+						<li>Wind: 8.9 MPH SE</li>
+						<li>Visibility: 8 miles</li>
+						<li>Cloud Cover: 30%</li>
+						<li>Dew Point/Humidity: 65 &#176;F / 30%</li>
+						<li>1000 mbar &amp; 300 ozone</li>
+						<li>Sun &amp; Moon: 5am 8:30pm / 56%</li>
+					</ul>
+				</li>
+				<li data-role="collapsible" data-iconpos="right" data-inset="false">
+					<h2 data-theme="a">Friday</h2>
+					<ul data-role="listview" data-theme="c">
+						<li>Mostly cloudy throughout the day.</li>
+						<li>Temperatures: 65 - 75&#176; F</li>
+						<li>Precipitation: 30% / 0.1 - 0.4 in/hr</li>
+						<li>Wind: 8.9 MPH SE</li>
+						<li>Visibility: 8 miles</li>
+						<li>Cloud Cover: 30%</li>
+						<li>Dew Point/Humidity: 65 &#176;F / 30%</li>
+						<li>1000 mbar &amp; 300 ozone</li>
+						<li>Sun &amp; Moon: 5am 8:30pm / 56%</li>
+					</ul>
+				</li>
+				<li data-role="collapsible" data-iconpos="right" data-inset="false">
+					<h2 data-theme="a">Saturday</h2>
+					<ul data-role="listview" data-theme="c">
+						<li>Mostly cloudy throughout the day.</li>
+						<li>Temperatures: 65 - 75&#176; F</li>
+						<li>Precipitation: 30% / 0.1 - 0.4 in/hr</li>
+						<li>Wind: 8.9 MPH SE</li>
+						<li>Visibility: 8 miles</li>
+						<li>Cloud Cover: 30%</li>
+						<li>Dew Point/Humidity: 65 &#176;F / 30%</li>
+						<li>1000 mbar &amp; 300 ozone</li>
+						<li>Sun &amp; Moon: 5am 8:30pm / 56%</li>
+					</ul>
+				</li>
+				<li data-role="collapsible" data-iconpos="right" data-inset="false">
+					<h2 data-theme="a">Sunday</h2>
+					<ul data-role="listview" data-theme="c">
+						<li>Mostly cloudy throughout the day.</li>
+						<li>Temperatures: 65 - 75&#176; F</li>
+						<li>Precipitation: 30% / 0.1 - 0.4 in/hr</li>
+						<li>Wind: 8.9 MPH SE</li>
+						<li>Visibility: 8 miles</li>
+						<li>Cloud Cover: 30%</li>
+						<li>Dew Point/Humidity: 65 &#176;F / 30%</li>
+						<li>1000 mbar &amp; 300 ozone</li>
+						<li>Sun &amp; Moon: 5am 8:30pm / 56%</li>
+					</ul>
+				</li>
+				<li data-role="collapsible" data-iconpos="right" data-inset="false">
+					<h2 data-theme="a">Monday</h2>
+					<ul data-role="listview" data-theme="c">
+						<li>Mostly cloudy throughout the day.</li>
+						<li>Temperatures: 65 - 75&#176; F</li>
+						<li>Precipitation: 30% / 0.1 - 0.4 in/hr</li>
+						<li>Wind: 8.9 MPH SE</li>
+						<li>Visibility: 8 miles</li>
+						<li>Cloud Cover: 30%</li>
+						<li>Dew Point/Humidity: 65 &#176;F / 30%</li>
+						<li>1000 mbar &amp; 300 ozone</li>
+						<li>Sun &amp; Moon: 5am 8:30pm / 56%</li>
+					</ul>
+				</li>
+				<li data-role="collapsible" data-iconpos="right" data-inset="false">
+					<h2 data-theme="a">Tuesday</h2>
+					<ul data-role="listview" data-theme="c">
+						<li>Mostly cloudy throughout the day.</li>
+						<li>Temperatures: 65 - 75&#176; F</li>
+						<li>Precipitation: 30% / 0.1 - 0.4 in/hr</li>
+						<li>Wind: 8.9 MPH SE</li>
+						<li>Visibility: 8 miles</li>
+						<li>Cloud Cover: 30%</li>
+						<li>Dew Point/Humidity: 65 &#176;F / 30%</li>
+						<li>1000 mbar &amp; 300 ozone</li>
+						<li>Sun &amp; Moon: 5am 8:30pm / 56%</li>
+					</ul>
+				</li>
+				<li data-role="collapsible" data-iconpos="right" data-inset="false">
+					<h2 data-theme="a">Wednesday</h2>
+					<ul data-role="listview" data-theme="c">
+						<li>Mostly cloudy throughout the day.</li>
+						<li>Temperatures: 65 - 75&#176; F</li>
+						<li>Precipitation: 30% / 0.1 - 0.4 in/hr</li>
+						<li>Wind: 8.9 MPH SE</li>
+						<li>Visibility: 8 miles</li>
+						<li>Cloud Cover: 30%</li>
+						<li>Dew Point/Humidity: 65 &#176;F / 30%</li>
+						<li>1000 mbar &amp; 300 ozone</li>
+						<li>Sun &amp; Moon: 5am 8:30pm / 56%</li>
+					</ul>
+				</li>
+				<li data-role="collapsible" data-iconpos="right" data-inset="false">
+					<h2 data-theme="a">Thursday</h2>
+					<ul data-role="listview" data-theme="c">
+						<li>Mostly cloudy throughout the day.</li>
+						<li>Temperatures: 65 - 75&#176; F</li>
+						<li>Precipitation: 30% / 0.1 - 0.4 in/hr</li>
+						<li>Wind: 8.9 MPH SE</li>
+						<li>Visibility: 8 miles</li>
+						<li>Cloud Cover: 30%</li>
+						<li>Dew Point/Humidity: 65 &#176;F / 30%</li>
+						<li>1000 mbar &amp; 300 ozone</li>
+						<li>Sun &amp; Moon: 5am 8:30pm / 56%</li>
+					</ul>
+				</li>
+			</ul> <!-- End of Content of Forecast Page -->
+		</div>	<!-- End of Forecast Page -->
 	
 	</body> 
 </html>
