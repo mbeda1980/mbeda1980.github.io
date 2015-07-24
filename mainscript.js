@@ -61,7 +61,7 @@ function loadWeather(cityCoords) {
 			var windmph=json.currently.windSpeed.toFixed(1);
 			$("#wind").html(windmph + " MPH");
 			var humidLevel = Math.round(json.currently.humidity*100);
-			$("#humid").html(humidLevel + "% H");
+			$("#humid").html(humidLevel + "% Humid");
 			var recommText = '"' + recommendations[json.currently.icon] + '"';
 			$("#recomm").html(recommText);
 		},
