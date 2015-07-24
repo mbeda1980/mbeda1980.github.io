@@ -12,7 +12,7 @@
 		<script src="mainscript.js"></script> <!-- Main Javascript code -->
 	</head>
 	<body>
-		<!-- Now Page -->
+		<!-- *** Now Page *** -->
 		<div data-role="page" id="now">
 			<!-- Panel  -->
 			<div data-role="panel" id="left-panel" data-theme="c">
@@ -36,12 +36,12 @@
 				<h1>SIMPLE Weather</h1>
 				<a href="#left-panel" data-icon="bars" data-role="button"  data-iconpos="notext" data-iconshadow="false">Menu</a>
 				<div data-role="navbar">
-				<ul>
-					<li><a href="#now" data-icon="eye" class="ui-btn-active" data-theme="a">Now</a></li>
-					<li><a href="#details" data-icon="grid" data-theme="a">Details</a></li>
-	            	<li><a href="#forecast" data-icon="calendar" data-theme="a">Forecast</a></li>
-				</ul>
-	    	</div>
+					<ul>
+						<li><a href="#now" data-icon="eye" class="ui-btn-active" data-theme="a">Now</a></li>
+						<li><a href="#details" data-icon="grid" data-theme="a">Details</a></li>
+		            	<li><a href="#forecast" data-icon="calendar" data-theme="a">Forecast</a></li>
+					</ul>
+	    		</div>
 			</div>
 			
 			<!-- Content -->
@@ -59,13 +59,96 @@
 			</div>
 		</div>
 
-		<!-- Details Page -->
+		<!-- *** Details Page *** -->
 		<div data-role="page" id="details">
+			<!-- Panel  -->
+			<div data-role="panel" id="left-panel" data-theme="c">
+			    <ul data-theme="d" data-role="listview">
+			    	<li data-icon="delete"><a href="#" data-rel="close">Close</a></li>	
+			    	<li data-role="list-divider">Select a City</li>
+		            <li ><a href="#" class="city" data-rel="close">Current Location</a></li>
+		          	<li ><a href="#" class="city" data-rel="close">Chicago</a></li>
+		          	<li ><a href="#" class="city" data-rel="close">Los Angeles</a></li>
+		          	<li ><a href="#" class="city" data-rel="close">Miami</a></li>
+		          	<li ><a href="#" class="city" data-rel="close">New York</a></li>
+		          	<li ><a href="#" class="city" data-rel="close">San Francisco</a></li>
+		          	<li ><a href="#" class="city" data-rel="close">Denver</a></li>
+			    </ul>
+			    <br><br>
+			    <input type="search" name="search" id="search" value="" placeholder="Add new city">
+			</div>
+
+			<!-- Header -->
+			<div data-role="header" data-position="fixed" data-theme="a">
+				<h1>SIMPLE Weather</h1>
+				<a href="#left-panel" data-icon="bars" data-role="button"  data-iconpos="notext" data-iconshadow="false">Menu</a>
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#now" data-icon="eye" data-theme="a">Now</a></li>
+						<li><a href="#details" data-icon="grid" class="ui-btn-active" data-theme="a">Details</a></li>
+		            	<li><a href="#forecast" data-icon="calendar" data-theme="a">Forecast</a></li>
+					</ul>
+	    		</div>
+			</div>
+			<!-- Content -->
+			<ul data-role="listview" data-inset="true" data-divider-theme="a">
+				<li data-role="list-divider">WHAT YOU FEEL</li>
+				<li>Feels Like: 72&#176;F</li>
+				<li>Precipitation: 0.1 in/hr</li>
+				<li>Pressure: 1015 mbar</li>
+				
+				<li data-role="list-divider">WHAT YOU SEE</li>
+				<li>Visibility: 9.4 miles</li>
+				<li>Cloud Cover: 40%</li>
+				<li>Nearest Storm: 51 miles SE</li>
+
+				<li data-role="list-divider">WHAT WE KNOW</li>
+				<li>Chance of Rain: 20%</li>
+				<li>Dew Point: 54&#176;F</li>
+				<li>Ozone Density: 328 Dobson Units</li>
+				
+				<li data-role="list-divider">SUN &amp;MOON</li>
+				<li>Sunrise: 5:50 am</li>
+				<li>Sunset: 8:21 pm</li>
+				<li>Moon Luminance: 49%</li>
+
+			</ul>
 
 		</div>
-		<!-- Forecast Page -->
-		<div data-role="page" id="forecast">
 
+		<!-- *** Forecast Page *** -->
+		<div data-role="page" id="forecast">
+			<!-- Panel  -->
+			<div data-role="panel" id="left-panel" data-theme="c">
+			    <ul data-theme="d" data-role="listview">
+			    	<li data-icon="delete"><a href="#" data-rel="close">Close</a></li>	
+			    	<li data-role="list-divider">Select a City</li>
+		            <li ><a href="#" class="city" data-rel="close">Current Location</a></li>
+		          	<li ><a href="#" class="city" data-rel="close">Chicago</a></li>
+		          	<li ><a href="#" class="city" data-rel="close">Los Angeles</a></li>
+		          	<li ><a href="#" class="city" data-rel="close">Miami</a></li>
+		          	<li ><a href="#" class="city" data-rel="close">New York</a></li>
+		          	<li ><a href="#" class="city" data-rel="close">San Francisco</a></li>
+		          	<li ><a href="#" class="city" data-rel="close">Denver</a></li>
+			    </ul>
+			    <br><br>
+			    <input type="search" name="search" id="search" value="" placeholder="Add new city">
+			</div>
+
+			<!-- Header -->
+			<div data-role="header" data-position="fixed" data-theme="a">
+				<h1>SIMPLE Weather</h1>
+				<a href="#left-panel" data-icon="bars" data-role="button"  data-iconpos="notext" data-iconshadow="false">Menu</a>
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#now" data-icon="eye" data-theme="a">Now</a></li>
+						<li><a href="#details" data-icon="grid" data-theme="a">Details</a></li>
+		            	<li><a href="#forecast" data-icon="calendar" class="ui-btn-active" data-theme="a">Forecast</a></li>
+					</ul>
+	    		</div>
+			</div>
+			<!-- Content -->
 		</div>	
+	
 	</body> 
 </html>
