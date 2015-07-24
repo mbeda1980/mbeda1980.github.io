@@ -1,0 +1,133 @@
+<!doctype html>
+<html>
+	<head>
+		 <meta http-equiv="Content-Type" content="text/html" charset="utf-8"/>
+		<title>SIMPLE Weather</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="apple-touch-icon" href="images/icon.png"/> <!-- this will set the icon if I save the bookmark as an app icon -->
+		<meta name="apple-mobile-web-app-capable" content="yes" />  <!-- this will allow the bookmark to be shown full screen, as a native app -->
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+		<script src="https://cdnjs.com/libraries/chart.js"></script> <!-- For adding charts -->
+		<link rel="stylesheet" type="text/css" href="css/stylesheet.css"> <!-- this links it to the style sheet for the font of weather images -->
+		<script src="mainscript.js"></script> <!-- Main Javascript code -->
+	</head>
+	<body>
+		<!-- <div data-role="page"> -->
+			<!-- Panel  -->
+			<div data-role="panel" id="left-panel" data-display="push" data-theme="c">
+			    <ul data-theme="d" data-role="listview">
+			    	<li data-icon="delete"><a href="#" data-rel="close">Close</a></li>	
+			    	<li data-role="list-divider">Select a City</li>
+		            <li ><a href="#" class="city" data-rel="close">Current Location</a></li>
+		          	<li ><a href="#" class="city" data-rel="close">Chicago</a></li>
+		          	<li ><a href="#" class="city" data-rel="close">Los Angeles</a></li>
+		          	<li ><a href="#" class="city" data-rel="close">Miami</a></li>
+		          	<li ><a href="#" class="city" data-rel="close">New York</a></li>
+		          	<li ><a href="#" class="city" data-rel="close">San Francisco</a></li>
+		          	<li ><a href="#" class="city" data-rel="close">Denver</a></li>
+			    </ul>
+			    <br><br>
+			    <input type="search" name="search" id="search" value="" placeholder="Add new city">
+			</div>
+
+			<!-- Header -->
+			<div data-role="header" data-position="fixed" data-theme="a">
+				<h1>SIMPLE Weather</h1>
+				<a href="#left-panel" data-icon="bars" data-role="button"  data-iconpos="notext" data-iconshadow="false">Menu</a>
+				<div data-role="navbar">
+					<ul>
+						<li><a href="index.html" data-icon="eye" data-theme="a">Basic</a></li>
+						<li><a href="detailed.html" data-icon="grid" data-theme="a">Detailed</a></li>
+		            	<li><a href="#" data-icon="calendar" data-theme="a" class="ui-btn-active">Forecast</a></li>
+		            </ul>
+	    		</div>
+			</div>
+			
+			<!-- Content -->
+			<ul data-role="listview" data-inset="true" data-shadow="false">
+				<li data-role="collapsible" data-iconpos="right" data-inset="false">
+					<h2 data-theme="a">Today</h2>
+					<ul data-role="listview" data-theme="c">
+						<li>Mostly cloudy throughout the day.</li>
+						<li>Low - High Temperature: 65 - 75&#176; F</li>
+						<li>Chance of Rain: 30%</li>
+						<li>Min - Max Precipitation: 0.1 - 0.4 in/hr</li>
+						<li>Sunrise - Sunset: 5am - 8:30pm</li>
+					</ul>
+				</li>
+				<li data-role="collapsible" data-iconpos="right" data-inset="false">
+					<h2 data-theme="a">Friday</h2>
+					<ul data-role="listview" data-theme="c">
+						<li>Mostly cloudy throughout the day.</li>
+						<li>Low - High Temperature: 65 - 75&#176; F</li>
+						<li>Chance of Rain: 30%</li>
+						<li>Min - Max Precipitation: 0.1 - 0.4 in/hr</li>
+						<li>Sunrise - Sunset: 5am - 8:30pm</li>
+					</ul>
+				</li>
+				<li data-role="collapsible" data-iconpos="right" data-inset="false">
+					<h2 data-theme="a">Saturday</h2>
+					<ul data-role="listview" data-theme="c">
+						<li>Mostly cloudy throughout the day.</li>
+						<li>Low - High Temperature: 65 - 75&#176; F</li>
+						<li>Chance of Rain: 30%</li>
+						<li>Min - Max Precipitation: 0.1 - 0.4 in/hr</li>
+						<li>Sunrise - Sunset: 5am - 8:30pm</li>
+					</ul>
+				</li>
+				<li data-role="collapsible" data-iconpos="right" data-inset="false">
+					<h2 data-theme="a">Sunday</h2>
+					<ul data-role="listview" data-theme="c">
+						<li>Mostly cloudy throughout the day.</li>
+						<li>Low - High Temperature: 65 - 75&#176; F</li>
+						<li>Chance of Rain: 30%</li>
+						<li>Min - Max Precipitation: 0.1 - 0.4 in/hr</li>
+						<li>Sunrise - Sunset: 5am - 8:30pm</li>
+					</ul>
+				</li>
+				<li data-role="collapsible" data-iconpos="right" data-inset="false">
+					<h2 data-theme="a">Monday</h2>
+					<ul data-role="listview" data-theme="c">
+						<li>Mostly cloudy throughout the day.</li>
+						<li>Low - High Temperature: 65 - 75&#176; F</li>
+						<li>Chance of Rain: 30%</li>
+						<li>Min - Max Precipitation: 0.1 - 0.4 in/hr</li>
+						<li>Sunrise - Sunset: 5am - 8:30pm</li>
+					</ul>
+				</li>
+				<li data-role="collapsible" data-iconpos="right" data-inset="false">
+					<h2 data-theme="a">Tuesday</h2>
+					<ul data-role="listview" data-theme="c">
+						<li>Mostly cloudy throughout the day.</li>
+						<li>Low - High Temperature: 65 - 75&#176; F</li>
+						<li>Chance of Rain: 30%</li>
+						<li>Min - Max Precipitation: 0.1 - 0.4 in/hr</li>
+						<li>Sunrise - Sunset: 5am - 8:30pm</li>
+					</ul>
+				</li>
+				<li data-role="collapsible" data-iconpos="right" data-inset="false">
+					<h2 data-theme="a">Wednesday</h2>
+					<ul data-role="listview" data-theme="c">
+						<li>Mostly cloudy throughout the day.</li>
+						<li>Low - High Temperature: 65 - 75&#176; F</li>
+						<li>Chance of Rain: 30%</li>
+						<li>Min - Max Precipitation: 0.1 - 0.4 in/hr</li>
+						<li>Sunrise - Sunset: 5am - 8:30pm</li>
+					</ul>
+				</li>
+				<li data-role="collapsible" data-iconpos="right" data-inset="false">
+					<h2 data-theme="a">Thursday</h2>
+					<ul data-role="listview" data-theme="c">
+						<li>Mostly cloudy throughout the day.</li>
+						<li>Low - High Temperature: 65 - 75&#176; F</li>
+						<li>Chance of Rain: 30%</li>
+						<li>Min - Max Precipitation: 0.1 - 0.4 in/hr</li>
+						<li>Sunrise - Sunset: 5am - 8:30pm</li>
+					</ul>
+				</li>
+			</ul> <!-- End of Content of Forecast Page -->
+		<!-- </div> -->	<!-- End of Forecast Page -->
+	</body> 
+</html>

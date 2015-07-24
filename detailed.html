@@ -14,7 +14,7 @@
 		<script src="mainscript.js"></script> <!-- Main Javascript code -->
 	</head>
 	<body>
-		<!-- <div data-role="page"> -->
+		<!-- <div data-role="page" id="detailed"> -->
 			<!-- Panel  -->
 			<div data-role="panel" id="left-panel" data-display="push" data-theme="c">
 			    <ul data-theme="d" data-role="listview">
@@ -38,25 +38,35 @@
 				<a href="#left-panel" data-icon="bars" data-role="button"  data-iconpos="notext" data-iconshadow="false">Menu</a>
 				<div data-role="navbar">
 					<ul>
-						<li><a href="#" data-icon="eye" class="ui-btn-active" data-theme="a">Basic</a></li>
-						<li><a href="detailed.html" data-icon="grid" data-theme="a">Detailed</a></li>
+						<li><a href="index.html" data-icon="eye" data-theme="a">Basic</a></li>
+						<li><a href="#" data-icon="grid" class="ui-btn-active" data-theme="a">Detailed</a></li>
 		            	<li><a href="forecast.html" data-icon="calendar" data-theme="a">Forecast</a></li>
 					</ul>
 	    		</div>
 			</div>
-			
+
 			<!-- Content -->
-			<div data-role="content" class="content">
-				<div id="basic_info">
-					<h2 id="location">New York</h2> 
-					<h1 id="current_temp" class="icon" data-icon="I">72&#176;F</h1> <!-- the icon class comes from the implementation of the icons, which is explained in http://www.alessioatzeni.com/meteocons/ -->
-					<p id="current_summary">Sunny</p>
-				</div>
-				<div id="more_info">
-					<h4 id="wind">5 MPH</h4><h4 id="humid">20% Humid</h4>
-				</div>
-				<h3 id="recomm">"Go outside and enjoy the day!"</h3>
-			</div>
+			<ul data-role="listview" data-inset="true" data-divider-theme="a">
+				<li data-role="list-divider">WHAT YOU FEEL</li>
+				<li>Feels Like: 72&#176;F</li>
+				<li>Precipitation: 0.1 in/hr</li>
+				<li>Pressure: 1015 mbar</li>
+				
+				<li data-role="list-divider">WHAT YOU SEE</li>
+				<li>Visibility: 9.4 miles</li>
+				<li>Cloud Cover: 40%</li>
+				<li>Nearest Storm: 51 miles SE</li>
+
+				<li data-role="list-divider">WHAT WE KNOW</li>
+				<li>Chance of Rain: 20%</li>
+				<li>Dew Point: 54&#176;F</li>
+				<li>Ozone Density: 328 Dobson Units</li>
+				
+				<li data-role="list-divider">SUN &amp; MOON</li>
+				<li>Sunrise: 5:50 am</li>
+				<li>Sunset: 8:21 pm</li>
+				<li>Moon Phase: 49%</li>
+			</ul>
 		<!-- </div> -->
 	</body> 
 </html>
