@@ -9,9 +9,11 @@
 		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
 		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 		<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-		<script src="https://cdnjs.com/libraries/chart.js"></script> <!-- For adding charts -->
+		<script src="Chart.min.js"></script> <!-- For adding charts -->
 		<link rel="stylesheet" type="text/css" href="css/stylesheet.css"> <!-- this links it to the style sheet for the font of weather images -->
-		<script src="mainscript.js"></script> <!-- Main Javascript code -->
+		<script>
+			var page = "forecastPage";
+		</script>
 	</head>
 	<body>
 		<!-- Panel  -->
@@ -126,6 +128,42 @@
 					<li>Sunrise - Sunset: 5am - 8:30pm</li>
 				</ul>
 			</li>
-		</ul> 
+		</ul>
+		<h3>Forecast by Variable</h3>
+		<div>
+			<canvas id="canvas"></canvas>
+		</div>
+		<!-- <script src="mainscript.js"></script> -->
+		<script>
+			var barChartData = {
+			    labels: ["Tomorrow", "+2", "+3", "+4", "+5", "+6", "+7"],
+			    datasets: [
+			        {
+			            label: "Lowest Temperature",
+			            fillColor: "rgba(220,220,220,0.5)",
+			            strokeColor: "rgba(220,220,220,0.8)",
+			            highlightFill: "rgba(220,220,220,0.75)",
+			            highlightStroke: "rgba(220,220,220,1)",
+			            data: [65, 60, 69, 70, 72, 71, 75]
+			        },
+			        {
+			            label: "Highest Temperature",
+			            fillColor: "rgba(151,187,205,0.5)",
+			            strokeColor: "rgba(151,187,205,0.8)",
+			            highlightFill: "rgba(151,187,205,0.75)",
+			            highlightStroke: "rgba(151,187,205,1)",
+			            data: [69, 70, 80, 82, 86, 86, 90]
+			        }
+			    ]
+			};
+
+		window.onload = function(){
+			var ctx = document.getElementById("canvas").getContext("2d");
+			window.myBar = new Chart(ctx).Bar(barChartData, {
+				responsive : true
+			});
+		}
+		</script>
+
 	</body> 
 </html>

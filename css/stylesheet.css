@@ -62,3 +62,11 @@
 .ui-li-static.ui-collapsible>.ui-collapsible-content {
     border-bottom-width: 0;
 }
+
+/*** Chart on Forecast Page***/
+
+#canvas {
+    max-width: 90%;
+    margin-right: 5%;
+    margin-left: 5%;
+}
