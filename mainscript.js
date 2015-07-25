@@ -55,7 +55,7 @@ function direction(angle) {
 	}
 } 
 
-function loadWeather(cityCoords) {
+function loadBasic(cityCoords) {
 	var latlng = cityCoords.coords.latitude + "," + cityCoords.coords.longitude;
 
 	var forecastURL ="https://api.forecast.io/forecast/2db00ee1ac3c9d37be124f62c67bb9f8/" + latlng;
@@ -82,29 +82,96 @@ function loadWeather(cityCoords) {
 	});
 } // this gives the weather info of a city with its coordinates
 
-function loadCity(city) {
+function loadDetailed(cityCoords) {
+	var latlng = cityCoords.coords.latitude + "," + cityCoords.coords.longitude;
+
+	var forecastURL ="https://api.forecast.io/forecast/2db00ee1ac3c9d37be124f62c67bb9f8/" + latlng;
+
+	$.ajax({
+		url: forecastURL,
+		jsonpCallback: 'jsonCallback',
+		contentType: "application/json",
+		dataType: 'jsonp',
+		success: function(json) {
+			$("#feels").html("Feels like: " + Math.round(json.currently.apparentTemperature) + "&#176;F"); //this changes the content of the feeling temperature
+			$("#precipitation").html("Precipitation: " + json.currently.precipIntensity + " in/hr"); //changes the precipitation description
+			$("#pressure").html("Pressure: " + Math.round(json.currently.pressure) + " mbar"); // changes the pressure description
+			$("#visibility").html("Visibility: " + Math.round(json.currently.visibility) + " miles");
+			$("#cloudCover").html("Cloud Cover: " + Math.round((json.currently.cloudCover)*100) + "%");
+			$("#nearestStorm").html("Nearest Storm: " + json.currently.nearestStormDistance + " miles " + direction(json.currently.windBearing));
+			$("#chanceRain").html("Chance of Rain: " + (json.currently.precipProbability)*100 + "%");
+			$("#dewPoint").html("Dew Point: " + Math.round(json.currently.dewPoint) + "&#176;F");
+			$("#ozone").html("Ozone Density: " + Math.round(json.currently.ozone) + " Dobson Units");
+			
+			var sunriseDate = new Date((json.daily.data[0].sunriseTime)*1000);
+			$("#sunrise").html("Sunrise: " + sunriseDate.getHours() + ":" + sunriseDate.getMinutes());
+			var sunsetDate = new Date((json.daily.data[0].sunsetTime)*1000);
+			$("#sunset").html("Sunset: " + sunsetDate.getHours() + ":" + sunsetDate.getMinutes());
+
+			$("#moonPhase").html("Moon Phase: " + (json.daily.data[0].moonPhase)*100 + "%");
+		},
+		error: function(e) {
+			console.log(e.message);
+		}
+	});
+}
+
+function loadCityBasic(city) {
 	$("#location").html(city); // changes the description of location to the input city in the content area
 
 	if (city.toLowerCase() == "current location") {
 		if (navigator.geolocation) { //this is an HTML5 API and lets you know if the browser has the capability to access the geolocation
-			navigator.geolocation.getCurrentPosition(loadWeather,loadDefaultCity); // if succesful the getCurrentPosition method returns an object, where the first 2 key values are coords.latitude and coords.longitude, and then that object will be the parameter of loadWeather, so it will work
+			navigator.geolocation.getCurrentPosition(loadBasic,loadDefaultCityBasic); 
+			// if succesful the getCurrentPosition method returns an object, where the first 2 key values are coords.latitude and coords.longitude, and then that 
+			//object will be the parameter of loadBasic, so it will work
 		} else {
-			loadDefaultCity(); // if your browser doesn't have the capabilities yóu'll see San Francisco weather
+			loadDefaultCityBasic(); // if your browser doesn't have the capabilities yóu'll see Denver weather
 		}
 	} else{
-		loadWeather(cities[city.toLowerCase()]); // will run the loadweather function and will update all weather info for that city
+		loadBasic(cities[city.toLowerCase()]); // will run the loadBasic function and will update all weather basic info for that city
 	}
 }
 
-function loadDefaultCity() {
-	loadCity("Denver");
-}	
+function loadDefaultCityBasic() {
+	loadCityBasic("Denver");
+}
+
+function loadCityDetailed(city) {
+	$("#locationDetailed").html(city); // changes the description of location to the input city in the content area
+
+	if (city.toLowerCase() == "current location") {
+		if (navigator.geolocation) { //this is an HTML5 API and lets you know if the browser has the capability to access the geolocation
+			navigator.geolocation.getCurrentPosition(loadDetailed,loadDefaultCityDetailed); 
+			// if succesful the getCurrentPosition method returns an object, where the first 2 key values are coords.latitude and coords.longitude, and then that 
+			//object will be the parameter of loadBasic, so it will work
+		} else {
+			loadDefaultCityDetailed(); // if your browser doesn't have the capabilities yóu'll see Denver weather
+		}
+	} else{
+		loadDetailed(cities[city.toLowerCase()]); // will run the loadBasic function and will update all weather basic info for that city
+	}
+}
+
+function loadDefaultCityDetailed() {
+	loadCityDetailed("Denver");
+}
+
 
 /*** Execution of script! ***/	
 $(document).ready(function() {
-	loadCity("Current Location"); //this is just a starting point for when the page loads, cause once a click another city in the panel that info will change, see below
-	
-	$("a.city").bind("click",function(){
-		loadCity($(this).html()); //If I click a city in the panel it will update all weather info for that city
-	})
+	if (page == "indexPage") {
+		loadCityBasic("Current Location"); //this is just a starting point for when the page loads, cause once I click another city in the panel that info will change, see below
+		
+		$("a.city").bind("click",function(){
+			loadCityBasic($(this).html()); //If I click a city in the panel it will update all weather info for that city
+		})
+	} else if (page == "detailedPage") {
+		loadCityDetailed("Current Location");
+
+		$("a.city").bind("click",function(){
+			loadCityDetailed($(this).html()); //If I click a city in the panel it will update all weather info for that city
+		})
+	} else if (page == "forecastPage") {
+		//js for forecast page
+	}
 });

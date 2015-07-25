@@ -96,3 +96,10 @@ h3.title {
 .mybutton {
     font-size: 10px;
 }
+
+/*** Detailed page ***/
+#locationDetailed {
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
