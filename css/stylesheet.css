@@ -64,6 +64,17 @@
 }
 
 /*** Chart on Forecast Page***/
+.title {
+    text-align: center;
+}
+
+h4.title {
+    margin-top: 0;
+}
+
+h3.title {
+    margin-bottom: 0.5em;
+}
 
 #canvas {
     max-width: 90%;
