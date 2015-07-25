@@ -86,6 +86,11 @@ h3.title {
     width: 90%;
     margin-left: 5%;
     margin-right: 5%;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .mybutton {
