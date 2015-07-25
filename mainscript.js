@@ -98,7 +98,7 @@ function loadDetailed(cityCoords) {
 			$("#pressure").html("Pressure: " + Math.round(json.currently.pressure) + " mbar"); // changes the pressure description
 			$("#visibility").html("Visibility: " + Math.round(json.currently.visibility) + " miles");
 			$("#cloudCover").html("Cloud Cover: " + Math.round((json.currently.cloudCover)*100) + "%");
-			$("#nearestStorm").html("Nearest Storm: " + json.currently.nearestStormDistance + " miles " + direction(json.currently.windBearing));
+			$("#nearestStorm").html("Nearest Storm: " + Math.round(json.currently.nearestStormDistance) + " miles " + direction(json.currently.windBearing));
 			$("#chanceRain").html("Chance of Rain: " + (json.currently.precipProbability)*100 + "%");
 			$("#dewPoint").html("Dew Point: " + Math.round(json.currently.dewPoint) + "&#176;F");
 			$("#ozone").html("Ozone Density: " + Math.round(json.currently.ozone) + " Dobson Units");
