@@ -66,7 +66,6 @@ function loadWeather(cityCoords) {
 		contentType: "application/json",
 		dataType: 'jsonp',
 		success: function(json) {
-			console.log(json);
 			$("#current_temp").html(Math.round(json.currently.temperature)+"&#176;F"); //this changes the content of the current temperature
 			$("#current_summary").html(json.currently.summary); //changes the summary description
 			$("#current_temp").attr("data-icon",icons[json.currently.icon]); // changes the icon before the temperature
