@@ -9,54 +9,51 @@
 		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
 		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 		<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-		<script src="https://cdnjs.com/libraries/chart.js"></script> <!-- For adding charts -->
 		<link rel="stylesheet" type="text/css" href="css/stylesheet.css"> <!-- this links it to the style sheet for the font of weather images -->
 		<script src="mainscript.js"></script> <!-- Main Javascript code -->
 	</head>
 	<body>
-		<!-- <div data-role="page"> -->
-			<!-- Panel  -->
-			<div data-role="panel" id="left-panel" data-display="push" data-theme="c">
-			    <ul data-theme="d" data-role="listview">
-			    	<li data-icon="delete"><a href="#" data-rel="close">Close</a></li>	
-			    	<li data-role="list-divider">Select a City</li>
-		            <li ><a href="#" class="city" data-rel="close">Current Location</a></li>
-		          	<li ><a href="#" class="city" data-rel="close">Chicago</a></li>
-		          	<li ><a href="#" class="city" data-rel="close">Los Angeles</a></li>
-		          	<li ><a href="#" class="city" data-rel="close">Miami</a></li>
-		          	<li ><a href="#" class="city" data-rel="close">New York</a></li>
-		          	<li ><a href="#" class="city" data-rel="close">San Francisco</a></li>
-		          	<li ><a href="#" class="city" data-rel="close">Denver</a></li>
-			    </ul>
-			    <br><br>
-			    <input type="search" name="search" id="search" value="" placeholder="Add new city">
-			</div>
+		<!-- Panel  -->
+		<div data-role="panel" id="left-panel" data-display="reveal" data-theme="a">
+		    <ul data-theme="a" data-role="listview">
+		    	<li data-icon="delete"><a href="#" data-rel="close">Close</a></li>	
+		    	<li data-role="list-divider">Select a City</li>
+	            <li ><a href="#" class="city" data-rel="close">Current Location</a></li>
+	          	<li ><a href="#" class="city" data-rel="close">Chicago</a></li>
+	          	<li ><a href="#" class="city" data-rel="close">Los Angeles</a></li>
+	          	<li ><a href="#" class="city" data-rel="close">Miami</a></li>
+	          	<li ><a href="#" class="city" data-rel="close">New York</a></li>
+	          	<li ><a href="#" class="city" data-rel="close">San Francisco</a></li>
+	          	<li ><a href="#" class="city" data-rel="close">Denver</a></li>
+		    </ul>
+		    <br><br>
+		    <input type="search" name="search" id="search" value="" placeholder="Add new city" data-theme="a">
+		</div>
 
-			<!-- Header -->
-			<div data-role="header" data-position="fixed" data-theme="a">
-				<h1>SIMPLE Weather</h1>
-				<a href="#left-panel" data-icon="bars" data-role="button"  data-iconpos="notext" data-iconshadow="false">Menu</a>
-				<div data-role="navbar">
-					<ul>
-						<li><a href="#" data-icon="eye" class="ui-btn-active" data-theme="a">Basic</a></li>
-						<li><a href="detailed.html" data-icon="grid" data-theme="a">Detailed</a></li>
-		            	<li><a href="forecast.html" data-icon="calendar" data-theme="a">Forecast</a></li>
-					</ul>
-	    		</div>
+		<!-- Header -->
+		<div data-role="header" data-position="fixed" data-theme="a">
+			<h1>SIMPLE Weather</h1>
+			<a href="#left-panel" data-icon="bars" data-role="button"  data-iconpos="notext" data-iconshadow="false">Menu</a>
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#" data-icon="eye" class="ui-btn-active" data-theme="a">Basic</a></li>
+					<li><a href="detailed.html" data-icon="grid" data-theme="a">Detailed</a></li>
+	            	<li><a href="forecast.html" data-icon="calendar" data-theme="a">Forecast</a></li>
+				</ul>
+    		</div>
+		</div>
+		
+		<!-- Content -->
+		<div data-role="content" class="content">
+			<div id="basic_info">
+				<h2 id="location">New York</h2> 
+				<h1 id="current_temp" class="icon" data-icon="I">72&#176;F</h1> <!-- the icon class comes from the implementation of the icons, which is explained in http://www.alessioatzeni.com/meteocons/ -->
+				<p id="current_summary">Sunny</p>
 			</div>
-			
-			<!-- Content -->
-			<div data-role="content" class="content">
-				<div id="basic_info">
-					<h2 id="location">New York</h2> 
-					<h1 id="current_temp" class="icon" data-icon="I">72&#176;F</h1> <!-- the icon class comes from the implementation of the icons, which is explained in http://www.alessioatzeni.com/meteocons/ -->
-					<p id="current_summary">Sunny</p>
-				</div>
-				<div id="more_info">
-					<h4 id="wind">5 MPH</h4><h4 id="humid">20% Humid</h4>
-				</div>
-				<h3 id="recomm">"Go outside and enjoy the day!"</h3>
+			<div id="more_info">
+				<h4 id="wind">5 MPH</h4><h4 id="humid">20% Humid</h4>
 			</div>
-		<!-- </div> -->
+			<h3 id="recomm">"Go outside and enjoy the day!"</h3>
+		</div>
 	</body> 
 </html>
