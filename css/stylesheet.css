@@ -73,11 +73,21 @@ h4.title {
 }
 
 h3.title {
-    margin-bottom: 0.5em;
+    margin-bottom: 0.25em;
 }
 
 #canvas {
     max-width: 90%;
     margin-right: 5%;
     margin-left: 5%;
+}
+
+#mybuttons {
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.mybutton {
+    font-size: 10px;
 }

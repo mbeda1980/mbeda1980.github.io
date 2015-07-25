@@ -54,7 +54,7 @@
 					<li>Mostly cloudy throughout the day.</li>
 					<li>Low - High Temperature: 65 - 75&#176; F</li>
 					<li>Chance of Rain: 30%</li>
-					<li>Min - Max Precipitation: 0.1 - 0.4 in/hr</li>
+					<li>Average Precipitation: 0.3 in/hr</li>
 					<li>Sunrise - Sunset: 5am - 8:30pm</li>
 				</ul>
 			</li>
@@ -64,7 +64,7 @@
 					<li>Mostly cloudy throughout the day.</li>
 					<li>Low - High Temperature: 65 - 75&#176; F</li>
 					<li>Chance of Rain: 30%</li>
-					<li>Min - Max Precipitation: 0.1 - 0.4 in/hr</li>
+					<li>Average Precipitation: 0.3 in/hr</li>
 					<li>Sunrise - Sunset: 5am - 8:30pm</li>
 				</ul>
 			</li>
@@ -74,7 +74,7 @@
 					<li>Mostly cloudy throughout the day.</li>
 					<li>Low - High Temperature: 65 - 75&#176; F</li>
 					<li>Chance of Rain: 30%</li>
-					<li>Min - Max Precipitation: 0.1 - 0.4 in/hr</li>
+					<li>Average Precipitation: 0.3 in/hr</li>
 					<li>Sunrise - Sunset: 5am - 8:30pm</li>
 				</ul>
 			</li>
@@ -84,7 +84,7 @@
 					<li>Mostly cloudy throughout the day.</li>
 					<li>Low - High Temperature: 65 - 75&#176; F</li>
 					<li>Chance of Rain: 30%</li>
-					<li>Min - Max Precipitation: 0.1 - 0.4 in/hr</li>
+					<li>Average Precipitation: 0.3 in/hr</li>
 					<li>Sunrise - Sunset: 5am - 8:30pm</li>
 				</ul>
 			</li>
@@ -94,7 +94,7 @@
 					<li>Mostly cloudy throughout the day.</li>
 					<li>Low - High Temperature: 65 - 75&#176; F</li>
 					<li>Chance of Rain: 30%</li>
-					<li>Min - Max Precipitation: 0.1 - 0.4 in/hr</li>
+					<li>Average Precipitation: 0.3 in/hr</li>
 					<li>Sunrise - Sunset: 5am - 8:30pm</li>
 				</ul>
 			</li>
@@ -104,7 +104,7 @@
 					<li>Mostly cloudy throughout the day.</li>
 					<li>Low - High Temperature: 65 - 75&#176; F</li>
 					<li>Chance of Rain: 30%</li>
-					<li>Min - Max Precipitation: 0.1 - 0.4 in/hr</li>
+					<li>Average Precipitation: 0.3 in/hr</li>
 					<li>Sunrise - Sunset: 5am - 8:30pm</li>
 				</ul>
 			</li>
@@ -114,7 +114,7 @@
 					<li>Mostly cloudy throughout the day.</li>
 					<li>Low - High Temperature: 65 - 75&#176; F</li>
 					<li>Chance of Rain: 30%</li>
-					<li>Min - Max Precipitation: 0.1 - 0.4 in/hr</li>
+					<li>Average Precipitation: 0.3 in/hr</li>
 					<li>Sunrise - Sunset: 5am - 8:30pm</li>
 				</ul>
 			</li>
@@ -124,13 +124,26 @@
 					<li>Mostly cloudy throughout the day.</li>
 					<li>Low - High Temperature: 65 - 75&#176; F</li>
 					<li>Chance of Rain: 30%</li>
-					<li>Min - Max Precipitation: 0.1 - 0.4 in/hr</li>
+					<li>Average Precipitation: 0.3 in/hr</li>
 					<li>Sunrise - Sunset: 5am - 8:30pm</li>
 				</ul>
 			</li>
 		</ul>
-		<h3 class="title">Forecast by Variable</h3>
+		<h3 class="title">Weekly Snapshot</h3>
 		<h4 class="title">(Next 7 days)</h4>
+		<div id="mybuttons">
+			<button class="ui-btn ui-corner-all ui-btn-inline ui-btn-active mybutton">Temp.</button>
+			<button class="ui-btn ui-corner-all ui-btn-inline mybutton">Rain Chance</button>
+			<button class="ui-btn ui-corner-all ui-btn-inline mybutton">Average Prec.</button>
+			<button class="ui-btn ui-corner-all ui-btn-inline mybutton">Max Prec.</button>
+			<button class="ui-btn ui-corner-all ui-btn-inline mybutton">Dew Point</button>
+			<button class="ui-btn ui-corner-all ui-btn-inline mybutton">Humidity</button>
+			<button class="ui-btn ui-corner-all ui-btn-inline mybutton">Wind Speed</button>
+			<button class="ui-btn ui-corner-all ui-btn-inline mybutton">Visibility</button>
+			<button class="ui-btn ui-corner-all ui-btn-inline mybutton">Cloud Cover</button>
+			<button class="ui-btn ui-corner-all ui-btn-inline mybutton">Pressure</button>
+			<button class="ui-btn ui-corner-all ui-btn-inline mybutton">Ozone</button>
+		</div>
 		<div>
 			<canvas id="canvas"></canvas>
 		</div>
@@ -161,7 +174,8 @@
 		window.onload = function(){
 			var ctx = document.getElementById("canvas").getContext("2d");
 			window.myBar = new Chart(ctx).Bar(barChartData, {
-				responsive : true
+				responsive : true,
+				scaleShowVerticalLines: false
 			});
 		}
 		</script>
