@@ -72,7 +72,7 @@
 				</ul>
 			</li>
 			<li data-role="collapsible" data-iconpos="right" data-inset="false">
-				<h2 data-theme="a">2 days from Today</h2>
+				<h2 data-theme="a" id="twod">2 days from Today</h2>
 				<ul data-role="listview" data-theme="c">
 					<li id="summ2">Mostly cloudy throughout the day.</li>
 					<li id="temp2">Low - High Temperature: 65 - 75&#176; F</li>
@@ -82,7 +82,7 @@
 				</ul>
 			</li>
 			<li data-role="collapsible" data-iconpos="right" data-inset="false">
-				<h2 data-theme="a">3 days from Today</h2>
+				<h2 data-theme="a" id="three">3 days from Today</h2>
 				<ul data-role="listview" data-theme="c">
 					<li id="summ3">Mostly cloudy throughout the day.</li>
 					<li id="temp3">Low - High Temperature: 65 - 75&#176; F</li>
@@ -92,7 +92,7 @@
 				</ul>
 			</li>
 			<li data-role="collapsible" data-iconpos="right" data-inset="false">
-				<h2 data-theme="a">4 days from Today</h2>
+				<h2 data-theme="a" id="four">4 days from Today</h2>
 				<ul data-role="listview" data-theme="c">
 					<li id="summ4">Mostly cloudy throughout the day.</li>
 					<li id="temp4">Low - High Temperature: 65 - 75&#176; F</li>
@@ -102,7 +102,7 @@
 				</ul>
 			</li>
 			<li data-role="collapsible" data-iconpos="right" data-inset="false">
-				<h2 data-theme="a">5 days from Today</h2>
+				<h2 data-theme="a" id="five">5 days from Today</h2>
 				<ul data-role="listview" data-theme="c">
 					<li id="summ5">Mostly cloudy throughout the day.</li>
 					<li id="temp5">Low - High Temperature: 65 - 75&#176; F</li>
@@ -112,7 +112,7 @@
 				</ul>
 			</li>
 			<li data-role="collapsible" data-iconpos="right" data-inset="false">
-				<h2 data-theme="a">6 days from Today</h2>
+				<h2 data-theme="a" id="six">6 days from Today</h2>
 				<ul data-role="listview" data-theme="c">
 					<li id="summ6">Mostly cloudy throughout the day.</li>
 					<li id="temp6">Low - High Temperature: 65 - 75&#176; F</li>
@@ -122,7 +122,7 @@
 				</ul>
 			</li>
 			<li data-role="collapsible" data-iconpos="right" data-inset="false">
-				<h2 data-theme="a">7 days from Today</h2>
+				<h2 data-theme="a" id="seven">7 days from Today</h2>
 				<ul data-role="listview" data-theme="c">
 					<li id="summ7">Mostly cloudy throughout the day.</li>
 					<li id="temp7">Low - High Temperature: 65 - 75&#176; F</li>
@@ -148,37 +148,5 @@
 			<canvas id="canvas"></canvas>
 		</div>
 		<script src="js/mainscript.js"></script>
-		<script>
-		var barChartData = {
-		    labels: ["+1", "+2", "+3", "+4", "+5", "+6", "+7"],
-		    datasets: [
-		        {
-		            label: "Lowest Temperature",
-		            fillColor: "rgba(220,220,220,0.5)",
-		            strokeColor: "rgba(220,220,220,0.8)",
-		            highlightFill: "rgba(220,220,220,0.75)",
-		            highlightStroke: "rgba(220,220,220,1)",
-		            data: [65, 60, 69, 70, 72, 71, 75]
-		        },
-		        {
-		            label: "Highest Temperature",
-		            fillColor: "rgba(151,187,205,0.5)",
-		            strokeColor: "rgba(151,187,205,0.8)",
-		            highlightFill: "rgba(151,187,205,0.75)",
-		            highlightStroke: "rgba(151,187,205,1)",
-		            data: [69, 70, 80, 82, 86, 86, 90]
-		        }
-		    ]
-		};
-
-		window.onload = function(){
-			var ctx = document.getElementById("canvas").getContext("2d");
-			window.myBar = new Chart(ctx).Bar(barChartData, {
-				responsive : true,
-				scaleShowVerticalLines: false
-			});
-		}
-		</script>
-
 	</body> 
 </html>

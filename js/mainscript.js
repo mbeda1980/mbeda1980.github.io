@@ -26,21 +26,23 @@ var recommendations = {
 };
 
 var cities = {	
-				"new york" 		: 	{coords: {latitude: 40.672060, longitude:-73.983898}},
-				"los angeles" 	: 	{coords: {latitude: 34.101422, longitude: -118.341224}},
-				"chicago" 		: 	{coords: {latitude: 41.879003, longitude: -87.63675}},
-				"san francisco" : 	{coords: {latitude: 37.788531, longitude: -122.407237}},
-				"miami" 		:	{coords: {latitude: 25.790176, longitude: -80.140133}},
-				"denver" 		:	{coords: {latitude: 39.739150, longitude: -104.98470}},
-				"boston" 		:	{coords: {latitude: 42.358430, longitude: -71.059770}},
-				"houston" 		:	{coords: {latitude: 29.763280, longitude: -95.363270}},
-				"philadelphia" 	:	{coords: {latitude: 39.952340, longitude: -75.163790}},
-				"phoenix" 		:	{coords: {latitude: 33.448380, longitude: -112.07404}},
-				"san antonio"	:	{coords: {latitude: 29.424120, longitude: -98.493630}},
-				"san diego"		:	{coords: {latitude: 32.715330, longitude: -117.15726}},
-				"dallas" 		:	{coords: {latitude: 32.783060, longitude: -96.806670}},
-				"san jose" 		:	{coords: {latitude: 37.339390, longitude: -121.89496}},
-			 };
+	"new york" 		: 	{coords: {latitude: 40.672060, longitude:-73.983898}},
+	"los angeles" 	: 	{coords: {latitude: 34.101422, longitude: -118.341224}},
+	"chicago" 		: 	{coords: {latitude: 41.879003, longitude: -87.63675}},
+	"san francisco" : 	{coords: {latitude: 37.788531, longitude: -122.407237}},
+	"miami" 		:	{coords: {latitude: 25.790176, longitude: -80.140133}},
+	"denver" 		:	{coords: {latitude: 39.739150, longitude: -104.98470}},
+	"boston" 		:	{coords: {latitude: 42.358430, longitude: -71.059770}},
+	"houston" 		:	{coords: {latitude: 29.763280, longitude: -95.363270}},
+	"philadelphia" 	:	{coords: {latitude: 39.952340, longitude: -75.163790}},
+	"phoenix" 		:	{coords: {latitude: 33.448380, longitude: -112.07404}},
+	"san antonio"	:	{coords: {latitude: 29.424120, longitude: -98.493630}},
+	"san diego"		:	{coords: {latitude: 32.715330, longitude: -117.15726}},
+	"dallas" 		:	{coords: {latitude: 32.783060, longitude: -96.806670}},
+	"san jose" 		:	{coords: {latitude: 37.339390, longitude: -121.89496}}
+ };
+
+var weekDays = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
 
 /*** Definition of functions ***/				 
 function direction(angle) {
@@ -205,6 +207,8 @@ function loadForecast(cityCoords) {
 			var sunsetDate = new Date((json.daily.data[1].sunsetTime)*1000);
 			$("#sun1").html("Sunrise - Sunset: " + hoursAndMinutes(sunriseDate) + " - " + hoursAndMinutes(sunsetDate));
 
+			// var forecastDate = new Date((json.daily.data[2].time)*1000);
+			// $("#two").html(weekDays[forecastDate.getDay()]);
 			$("#summ2").html(json.daily.data[2].summary); 
 			$("#temp2").html("Low - High Temperature: " + Math.round(json.daily.data[2].temperatureMin) + " - " + Math.round(json.daily.data[2].temperatureMax) + "&#176;F"); 
 			$("#rain2").html("Chance of Rain: " + (json.daily.data[2].precipProbability)*100 + "%"); 
@@ -213,6 +217,8 @@ function loadForecast(cityCoords) {
 			var sunsetDate = new Date((json.daily.data[2].sunsetTime)*1000);
 			$("#sun2").html("Sunrise - Sunset: " + hoursAndMinutes(sunriseDate) + " - " + hoursAndMinutes(sunsetDate));
 
+			// var forecastDate = new Date((json.daily.data[3].time)*1000);
+			// $("#three").html(weekDays[forecastDate.getDay()]);
 			$("#summ3").html(json.daily.data[3].summary); 
 			$("#temp3").html("Low - High Temperature: " + Math.round(json.daily.data[3].temperatureMin) + " - " + Math.round(json.daily.data[3].temperatureMax) + "&#176;F"); 
 			$("#rain3").html("Chance of Rain: " + (json.daily.data[3].precipProbability)*100 + "%"); 
@@ -221,6 +227,8 @@ function loadForecast(cityCoords) {
 			var sunsetDate = new Date((json.daily.data[3].sunsetTime)*1000);
 			$("#sun3").html("Sunrise - Sunset: " + hoursAndMinutes(sunriseDate) + " - " + hoursAndMinutes(sunsetDate));
 
+			// var forecastDate = new Date((json.daily.data[4].time)*1000);
+			// $("#four").html(weekDays[forecastDate].getDay());
 			$("#summ4").html(json.daily.data[4].summary); 
 			$("#temp4").html("Low - High Temperature: " + Math.round(json.daily.data[4].temperatureMin) + " - " + Math.round(json.daily.data[4].temperatureMax) + "&#176;F"); 
 			$("#rain4").html("Chance of Rain: " + (json.daily.data[4].precipProbability)*100 + "%"); 
@@ -229,6 +237,8 @@ function loadForecast(cityCoords) {
 			var sunsetDate = new Date((json.daily.data[4].sunsetTime)*1000);
 			$("#sun4").html("Sunrise - Sunset: " + hoursAndMinutes(sunriseDate) + " - " + hoursAndMinutes(sunsetDate));
 
+			// var forecastDate = new Date((json.daily.data[5].time)*1000);
+			// $("#five").html(weekDays[forecastDate].getDay());
 			$("#summ5").html(json.daily.data[5].summary); 
 			$("#temp5").html("Low - High Temperature: " + Math.round(json.daily.data[5].temperatureMin) + " - " + Math.round(json.daily.data[5].temperatureMax) + "&#176;F"); 
 			$("#rain5").html("Chance of Rain: " + (json.daily.data[5].precipProbability)*100 + "%"); 
@@ -237,6 +247,8 @@ function loadForecast(cityCoords) {
 			var sunsetDate = new Date((json.daily.data[5].sunsetTime)*1000);
 			$("#sun5").html("Sunrise - Sunset: " + hoursAndMinutes(sunriseDate) + " - " + hoursAndMinutes(sunsetDate));
 
+			// var forecastDate = new Date((json.daily.data[6].time)*1000);
+			// $("#six").html(weekDays[forecastDate].getDay());
 			$("#summ6").html(json.daily.data[6].summary); 
 			$("#temp6").html("Low - High Temperature: " + Math.round(json.daily.data[6].temperatureMin) + " - " + Math.round(json.daily.data[6].temperatureMax) + "&#176;F"); 
 			$("#rain6").html("Chance of Rain: " + (json.daily.data[6].precipProbability)*100 + "%"); 
@@ -245,6 +257,8 @@ function loadForecast(cityCoords) {
 			var sunsetDate = new Date((json.daily.data[6].sunsetTime)*1000);
 			$("#sun6").html("Sunrise - Sunset: " + hoursAndMinutes(sunriseDate) + " - " + hoursAndMinutes(sunsetDate));
 
+			// var forecastDate = new Date((json.daily.data[7].time)*1000);
+			// $("#seven").html(weekDays[forecastDate].getDay());
 			$("#summ7").html(json.daily.data[7].summary); 
 			$("#temp7").html("Low - High Temperature: " + Math.round(json.daily.data[7].temperatureMin) + " - " + Math.round(json.daily.data[7].temperatureMax) + "&#176;F"); 
 			$("#rain7").html("Chance of Rain: " + (json.daily.data[7].precipProbability)*100 + "%"); 
@@ -252,12 +266,62 @@ function loadForecast(cityCoords) {
 			var sunriseDate = new Date((json.daily.data[7].sunriseTime)*1000);
 			var sunsetDate = new Date((json.daily.data[7].sunsetTime)*1000);
 			$("#sun7").html("Sunrise - Sunset: " + hoursAndMinutes(sunriseDate) + " - " + hoursAndMinutes(sunsetDate));
-		},
+
+			var dataTempMin = [
+		            Math.round(json.daily.data[1].temperatureMin),
+		            Math.round(json.daily.data[2].temperatureMin),
+		            Math.round(json.daily.data[3].temperatureMin),
+		            Math.round(json.daily.data[4].temperatureMin),
+		            Math.round(json.daily.data[5].temperatureMin),
+		            Math.round(json.daily.data[6].temperatureMin),
+		            Math.round(json.daily.data[7].temperatureMin)
+		    ];
+
+		    var dataTempMax = [
+		            Math.round(json.daily.data[1].temperatureMax),
+		            Math.round(json.daily.data[2].temperatureMax),
+		            Math.round(json.daily.data[3].temperatureMax),
+		            Math.round(json.daily.data[4].temperatureMax),
+		            Math.round(json.daily.data[5].temperatureMax),
+		            Math.round(json.daily.data[6].temperatureMax),
+		            Math.round(json.daily.data[7].temperatureMax)
+		    ];
+
+		    var barChartData = {
+			    labels: ["+1", "+2", "+3", "+4", "+5", "+6", "+7"],
+			    datasets: [
+			        {
+			            label: "Lowest Temperature",
+			            fillColor: "rgba(220,220,220,0.5)",
+			            strokeColor: "rgba(220,220,220,0.8)",
+			            highlightFill: "rgba(220,220,220,0.75)",
+			            highlightStroke: "rgba(220,220,220,1)",
+			            data: dataTempMin
+			        },
+			        {
+			            label: "Highest Temperature",
+			            fillColor: "rgba(151,187,205,0.5)",
+			            strokeColor: "rgba(151,187,205,0.8)",
+			            highlightFill: "rgba(151,187,205,0.75)",
+			            highlightStroke: "rgba(151,187,205,1)",
+			            data: dataTempMax
+			        }
+			    ] 
+			}; //end of barChartData
+
+			var ctx = document.getElementById("canvas").getContext("2d");
+			window.myBar = new Chart(ctx).Bar(barChartData, {
+				responsive : true,
+				scaleShowVerticalLines: false
+			});
+		}, //end of success
+
 		error: function(e) {
 			console.log(e.message);
-		}
-	});
-}
+		} //end of error
+
+	}); //end of Ajax call
+} //end of function LoadForecast
 
 function loadCityForecast(city) {
 	$("#locationForecast").html(city); // changes the description of location to the input city in the content area
@@ -306,5 +370,6 @@ $(document).ready(function() {
 		$("a.city").bind("click",function(){
 			loadCityForecast($(this).html()); 
 		})	
-	}
-});
+			
+	} // end of forecast page script
+}); // end of script
