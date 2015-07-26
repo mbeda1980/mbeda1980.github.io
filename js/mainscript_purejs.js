@@ -76,28 +76,57 @@ function loadBasic(cityCoords) {
 
 	var forecastURL ="https://api.forecast.io/forecast/2db00ee1ac3c9d37be124f62c67bb9f8/" + latlng;
 
-	$.ajax({
-		url: forecastURL,
-		jsonpCallback: 'jsonCallback',
-		async: true,
-		contentType: "application/json",
-		dataType: 'jsonp',
-		method: 'GET',
-		success: function(json) {
-			$("#current_temp").html(Math.round(json.currently.temperature)+"&#176;F"); //this changes the content of the current temperature
-			$("#current_summary").html(json.currently.summary); //changes the summary description
-			$("#current_temp").attr("data-icon",icons[json.currently.icon]); // changes the icon before the temperature
-			var windInfo=json.currently.windSpeed.toFixed(1) + " MPH " + direction(json.currently.windBearing);
-			$("#wind").html(windInfo);
-			var humidLevel = Math.round(json.currently.humidity*100);
-			$("#humid").html(humidLevel + "% Humid");
-			var recommText = '"' + recommendations[json.currently.icon] + '"';
-			$("#recomm").html(recommText);
-		},
-		error: function(e) {
-			console.log(e.message);
+	// $.ajax({
+	// 	url: forecastURL,
+	// 	jsonpCallback: 'jsonCallback',
+	// 	async: true,
+	// 	contentType: "application/json",
+	// 	dataType: 'jsonp',
+	// 	method: 'GET',
+	// 	success: function(json) {
+	// 		$("#current_temp").html(Math.round(json.currently.temperature)+"&#176;F"); //this changes the content of the current temperature
+	// 		$("#current_summary").html(json.currently.summary); //changes the summary description
+	// 		$("#current_temp").attr("data-icon",icons[json.currently.icon]); // changes the icon before the temperature
+	// 		var windInfo=json.currently.windSpeed.toFixed(1) + " MPH " + direction(json.currently.windBearing);
+	// 		$("#wind").html(windInfo);
+	// 		var humidLevel = Math.round(json.currently.humidity*100);
+	// 		$("#humid").html(humidLevel + "% Humid");
+	// 		var recommText = '"' + recommendations[json.currently.icon] + '"';
+	// 		$("#recomm").html(recommText);
+	// 	},
+	// 	error: function(e) {
+	// 		console.log(e.message);
+	// 	}
+	// });
+
+	// Initialize the Ajax request.
+	var xhr = new XMLHttpRequest();
+	xhr.open('get', 'forecastURL');
+	// Track the state changes of the request.
+	xhr.onreadystatechange = function () {
+		var DONE = 4; // readyState 4 means the request is done.
+		var OK = 200; // status 200 is a successful return.
+		if (xhr.readyState === DONE) {
+			if (xhr.status === OK) {
+				var json = JSON.parse(xhr.responseText);
+				$("#current_temp").html(Math.round(json.currently.temperature)+"&#176;F"); //this changes the content of the current temperature
+				$("#current_summary").html(json.currently.summary); //changes the summary description
+				$("#current_temp").attr("data-icon",icons[json.currently.icon]); // changes the icon before the temperature
+				var windInfo=json.currently.windSpeed.toFixed(1) + " MPH " + direction(json.currently.windBearing);
+				$("#wind").html(windInfo);
+				var humidLevel = Math.round(json.currently.humidity*100);
+				$("#humid").html(humidLevel + "% Humid");
+				var recommText = '"' + recommendations[json.currently.icon] + '"';
+				$("#recomm").html(recommText);
+			} else {
+			console.log('Error: ' + xhr.status); // An error occurred during the request.
+			}
 		}
-	});
+	};
+	// Send the request to send-ajax-data.php
+	xhr.send(null);
+
+
 } // this gives the weather info of a city with its coordinates
 
 function loadCityBasic(city) {
@@ -207,8 +236,8 @@ function loadForecast(cityCoords) {
 			var sunsetDate = new Date((json.daily.data[1].sunsetTime)*1000);
 			$("#sun1").html("Sunrise - Sunset: " + hoursAndMinutes(sunriseDate) + " - " + hoursAndMinutes(sunsetDate));
 
-			var forecastDate = new Date((json.daily.data[2].time)*1000);
-			$("#two").html(weekDays[forecastDate.getDay()]);
+			// var forecastDate = new Date((json.daily.data[2].time)*1000);
+			// $("#two").html(weekDays[forecastDate.getDay()]);
 			$("#summ2").html(json.daily.data[2].summary); 
 			$("#temp2").html("Low - High Temperature: " + Math.round(json.daily.data[2].temperatureMin) + " - " + Math.round(json.daily.data[2].temperatureMax) + "&#176;F"); 
 			$("#rain2").html("Chance of Rain: " + (json.daily.data[2].precipProbability)*100 + "%"); 
