@@ -67,6 +67,7 @@ function loadBasic(cityCoords) {
 		async: true,
 		contentType: "application/json",
 		dataType: 'jsonp',
+		method: 'GET',
 		success: function(json) {
 			$("#current_temp").html(Math.round(json.currently.temperature)+"&#176;F"); //this changes the content of the current temperature
 			$("#current_summary").html(json.currently.summary); //changes the summary description
@@ -116,6 +117,7 @@ function loadDetailed(cityCoords) {
 		jsonpCallback: 'jsonCallback',
 		contentType: "application/json",
 		dataType: 'jsonp',
+		method: 'GET',
 		success: function(json) {
 			$("#feels").html("Feels like: " + Math.round(json.currently.apparentTemperature) + "&#176;F"); //this changes the content of the feeling temperature
 			$("#precipitation").html("Precipitation: " + json.currently.precipIntensity + " in/hr"); //changes the precipitation description
