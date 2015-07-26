@@ -92,7 +92,7 @@ function loadDetailed(cityCoords) {
 		async: false,
 		jsonpCallback: 'jsonCallback',
 		contentType: "application/json",
-		dataType: 'jsonp',
+		dataType: 'json',
 		success: function(json) {
 			$("#feels").html("Feels like: " + Math.round(json.currently.apparentTemperature) + "&#176;F"); //this changes the content of the feeling temperature
 			$("#precipitation").html("Precipitation: " + json.currently.precipIntensity + " in/hr"); //changes the precipitation description
