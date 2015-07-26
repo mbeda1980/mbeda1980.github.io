@@ -64,6 +64,7 @@ function loadBasic(cityCoords) {
 	$.ajax({
 		url: forecastURL,
 		jsonpCallback: 'jsonCallback',
+		async: true,
 		contentType: "application/json",
 		dataType: 'jsonp',
 		success: function(json) {
@@ -111,6 +112,7 @@ function loadDetailed(cityCoords) {
 
 	$.ajax({
 		url: forecastURL,
+		async: true,
 		jsonpCallback: 'jsonCallback',
 		contentType: "application/json",
 		dataType: 'jsonp',
@@ -175,6 +177,11 @@ function loadDefaultCityDetailed() {
 
 /*** Execution of script! ***/	
 $(document).ready(function() {
+	
+	$.ajaxPrefilter(function(options,originalOptions,jqXHR ) {
+		options.async = true;
+	});
+
 	if (page == "indexPage") {
 		loadCityBasic("Current Location"); //this is just a starting point for when the page loads, cause once I click another city in the panel that info will change, see below
 		
