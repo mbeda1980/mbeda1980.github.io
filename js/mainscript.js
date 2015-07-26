@@ -89,6 +89,7 @@ function loadDetailed(cityCoords) {
 
 	$.ajax({
 		url: forecastURL,
+		async: false,
 		jsonpCallback: 'jsonCallback',
 		contentType: "application/json",
 		dataType: 'jsonp',
@@ -103,10 +104,22 @@ function loadDetailed(cityCoords) {
 			$("#dewPoint").html("Dew Point: " + Math.round(json.currently.dewPoint) + "&#176;F");
 			$("#ozone").html("Ozone Density: " + Math.round(json.currently.ozone) + " Dobson Units");
 			
+			function hoursAndMinutes (unixtime) {
+				var hours = unixtime.getHours();
+				if (hours<10) {
+					hours = "0" + hours.toString();
+				}
+				var minutes = unixtime.getMinutes();
+				if (minutes<10) {
+					minutes = "0" + minutes.toString();
+				}
+				var hrsAndMns = hours + ":" + minutes;
+				return hrsAndMns;
+			}
 			var sunriseDate = new Date((json.daily.data[0].sunriseTime)*1000);
-			$("#sunrise").html("Sunrise: " + sunriseDate.getHours() + ":" + sunriseDate.getMinutes());
 			var sunsetDate = new Date((json.daily.data[0].sunsetTime)*1000);
-			$("#sunset").html("Sunset: " + sunsetDate.getHours() + ":" + sunsetDate.getMinutes());
+			$("#sunrise").html("Sunrise: " + hoursAndMinutes(sunriseDate));
+			$("#sunset").html("Sunset: " + hoursAndMinutes(sunsetDate));
 
 			$("#moonPhase").html("Moon Phase: " + (json.daily.data[0].moonPhase)*100 + "%");
 		},
