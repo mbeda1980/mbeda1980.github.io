@@ -344,7 +344,7 @@ function loadDefaultCityForecast() {
 }
 
 /*** Execution of script! ***/	
-$(document).ready(function() {
+// $(document).ready(function() {
 	
 	$.ajaxPrefilter(function(options,originalOptions,jqXHR ) {
 		options.async = true;
@@ -372,4 +372,4 @@ $(document).ready(function() {
 		})	
 			
 	} // end of forecast page script
-}); // end of script
+// }); // end of script
