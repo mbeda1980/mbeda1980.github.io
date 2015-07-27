@@ -59,6 +59,7 @@
 					<li id="tempToday">Min - Max Temperature: &#176;F</li>
 					<li id="rainToday">Chance of Rain: </li>
 					<li id="precToday">Average Precipitation:  in/hr</li>
+					<li id="maxPrecToday">Max Precipitation:  in/hr at</li>
 					<li id="sunToday">Sunrise - Sunset: </li>
 				</ul>
 			</li>
@@ -69,6 +70,7 @@
 					<li id="temp1">Min - Max Temperature: &#176; F</li>
 					<li id="rain1">Chance of Rain: </li>
 					<li id="prec1">Average Precipitation:  in/hr</li>
+					<li id="maxPrec1">Max Precipitation:  in/hr at</li>
 					<li id="sun1">Sunrise - Sunset: </li>
 				</ul>
 			</li>
@@ -79,6 +81,7 @@
 					<li id="temp2">Min - Max Temperature: &#176; F</li>
 					<li id="rain2">Chance of Rain: </li>
 					<li id="prec2">Average Precipitation:  in/hr</li>
+					<li id="maxPrec2">Max Precipitation:  in/hr at</li>
 					<li id="sun2">Sunrise - Sunset: </li>
 				</ul>
 			</li>
@@ -89,6 +92,7 @@
 					<li id="temp3">Min - Max Temperature: &#176; F</li>
 					<li id="rain3">Chance of Rain: </li>
 					<li id="prec3">Average Precipitation:  in/hr</li>
+					<li id="maxPrec3">Max Precipitation:  in/hr at</li>
 					<li id="sun3">Sunrise - Sunset: </li>
 				</ul>
 			</li>
@@ -99,6 +103,7 @@
 					<li id="temp4">Min - Max Temperature: &#176; F</li>
 					<li id="rain4">Chance of Rain: </li>
 					<li id="prec4">Average Precipitation:  in/hr</li>
+					<li id="maxPrec4">Max Precipitation:  in/hr at</li>
 					<li id="sun4">Sunrise - Sunset: </li>
 				</ul>
 			</li>
@@ -109,6 +114,7 @@
 					<li id="temp5">Min - Max Temperature: &#176; F</li>
 					<li id="rain5">Chance of Rain: </li>
 					<li id="prec5">Average Precipitation:  in/hr</li>
+					<li id="maxPrec5">Max Precipitation:  in/hr at</li>
 					<li id="sun5">Sunrise - Sunset: </li>
 				</ul>
 			</li>
@@ -119,6 +125,7 @@
 					<li id="temp6">Min - Max Temperature: &#176; F</li>
 					<li id="rain6">Chance of Rain: </li>
 					<li id="prec6">Average Precipitation: in/hr</li>
+					<li id="maxPrec6">Max Precipitation:  in/hr at</li>
 					<li id="sun6">Sunrise - Sunset: </li>
 				</ul>
 			</li>
@@ -129,11 +136,12 @@
 					<li id="temp7">Min - Max Temperature: &#176; F</li>
 					<li id="rain7">Chance of Rain: </li>
 					<li id="prec7">Average Precipitation:  in/hr</li>
+					<li id="maxPrec7">Max Precipitation:  in/hr at</li>
 					<li id="sun7">Sunrise - Sunset: </li>
 				</ul>
 			</li>
 		</ul>
-		<h4 class="title">Next 7 days Snapshot</h4>
+		<h4 class="title">Snapshot</h4>
 				
 		<div data-role="tabs" id="myTabs">
 			<div data-role="navbar">
@@ -155,30 +163,39 @@
 				<canvas id="canvasTemp" class="chart"></canvas>
 			</div>
 			<div id="rainTab" class="ui-content">
+				<h5>%</h5>
 				<canvas id="canvasRain" class="chart"></canvas>
 			</div>
 			<div id="precTab" class="ui-content">
+				<h5>in/hr</h5>
 				<canvas id="canvasPrec" class="chart"></canvas>
 			</div>
 			<div id="dewTab" class="ui-content">
+				<h5>&#176;F</h5>
 				<canvas id="canvasDew" class="chart"></canvas>
 			</div>
 			<div id="humidTab" class="ui-content">
+				<h5>%</h5>
 				<canvas id="canvasHumid" class="chart"></canvas>
 			</div>
 			<div id="windTab" class="ui-content">
+				<h5>MPH</h5>
 				<canvas id="canvasWind" class="chart"></canvas>
 			</div>
 			<div id="visibTab" class="ui-content">
+				<h5>Miles</h5>
 				<canvas id="canvasVisib" class="chart"></canvas>
 			</div>
 			<div id="cloudTab" class="ui-content">
+				<h5>%</h5>
 				<canvas id="canvasCloud" class="chart"></canvas>
 			</div>
 			<div id="pressTab" class="ui-content">
+				<h5>mbar</h5>
 				<canvas id="canvasPress" class="chart"></canvas>
 			</div>
 			<div id="moonTab" class="ui-content">
+				<h5>%</h5>
 				<canvas id="canvasMoon" class="chart"></canvas>
 			</div>
 		</div>
