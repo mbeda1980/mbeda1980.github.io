@@ -63,7 +63,7 @@
 				</ul>
 			</li>
 			<li data-role="collapsible" data-iconpos="right" data-inset="false">
-				<h2 data-theme="a" id="one">Tomorrow</h2>
+				<h2 data-theme="a" id="one">...</h2>
 				<ul data-role="listview" data-theme="c">
 					<li id="summ1">...</li>
 					<li id="temp1">Min - Max Temperature: &#176; F</li>
@@ -73,7 +73,7 @@
 				</ul>
 			</li>
 			<li data-role="collapsible" data-iconpos="right" data-inset="false">
-				<h2 data-theme="a" id="two">Day after tomorrow</h2>
+				<h2 data-theme="a" id="two">...</h2>
 				<ul data-role="listview" data-theme="c">
 					<li id="summ2">...</li>
 					<li id="temp2">Min - Max Temperature: &#176; F</li>
@@ -83,7 +83,7 @@
 				</ul>
 			</li>
 			<li data-role="collapsible" data-iconpos="right" data-inset="false">
-				<h2 data-theme="a" id="three">3 days from Today</h2>
+				<h2 data-theme="a" id="three">...</h2>
 				<ul data-role="listview" data-theme="c">
 					<li id="summ3">...</li>
 					<li id="temp3">Min - Max Temperature: &#176; F</li>
@@ -93,7 +93,7 @@
 				</ul>
 			</li>
 			<li data-role="collapsible" data-iconpos="right" data-inset="false">
-				<h2 data-theme="a" id="four">4 days from Today</h2>
+				<h2 data-theme="a" id="four">...</h2>
 				<ul data-role="listview" data-theme="c">
 					<li id="summ4">...</li>
 					<li id="temp4">Min - Max Temperature: &#176; F</li>
@@ -103,7 +103,7 @@
 				</ul>
 			</li>
 			<li data-role="collapsible" data-iconpos="right" data-inset="false">
-				<h2 data-theme="a" id="five">5 days from Today</h2>
+				<h2 data-theme="a" id="five">...</h2>
 				<ul data-role="listview" data-theme="c">
 					<li id="summ5">...</li>
 					<li id="temp5">Min - Max Temperature: &#176; F</li>
@@ -113,7 +113,7 @@
 				</ul>
 			</li>
 			<li data-role="collapsible" data-iconpos="right" data-inset="false">
-				<h2 data-theme="a" id="six">6 days from Today</h2>
+				<h2 data-theme="a" id="six">...</h2>
 				<ul data-role="listview" data-theme="c">
 					<li id="summ6">...</li>
 					<li id="temp6">Min - Max Temperature: &#176; F</li>
@@ -123,9 +123,9 @@
 				</ul>
 			</li>
 			<li data-role="collapsible" data-iconpos="right" data-inset="false">
-				<h2 data-theme="a" id="seven">7 days from Today</h2>
+				<h2 data-theme="a" id="seven">...</h2>
 				<ul data-role="listview" data-theme="c">
-					<li id="summ7">Mostly cloudy throughout the day.</li>
+					<li id="summ7">...</li>
 					<li id="temp7">Min - Max Temperature: &#176; F</li>
 					<li id="rain7">Chance of Rain: </li>
 					<li id="prec7">Average Precipitation:  in/hr</li>
@@ -134,19 +134,8 @@
 			</li>
 		</ul>
 		<h4 class="title">Next 7 days Snapshot</h4>
-		<!-- <div data-role ="tabs" id="mybuttons">
-			<button class="ui-btn ui-corner-all ui-btn-inline ui-btn-active mybutton">Temp.</button>
-			<button class="ui-btn ui-corner-all ui-btn-inline mybutton">Rain Chance</button>
-			<button class="ui-btn ui-corner-all ui-btn-inline mybutton">Average Precip.</button>
-			<button class="ui-btn ui-corner-all ui-btn-inline mybutton">Dew Point</button>
-			<button class="ui-btn ui-corner-all ui-btn-inline mybutton">Humidity</button>
-			<button class="ui-btn ui-corner-all ui-btn-inline mybutton">Wind Speed</button>
-			<button class="ui-btn ui-corner-all ui-btn-inline mybutton">Visibility</button>
-			<button class="ui-btn ui-corner-all ui-btn-inline mybutton">Cloud Cover</button>
-			<button class="ui-btn ui-corner-all ui-btn-inline mybutton">Pressure</button>
-		</div> -->
-		
-		<div data-role="tabs">
+				
+		<div data-role="tabs" id="myTabs">
 			<div data-role="navbar">
 				<ul>
 					<li><a href="#tempTab" data-theme="a" data-ajax="false" id="tempButton">Min - Max Temp.</a></li>
@@ -162,6 +151,7 @@
 				</ul>
 			</div>		
 			<div id="tempTab" class="ui-content">
+				<h5>&#176;F</h5>
 				<canvas id="canvasTemp" class="chart"></canvas>
 			</div>
 			<div id="rainTab" class="ui-content">

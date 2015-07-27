@@ -64,7 +64,7 @@
 }
 
 /*** Chart on Forecast Page***/
-.title {
+.title, #myTabs h5 {
     text-align: center;
 }
 
@@ -77,25 +77,11 @@ h3.title {
 }
 
 .chart {
-    max-width: 90%;
-    margin-right: 5%;
-    margin-left: 5%;
+    max-width: 96%;
+    margin-right: 2%;
+    margin-left: 2%;
 }
 
-#mybuttons {
-    width: 90%;
-    margin-left: 5%;
-    margin-right: 5%;
-    margin-bottom: 20px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.mybutton {
-    font-size: 10px;
-}
 
 /*** Detailed page ***/
 #locationDetailed, #locationForecast {
