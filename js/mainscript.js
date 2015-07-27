@@ -70,6 +70,19 @@ function hoursAndMinutes (unixtime) {
 	return hrsAndMns;
 }
 
+// Redirect to another weather section as an HTTP redirect
+function redirectToDetailed(){
+	window.location.replace("detailed.html");
+}
+
+function redirectToIndex(){
+	window.location.replace("index.html");
+}
+
+function redirectToForecast(){
+	window.location.replace("forecast.html");
+}
+
 /*** Functions for Index.html ***/
 function loadBasic(cityCoords) {
 	var latlng = cityCoords.coords.latitude + "," + cityCoords.coords.longitude;
@@ -208,7 +221,6 @@ function loadForecast(cityCoords) {
 			$("#sun1").html("Sunrise - Sunset: " + hoursAndMinutes(sunriseDate) + " - " + hoursAndMinutes(sunsetDate));
 
 			var forecastDate = new Date((json.daily.data[2].time)*1000);
-			// document.getElementById("two").textContent = "hao";
 			$("#two a").html(weekDays[forecastDate.getDay()]);
 			$("#summ2").html(json.daily.data[2].summary); 
 			$("#temp2").html("Low - High Temperature: " + Math.round(json.daily.data[2].temperatureMin) + " - " + Math.round(json.daily.data[2].temperatureMax) + "&#176;F"); 
@@ -218,8 +230,8 @@ function loadForecast(cityCoords) {
 			var sunsetDate = new Date((json.daily.data[2].sunsetTime)*1000);
 			$("#sun2").html("Sunrise - Sunset: " + hoursAndMinutes(sunriseDate) + " - " + hoursAndMinutes(sunsetDate));
 
-			// var forecastDate = new Date((json.daily.data[3].time)*1000);
-			// $("#three").html(weekDays[forecastDate.getDay()]);
+			var forecastDate = new Date((json.daily.data[3].time)*1000);
+			$("#three a").html(weekDays[forecastDate.getDay()]);
 			$("#summ3").html(json.daily.data[3].summary); 
 			$("#temp3").html("Low - High Temperature: " + Math.round(json.daily.data[3].temperatureMin) + " - " + Math.round(json.daily.data[3].temperatureMax) + "&#176;F"); 
 			$("#rain3").html("Chance of Rain: " + (json.daily.data[3].precipProbability)*100 + "%"); 
@@ -228,8 +240,8 @@ function loadForecast(cityCoords) {
 			var sunsetDate = new Date((json.daily.data[3].sunsetTime)*1000);
 			$("#sun3").html("Sunrise - Sunset: " + hoursAndMinutes(sunriseDate) + " - " + hoursAndMinutes(sunsetDate));
 
-			// var forecastDate = new Date((json.daily.data[4].time)*1000);
-			// $("#four").html(weekDays[forecastDate].getDay());
+			var forecastDate = new Date((json.daily.data[4].time)*1000);
+			$("#four a").html(weekDays[forecastDate.getDay()]);
 			$("#summ4").html(json.daily.data[4].summary); 
 			$("#temp4").html("Low - High Temperature: " + Math.round(json.daily.data[4].temperatureMin) + " - " + Math.round(json.daily.data[4].temperatureMax) + "&#176;F"); 
 			$("#rain4").html("Chance of Rain: " + (json.daily.data[4].precipProbability)*100 + "%"); 
@@ -238,8 +250,8 @@ function loadForecast(cityCoords) {
 			var sunsetDate = new Date((json.daily.data[4].sunsetTime)*1000);
 			$("#sun4").html("Sunrise - Sunset: " + hoursAndMinutes(sunriseDate) + " - " + hoursAndMinutes(sunsetDate));
 
-			// var forecastDate = new Date((json.daily.data[5].time)*1000);
-			// $("#five").html(weekDays[forecastDate].getDay());
+			var forecastDate = new Date((json.daily.data[5].time)*1000);
+			$("#five a").html(weekDays[forecastDate.getDay()]);
 			$("#summ5").html(json.daily.data[5].summary); 
 			$("#temp5").html("Low - High Temperature: " + Math.round(json.daily.data[5].temperatureMin) + " - " + Math.round(json.daily.data[5].temperatureMax) + "&#176;F"); 
 			$("#rain5").html("Chance of Rain: " + (json.daily.data[5].precipProbability)*100 + "%"); 
@@ -248,8 +260,8 @@ function loadForecast(cityCoords) {
 			var sunsetDate = new Date((json.daily.data[5].sunsetTime)*1000);
 			$("#sun5").html("Sunrise - Sunset: " + hoursAndMinutes(sunriseDate) + " - " + hoursAndMinutes(sunsetDate));
 
-			// var forecastDate = new Date((json.daily.data[6].time)*1000);
-			// $("#six").html(weekDays[forecastDate].getDay());
+			var forecastDate = new Date((json.daily.data[6].time)*1000);
+			$("#six a").html(weekDays[forecastDate.getDay()]);
 			$("#summ6").html(json.daily.data[6].summary); 
 			$("#temp6").html("Low - High Temperature: " + Math.round(json.daily.data[6].temperatureMin) + " - " + Math.round(json.daily.data[6].temperatureMax) + "&#176;F"); 
 			$("#rain6").html("Chance of Rain: " + (json.daily.data[6].precipProbability)*100 + "%"); 
@@ -258,8 +270,8 @@ function loadForecast(cityCoords) {
 			var sunsetDate = new Date((json.daily.data[6].sunsetTime)*1000);
 			$("#sun6").html("Sunrise - Sunset: " + hoursAndMinutes(sunriseDate) + " - " + hoursAndMinutes(sunsetDate));
 
-			// var forecastDate = new Date((json.daily.data[7].time)*1000);
-			// $("#seven").html(weekDays[forecastDate].getDay());
+			var forecastDate = new Date((json.daily.data[7].time)*1000);
+			$("#seven a").html(weekDays[forecastDate.getDay()]);
 			$("#summ7").html(json.daily.data[7].summary); 
 			$("#temp7").html("Low - High Temperature: " + Math.round(json.daily.data[7].temperatureMin) + " - " + Math.round(json.daily.data[7].temperatureMax) + "&#176;F"); 
 			$("#rain7").html("Chance of Rain: " + (json.daily.data[7].precipProbability)*100 + "%"); 
@@ -375,13 +387,3 @@ $(document).ready(function() {
 	} // end of forecast page script
 }); // end of script
 
-// Redirect to another weather section as an HTTP redirect
-function redirectToDetailed(){
-	window.location.replace("detailed.html");
-}
-function redirectToIndex(){
-	window.location.replace("index.html");
-}
-function redirectToForecast(){
-	window.location.replace("forecast.html");
-}
