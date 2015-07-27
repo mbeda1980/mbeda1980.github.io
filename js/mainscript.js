@@ -374,3 +374,14 @@ $(document).ready(function() {
 			
 	} // end of forecast page script
 }); // end of script
+
+// Redirect to another weather section as an HTTP redirect
+function redirectToDetailed(){
+	window.location.replace("detailed.html");
+}
+function redirectToIndex(){
+	window.location.replace("index.html");
+}
+function redirectToForecast(){
+	window.location.replace("forecast.html");
+}
