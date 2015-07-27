@@ -208,7 +208,8 @@ function loadForecast(cityCoords) {
 			$("#sun1").html("Sunrise - Sunset: " + hoursAndMinutes(sunriseDate) + " - " + hoursAndMinutes(sunsetDate));
 
 			var forecastDate = new Date((json.daily.data[2].time)*1000);
-			$("#two").html(weekDays[forecastDate.getDay()]);
+			// document.getElementById("two").textContent = "hao";
+			$("#two a").html(weekDays[forecastDate.getDay()]);
 			$("#summ2").html(json.daily.data[2].summary); 
 			$("#temp2").html("Low - High Temperature: " + Math.round(json.daily.data[2].temperatureMin) + " - " + Math.round(json.daily.data[2].temperatureMax) + "&#176;F"); 
 			$("#rain2").html("Chance of Rain: " + (json.daily.data[2].precipProbability)*100 + "%"); 
