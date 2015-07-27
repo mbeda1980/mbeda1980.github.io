@@ -76,7 +76,7 @@ h3.title {
     margin-bottom: 0.25em;
 }
 
-#canvas {
+.chart {
     max-width: 90%;
     margin-right: 5%;
     margin-left: 5%;
