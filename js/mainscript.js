@@ -70,6 +70,25 @@ function hoursAndMinutes (unixtime) {
 	return hrsAndMns;
 }
 
+function precipitationLevel (prec) {
+	if (prec==0) {
+		return "";
+	}
+	else if (prec<=0.01) {
+		return "Very Light: ";
+	} else if (prec<=0.039) {
+		return "Light: ";
+	} else if (prec<=0.157) {
+		return "Moderate: ";
+	} else if (prec<=0.63) {
+		return "Heavy: ";
+	} else if (prec<=1.969) {
+		return "Very Heavy: ";
+	} else if (prec>1.969) {
+		return "Extreme: "
+	}
+}
+
 // Redirect to another weather section as an HTTP redirect
 function redirectToDetailed(){
 	window.location.replace("detailed.html");
@@ -149,7 +168,7 @@ function loadDetailed(cityCoords) {
 		method: 'GET',
 		success: function(json) {
 			$("#feels").html("Feels like: " + Math.round(json.currently.apparentTemperature) + "&#176;F"); //this changes the content of the feeling temperature
-			$("#precipitation").html("Precipitation: " + json.currently.precipIntensity + " in/hr"); //changes the precipitation description
+			$("#precipitation").html("Precipitation: " + precipitationLevel(json.currently.precipIntensity) + json.currently.precipIntensity + " in/hr"); //changes the precipitation description
 			$("#pressure").html("Pressure: " + Math.round(json.currently.pressure) + " mbar"); // changes the pressure description
 			$("#visibility").html("Visibility: " + Math.round(json.currently.visibility) + " miles");
 			$("#cloudCover").html("Cloud Cover: " + Math.round((json.currently.cloudCover)*100) + "%");
@@ -210,10 +229,10 @@ function loadForecast(cityCoords) {
 			$("#summToday").html(json.daily.data[0].summary); 
 			$("#tempToday").html("Min - Max Temperature: " + Math.round(json.daily.data[0].temperatureMin) + " - " + Math.round(json.daily.data[0].temperatureMax) + "&#176;F"); 
 			$("#rainToday").html("Chance of Rain: " + (json.daily.data[0].precipProbability)*100 + "%"); 
-			$("#precToday").html("Average Precipitation: " + json.daily.data[0].precipIntensity + " in/hr");				
+			$("#precToday").html("Average Prec.: " + precipitationLevel(json.daily.data[0].precipIntensity) + (json.daily.data[0].precipIntensity).toFixed(3) + " in/hr");				
 			var MaxPrecipDate = new Date((json.daily.data[0].precipIntensityMaxTime)*1000);
-			if (json.daily.data[0].precipIntensityMax >0) {var textTime = " at " + hoursAndMinutes(MaxPrecipDate);} else {var textTime = ""}
-			$("#maxPrecToday").html("Max Precipitation: " + json.daily.data[0].precipIntensityMax + " in/hr" + textTime);
+			if (json.daily.data[0].precipIntensityMax >0) {var textTime = " " + hoursAndMinutes(MaxPrecipDate);} else {var textTime = ""}
+			$("#maxPrecToday").html("Max Prec.: " + precipitationLevel(json.daily.data[0].precipIntensityMax) + (json.daily.data[0].precipIntensityMax).toFixed(3) + " in/hr" + textTime);
 			var sunriseDate = new Date((json.daily.data[0].sunriseTime)*1000);
 			var sunsetDate = new Date((json.daily.data[0].sunsetTime)*1000);
 			$("#sunToday").html("Sunrise - Sunset: " + hoursAndMinutes(sunriseDate) + " - " + hoursAndMinutes(sunsetDate));
@@ -223,10 +242,10 @@ function loadForecast(cityCoords) {
 			$("#summ1").html(json.daily.data[1].summary); 
 			$("#temp1").html("Min - Max Temperature: " + Math.round(json.daily.data[1].temperatureMin) + " - " + Math.round(json.daily.data[1].temperatureMax) + "&#176;F"); 
 			$("#rain1").html("Chance of Rain: " + (json.daily.data[1].precipProbability)*100 + "%"); 
-			$("#prec1").html("Average Precipitation: " + json.daily.data[1].precipIntensity + " in/hr");				
+			$("#prec1").html("Average Prec.: " + precipitationLevel(json.daily.data[1].precipIntensity) + (json.daily.data[1].precipIntensity).toFixed(3) + " in/hr");				
 			var MaxPrecipDate = new Date((json.daily.data[1].precipIntensityMaxTime)*1000);
-			if (json.daily.data[1].precipIntensityMax >0) {var textTime = " at " + hoursAndMinutes(MaxPrecipDate);} else {var textTime = ""}
-			$("#maxPrec1").html("Max Precipitation: " + json.daily.data[1].precipIntensityMax + " in/hr" + textTime);
+			if (json.daily.data[1].precipIntensityMax >0) {var textTime = " " + hoursAndMinutes(MaxPrecipDate);} else {var textTime = ""}
+			$("#maxPrec1").html("Max Prec.: " + precipitationLevel(json.daily.data[1].precipIntensityMax) + (json.daily.data[1].precipIntensityMax).toFixed(3) + " in/hr" + textTime);
 			var sunriseDate = new Date((json.daily.data[1].sunriseTime)*1000);
 			var sunsetDate = new Date((json.daily.data[1].sunsetTime)*1000);
 			$("#sun1").html("Sunrise - Sunset: " + hoursAndMinutes(sunriseDate) + " - " + hoursAndMinutes(sunsetDate));
@@ -236,10 +255,10 @@ function loadForecast(cityCoords) {
 			$("#summ2").html(json.daily.data[2].summary); 
 			$("#temp2").html("Min - Max Temperature: " + Math.round(json.daily.data[2].temperatureMin) + " - " + Math.round(json.daily.data[2].temperatureMax) + "&#176;F"); 
 			$("#rain2").html("Chance of Rain: " + (json.daily.data[2].precipProbability)*100 + "%"); 
-			$("#prec2").html("Average Precipitation: " + json.daily.data[2].precipIntensity + " in/hr");				
+			$("#prec2").html("Average Prec.: " + precipitationLevel(json.daily.data[2].precipIntensity) + (json.daily.data[2].precipIntensity).toFixed(3) + " in/hr");				
 			var MaxPrecipDate = new Date((json.daily.data[2].precipIntensityMaxTime)*1000);
-			if (json.daily.data[2].precipIntensityMax >0) {var textTime = " at " + hoursAndMinutes(MaxPrecipDate);} else {var textTime = ""}
-			$("#maxPrec2").html("Max Precipitation: " + json.daily.data[2].precipIntensityMax + " in/hr" + textTime);
+			if (json.daily.data[2].precipIntensityMax >0) {var textTime = " " + hoursAndMinutes(MaxPrecipDate);} else {var textTime = ""}
+			$("#maxPrec2").html("Max Prec.: " + precipitationLevel(json.daily.data[2].precipIntensityMax) + (json.daily.data[2].precipIntensityMax).toFixed(3) + " in/hr" + textTime);
 			var sunriseDate = new Date((json.daily.data[2].sunriseTime)*1000);
 			var sunsetDate = new Date((json.daily.data[2].sunsetTime)*1000);
 			$("#sun2").html("Sunrise - Sunset: " + hoursAndMinutes(sunriseDate) + " - " + hoursAndMinutes(sunsetDate));
@@ -249,10 +268,10 @@ function loadForecast(cityCoords) {
 			$("#summ3").html(json.daily.data[3].summary); 
 			$("#temp3").html("Min - Max Temperature: " + Math.round(json.daily.data[3].temperatureMin) + " - " + Math.round(json.daily.data[3].temperatureMax) + "&#176;F"); 
 			$("#rain3").html("Chance of Rain: " + (json.daily.data[3].precipProbability)*100 + "%"); 
-			$("#prec3").html("Average Precipitation: " + json.daily.data[3].precipIntensity + " in/hr");				
+			$("#prec3").html("Average Prec.: " + precipitationLevel(json.daily.data[3].precipIntensity) + (json.daily.data[3].precipIntensity).toFixed(3) + " in/hr");				
 			var MaxPrecipDate = new Date((json.daily.data[3].precipIntensityMaxTime)*1000);
-			if (json.daily.data[3].precipIntensityMax >0) {var textTime = " at " + hoursAndMinutes(MaxPrecipDate);} else {var textTime = ""}
-			$("#maxPrec3").html("Max Precipitation: " + json.daily.data[3].precipIntensityMax + " in/hr" + textTime);
+			if (json.daily.data[3].precipIntensityMax >0) {var textTime = " " + hoursAndMinutes(MaxPrecipDate);} else {var textTime = ""}
+			$("#maxPrec3").html("Max Prec.: " + precipitationLevel(json.daily.data[3].precipIntensityMax) + (json.daily.data[3].precipIntensityMax).toFixed(3) + " in/hr" + textTime);
 			var sunriseDate = new Date((json.daily.data[3].sunriseTime)*1000);
 			var sunsetDate = new Date((json.daily.data[3].sunsetTime)*1000);
 			$("#sun3").html("Sunrise - Sunset: " + hoursAndMinutes(sunriseDate) + " - " + hoursAndMinutes(sunsetDate));
@@ -262,10 +281,10 @@ function loadForecast(cityCoords) {
 			$("#summ4").html(json.daily.data[4].summary); 
 			$("#temp4").html("Min - Max Temperature: " + Math.round(json.daily.data[4].temperatureMin) + " - " + Math.round(json.daily.data[4].temperatureMax) + "&#176;F"); 
 			$("#rain4").html("Chance of Rain: " + (json.daily.data[4].precipProbability)*100 + "%"); 
-			$("#prec4").html("Average Precipitation: " + json.daily.data[4].precipIntensity + " in/hr");				
+			$("#prec4").html("Average Prec.: " + precipitationLevel(json.daily.data[4].precipIntensity) + (json.daily.data[4].precipIntensity).toFixed(3) + " in/hr");				
 			var MaxPrecipDate = new Date((json.daily.data[4].precipIntensityMaxTime)*1000);
-			if (json.daily.data[4].precipIntensityMax >0) {var textTime = " at " + hoursAndMinutes(MaxPrecipDate);} else {var textTime = ""}
-			$("#maxPrec4").html("Max Precipitation: " + json.daily.data[4].precipIntensityMax + " in/hr" + textTime);
+			if (json.daily.data[4].precipIntensityMax >0) {var textTime = " " + hoursAndMinutes(MaxPrecipDate);} else {var textTime = ""}
+			$("#maxPrec4").html("Max Prec.: " + precipitationLevel(json.daily.data[4].precipIntensityMax) + (json.daily.data[4].precipIntensityMax).toFixed(3) + " in/hr" + textTime);
 			var sunriseDate = new Date((json.daily.data[4].sunriseTime)*1000);
 			var sunsetDate = new Date((json.daily.data[4].sunsetTime)*1000);
 			$("#sun4").html("Sunrise - Sunset: " + hoursAndMinutes(sunriseDate) + " - " + hoursAndMinutes(sunsetDate));
@@ -275,10 +294,10 @@ function loadForecast(cityCoords) {
 			$("#summ5").html(json.daily.data[5].summary); 
 			$("#temp5").html("Min - Max Temperature: " + Math.round(json.daily.data[5].temperatureMin) + " - " + Math.round(json.daily.data[5].temperatureMax) + "&#176;F"); 
 			$("#rain5").html("Chance of Rain: " + (json.daily.data[5].precipProbability)*100 + "%"); 
-			$("#prec5").html("Average Precipitation: " + json.daily.data[5].precipIntensity + " in/hr");				
+			$("#prec5").html("Average Prec.: " + precipitationLevel(json.daily.data[5].precipIntensity) + (json.daily.data[5].precipIntensity).toFixed(3) + " in/hr");				
 			var MaxPrecipDate = new Date((json.daily.data[5].precipIntensityMaxTime)*1000);
-			if (json.daily.data[5].precipIntensityMax >0) {var textTime = " at " + hoursAndMinutes(MaxPrecipDate);} else {var textTime = ""}
-			$("#maxPrec5").html("Max Precipitation: " + json.daily.data[5].precipIntensityMax + " in/hr" + textTime);			
+			if (json.daily.data[5].precipIntensityMax >0) {var textTime = " " + hoursAndMinutes(MaxPrecipDate);} else {var textTime = ""}
+			$("#maxPrec5").html("Max Prec.: " + precipitationLevel(json.daily.data[5].precipIntensityMax) + (json.daily.data[5].precipIntensityMax).toFixed(3) + " in/hr" + textTime);			
 			var sunriseDate = new Date((json.daily.data[5].sunriseTime)*1000);
 			var sunsetDate = new Date((json.daily.data[5].sunsetTime)*1000);
 			$("#sun5").html("Sunrise - Sunset: " + hoursAndMinutes(sunriseDate) + " - " + hoursAndMinutes(sunsetDate));
@@ -288,10 +307,10 @@ function loadForecast(cityCoords) {
 			$("#summ6").html(json.daily.data[6].summary); 
 			$("#temp6").html("Min - Max Temperature: " + Math.round(json.daily.data[6].temperatureMin) + " - " + Math.round(json.daily.data[6].temperatureMax) + "&#176;F"); 
 			$("#rain6").html("Chance of Rain: " + (json.daily.data[6].precipProbability)*100 + "%"); 
-			$("#prec6").html("Average Precipitation: " + json.daily.data[6].precipIntensity + " in/hr");				
+			$("#prec6").html("Average Prec.: " + precipitationLevel(json.daily.data[6].precipIntensity) + (json.daily.data[6].precipIntensity).toFixed(3) + " in/hr");				
 			var MaxPrecipDate = new Date((json.daily.data[6].precipIntensityMaxTime)*1000);
-			if (json.daily.data[6].precipIntensityMax >0) {var textTime = " at " + hoursAndMinutes(MaxPrecipDate);} else {var textTime = ""}
-			$("#maxPrec6").html("Max Precipitation: " + json.daily.data[6].precipIntensityMax + " in/hr" + textTime);
+			if (json.daily.data[6].precipIntensityMax >0) {var textTime = " " + hoursAndMinutes(MaxPrecipDate);} else {var textTime = ""}
+			$("#maxPrec6").html("Max Prec.: " + precipitationLevel(json.daily.data[6].precipIntensityMax) + (json.daily.data[6].precipIntensityMax).toFixed(3) + " in/hr" + textTime);
 			var sunriseDate = new Date((json.daily.data[6].sunriseTime)*1000);
 			var sunsetDate = new Date((json.daily.data[6].sunsetTime)*1000);
 			$("#sun6").html("Sunrise - Sunset: " + hoursAndMinutes(sunriseDate) + " - " + hoursAndMinutes(sunsetDate));
@@ -301,10 +320,10 @@ function loadForecast(cityCoords) {
 			$("#summ7").html(json.daily.data[7].summary); 
 			$("#temp7").html("Min - Max Temperature: " + Math.round(json.daily.data[7].temperatureMin) + " - " + Math.round(json.daily.data[7].temperatureMax) + "&#176;F"); 
 			$("#rain7").html("Chance of Rain: " + (json.daily.data[7].precipProbability)*100 + "%"); 
-			$("#prec7").html("Average Precipitation: " + json.daily.data[7].precipIntensity + " in/hr");				
+			$("#prec7").html("Average Prec.: " + precipitationLevel(json.daily.data[7].precipIntensity) + (json.daily.data[7].precipIntensity).toFixed(3) + " in/hr");				
 			var MaxPrecipDate = new Date((json.daily.data[7].precipIntensityMaxTime)*1000);
-			if (json.daily.data[7].precipIntensityMax >0) {var textTime = " at " + hoursAndMinutes(MaxPrecipDate);} else {var textTime = ""}
-			$("#maxPrec7").html("Max Precipitation: " + json.daily.data[7].precipIntensityMax + " in/hr" + textTime);
+			if (json.daily.data[7].precipIntensityMax >0) {var textTime = " " + hoursAndMinutes(MaxPrecipDate);} else {var textTime = ""}
+			$("#maxPrec7").html("Max Prec.: "  + precipitationLevel(json.daily.data[7].precipIntensityMax) + (json.daily.data[7].precipIntensityMax).toFixed(3) + " in/hr" + textTime);
 			var sunriseDate = new Date((json.daily.data[7].sunriseTime)*1000);
 			var sunsetDate = new Date((json.daily.data[7].sunsetTime)*1000);
 			$("#sun7").html("Sunrise - Sunset: " + hoursAndMinutes(sunriseDate) + " - " + hoursAndMinutes(sunsetDate));
@@ -422,25 +441,23 @@ function loadForecast(cityCoords) {
 			});
 
 			/* Precipitation Chart */
-			// var precDataChart = {
-			// labels: chartDates,
-			// datasets: [
-			//     	{
-			// 	        label: "Average Precipitation",
-			// 	        fillColor: "rgba(151,187,205,0.5)",
-			// 	        strokeColor: "rgba(151,187,205,0.8)",
-			// 	        highlightFill: "rgba(151,187,205,0.75)",
-			// 	        highlightStroke: "rgba(151,187,205,1)",
-			// 	        data: dataPrec
-			//     	}
-			// 	] 
-			// };
+			var precDataChart = {
+			labels: ["today","7/30","7/31","8/1","8/2","8/3","8/4","8/5"],
+			datasets: [{
+				        label: "Average Precipitation",
+				        fillColor: "rgba(151,187,205,0.5)",
+				        strokeColor: "rgba(151,187,205,0.8)",
+				        highlightFill: "rgba(151,187,205,0.75)",
+				        highlightStroke: "rgba(151,187,205,1)",
+				        data: [0.05,0,0.09,0.16,0.2,0.15,0,0.08]
+			    	}] 
+			};
 
-			// var ctxPrec = document.getElementById("canvasPrec").getContext("2d");
-			// var precChart = new Chart(ctxPrec).Bar(precDataChart, {
-			// 	responsive : true,
-			// 	scaleShowVerticalLines: false
-			// });
+			var ctxPrec = document.getElementById("canvasPrec").getContext("2d");
+			var precChart = new Chart(ctxPrec).Bar(precDataChart, {
+				responsive : true,
+				scaleShowVerticalLines: false
+			});
 
 			/* Humidity Chart */
 			/* Visibility Chart */
@@ -510,5 +527,5 @@ $(document).ready(function() {
 		
 		$("#tempButton").trigger("click");
 	} // end of forecast page script
-}); // end of script
+});
 
