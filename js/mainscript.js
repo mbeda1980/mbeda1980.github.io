@@ -348,25 +348,25 @@ function loadForecast(cityCoords) {
 		    ];
 
 		    var dataPrec = [
-	           (json.daily.data[0].precipIntensity)*1000,
-	           (json.daily.data[1].precipIntensity)*1000,
-	           (json.daily.data[2].precipIntensity)*1000,
-	           (json.daily.data[3].precipIntensity)*1000,
-	           (json.daily.data[4].precipIntensity)*1000,
-	           (json.daily.data[5].precipIntensity)*1000,
-	           (json.daily.data[6].precipIntensity)*1000,
-	           (json.daily.data[7].precipIntensity)*1000,
+	           ((json.daily.data[0].precipIntensity)*1000).toFixed(1),
+	           ((json.daily.data[1].precipIntensity)*1000).toFixed(1),
+	           ((json.daily.data[2].precipIntensity)*1000).toFixed(1),
+	           ((json.daily.data[3].precipIntensity)*1000).toFixed(1),
+	           ((json.daily.data[4].precipIntensity)*1000).toFixed(1),
+	           ((json.daily.data[5].precipIntensity)*1000).toFixed(1),
+	           ((json.daily.data[6].precipIntensity)*1000).toFixed(1),
+	           ((json.daily.data[7].precipIntensity)*1000).toFixed(1),
 		    ];
 
 		    var dataPrecMax = [
-				(json.daily.data[0].precipIntensityMax)*1000,    	
-		    	(json.daily.data[1].precipIntensityMax)*1000,
-		    	(json.daily.data[2].precipIntensityMax)*1000,		    
-		    	(json.daily.data[3].precipIntensityMax)*1000,
-		    	(json.daily.data[4].precipIntensityMax)*1000,
-		    	(json.daily.data[5].precipIntensityMax)*1000,
-		    	(json.daily.data[6].precipIntensityMax)*1000,
-		    	(json.daily.data[7].precipIntensityMax)*1000,
+				((json.daily.data[0].precipIntensityMax)*1000).toFixed(1),    	
+		    	((json.daily.data[1].precipIntensityMax)*1000).toFixed(1),
+		    	((json.daily.data[2].precipIntensityMax)*1000).toFixed(1),
+		    	((json.daily.data[3].precipIntensityMax)*1000).toFixed(1),	
+		    	((json.daily.data[4].precipIntensityMax)*1000).toFixed(1),	
+		    	((json.daily.data[5].precipIntensityMax)*1000).toFixed(1),
+		    	((json.daily.data[6].precipIntensityMax)*1000).toFixed(1),	
+		    	((json.daily.data[7].precipIntensityMax)*1000).toFixed(1),		
 		    ]
 
 		    var dataHumid = [
