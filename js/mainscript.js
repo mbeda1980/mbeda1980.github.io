@@ -326,69 +326,80 @@ function loadForecast(cityCoords) {
 		    ]
 
 			var dataTempMin = [
-		            Math.round(json.daily.data[0].temperatureMin),
-		            Math.round(json.daily.data[1].temperatureMin),
-		            Math.round(json.daily.data[2].temperatureMin),
-		            Math.round(json.daily.data[3].temperatureMin),
-		            Math.round(json.daily.data[4].temperatureMin),
-		            Math.round(json.daily.data[5].temperatureMin),
-		            Math.round(json.daily.data[6].temperatureMin),
-		            Math.round(json.daily.data[7].temperatureMin)
+	            Math.round(json.daily.data[0].temperatureMin),
+	            Math.round(json.daily.data[1].temperatureMin),
+	            Math.round(json.daily.data[2].temperatureMin),
+	            Math.round(json.daily.data[3].temperatureMin),
+	            Math.round(json.daily.data[4].temperatureMin),
+	            Math.round(json.daily.data[5].temperatureMin),
+	            Math.round(json.daily.data[6].temperatureMin),
+	            Math.round(json.daily.data[7].temperatureMin)
 		    ];
 
 		    var dataTempMax = [
-		            Math.round(json.daily.data[0].temperatureMax),
-		            Math.round(json.daily.data[1].temperatureMax),
-		            Math.round(json.daily.data[2].temperatureMax),
-		            Math.round(json.daily.data[3].temperatureMax),
-		            Math.round(json.daily.data[4].temperatureMax),
-		            Math.round(json.daily.data[5].temperatureMax),
-		            Math.round(json.daily.data[6].temperatureMax),
-		            Math.round(json.daily.data[7].temperatureMax)
+	            Math.round(json.daily.data[0].temperatureMax),
+	            Math.round(json.daily.data[1].temperatureMax),
+	            Math.round(json.daily.data[2].temperatureMax),
+	            Math.round(json.daily.data[3].temperatureMax),
+	            Math.round(json.daily.data[4].temperatureMax),
+	            Math.round(json.daily.data[5].temperatureMax),
+	            Math.round(json.daily.data[6].temperatureMax),
+	            Math.round(json.daily.data[7].temperatureMax)
 		    ];
 
 		    var dataPrec = [
-		           (json.daily.data[0].precipIntensity)*1000,
-		           (json.daily.data[1].precipIntensity)*1000,
-		           (json.daily.data[2].precipIntensity)*1000,
-		           (json.daily.data[3].precipIntensity)*1000,
-		           (json.daily.data[4].precipIntensity)*1000,
-		           (json.daily.data[5].precipIntensity)*1000,
-		           (json.daily.data[6].precipIntensity)*1000,
-		           (json.daily.data[7].precipIntensity)*1000,
+	           (json.daily.data[0].precipIntensity)*1000,
+	           (json.daily.data[1].precipIntensity)*1000,
+	           (json.daily.data[2].precipIntensity)*1000,
+	           (json.daily.data[3].precipIntensity)*1000,
+	           (json.daily.data[4].precipIntensity)*1000,
+	           (json.daily.data[5].precipIntensity)*1000,
+	           (json.daily.data[6].precipIntensity)*1000,
+	           (json.daily.data[7].precipIntensity)*1000,
 		    ];
 
+		    var dataPrecMax = [
+				(json.daily.data[0].precipIntensityMax)*1000,    	
+		    	(json.daily.data[1].precipIntensityMax)*1000,
+		    	(json.daily.data[2].precipIntensityMax)*1000,		    
+		    	(json.daily.data[3].precipIntensityMax)*1000,
+		    	(json.daily.data[4].precipIntensityMax)*1000,
+		    	(json.daily.data[5].precipIntensityMax)*1000,
+		    	(json.daily.data[6].precipIntensityMax)*1000,
+		    	(json.daily.data[7].precipIntensityMax)*1000,
+		    ]
+
 		    var dataHumid = [
-		            Math.round((json.daily.data[0].humidity)*100),
-		            Math.round((json.daily.data[1].humidity)*100),
-		            Math.round((json.daily.data[2].humidity)*100),
-		            Math.round((json.daily.data[3].humidity)*100),
-		            Math.round((json.daily.data[4].humidity)*100),
-		            Math.round((json.daily.data[5].humidity)*100),
-		            Math.round((json.daily.data[6].humidity)*100),
-		            Math.round((json.daily.data[7].humidity)*100)
+	            Math.round((json.daily.data[0].humidity)*100),
+	            Math.round((json.daily.data[1].humidity)*100),
+	            Math.round((json.daily.data[2].humidity)*100),
+	            Math.round((json.daily.data[3].humidity)*100),
+	            Math.round((json.daily.data[4].humidity)*100),
+	            Math.round((json.daily.data[5].humidity)*100),
+	            Math.round((json.daily.data[6].humidity)*100),
+	            Math.round((json.daily.data[7].humidity)*100)
 		    ];
 
 		    var dataVisib = [
-		            Math.round(json.daily.data[0].visibility),
-		            Math.round(json.daily.data[1].visibility),
-		            Math.round(json.daily.data[2].visibility),
-		            Math.round(json.daily.data[3].visibility),
-		            Math.round(json.daily.data[4].visibility),
-		            Math.round(json.daily.data[5].visibility),
-		            Math.round(json.daily.data[6].visibility),
-		            Math.round(json.daily.data[7].visibility)
+	            Math.round(json.daily.data[0].visibility),
+	            Math.round(json.daily.data[1].visibility),
+	            Math.round(json.daily.data[2].visibility),
+	            Math.round(json.daily.data[3].visibility),
+	            Math.round(json.daily.data[4].visibility),
+	            Math.round(json.daily.data[5].visibility),
+	            Math.round(json.daily.data[6].visibility),
+	            Math.round(json.daily.data[7].visibility)
 		    ];
 
 			var dataPressure = [
-		            Math.round(json.daily.data[0].pressure),
-		            Math.round(json.daily.data[1].pressure),
-		            Math.round(json.daily.data[2].pressure),
-		            Math.round(json.daily.data[3].pressure),
-		            Math.round(json.daily.data[4].pressure),
-		            Math.round(json.daily.data[5].pressure),
-		            Math.round(json.daily.data[6].pressure),
-		            Math.round(json.daily.data[7].pressure)
+	            Math.round(json.daily.data[0].pressure),
+	            Math.round(json.daily.data[1].pressure),
+	            Math.round(json.daily.data[2].pressure),
+	            Math.round(json.daily.data[3].pressure),
+	            Math.round(json.daily.data[4].pressure),
+	            Math.round(json.daily.data[5].pressure),
+	            Math.round(json.daily.data[6].pressure),
+	            Math.round(json.daily.data[7].pressure)
 		    ];
 
 		    //define rest of variables (5 more)		    
@@ -427,25 +438,34 @@ function loadForecast(cityCoords) {
 
 			/* Precipitation Chart */
 			var precDataChart = {
-			labels: chartDates,
-			datasets: [{
-				        label: "Average Precipitation",
-				        fillColor: "rgba(151,187,205,0.5)",
-				        strokeColor: "rgba(151,187,205,0.8)",
-				        highlightFill: "rgba(151,187,205,0.75)",
-				        highlightStroke: "rgba(151,187,205,1)",
-				        data: dataPrec
-			    	}] 
+			    labels: chartDates,
+			    datasets: [
+			        {
+			            label: "Max Precipitation",
+			            fillColor: "rgba(220,220,220,0.2)",
+			            strokeColor: "rgba(220,220,220,1)",
+			            pointColor: "rgba(220,220,220,1)",
+			            pointStrokeColor: "#fff",
+			            pointHighlightFill: "#fff",
+			            pointHighlightStroke: "rgba(220,220,220,1)",
+			            data: dataPrecMax
+			        },
+			        {
+			            label: "Average Precipitation",
+			            fillColor: "rgba(151,187,205,0.2)",
+			            strokeColor: "rgba(151,187,205,1)",
+			            pointColor: "rgba(151,187,205,1)",
+			            pointStrokeColor: "#fff",
+			            pointHighlightFill: "#fff",
+			            pointHighlightStroke: "rgba(151,187,205,1)",
+			            data: dataPrec
+			        }
+			    ]
 			};
 
 			var ctxPrec = document.getElementById("canvasPrec").getContext("2d");
-			var precChart = new Chart(ctxPrec).Bar(precDataChart, {
+			var precChart = new Chart(ctxPrec).Line(precDataChart, {
 				responsive : true,
-				// scaleOverride: true,
-				// scaleSteps: 4,
-				// scaleStepWidth: 0.001,
-				scaleShowVerticalLines: false,
-				scaleIntegersOnly: true,
 			});
 
 			/* Humidity Chart */
