@@ -315,7 +315,7 @@ function loadForecast(cityCoords) {
 
 			/* Chart js*/
 			var chartDates = [
-		    	"today",
+		    	"Today",
 		    	(forecastDate1.getMonth() + 1) + "/" + forecastDate1.getDate(),
 	    	 	(forecastDate2.getMonth() + 1) + "/" + forecastDate2.getDate(),
 	    	 	(forecastDate3.getMonth() + 1) + "/" + forecastDate3.getDate(),
@@ -426,23 +426,23 @@ function loadForecast(cityCoords) {
 			});
 
 			/* Precipitation Chart */
-			// var precDataChart = {
-			// labels: ["today","7/30","7/31","8/1","8/2","8/3","8/4","8/5"],
-			// datasets: [{
-			// 	        label: "Average Precipitation",
-			// 	        fillColor: "rgba(151,187,205,0.5)",
-			// 	        strokeColor: "rgba(151,187,205,0.8)",
-			// 	        highlightFill: "rgba(151,187,205,0.75)",
-			// 	        highlightStroke: "rgba(151,187,205,1)",
-			// 	        data: [0.05,0,0.09,0.16,0.2,0.15,0,0.08]
-			//     	}] 
-			// };
+			var precDataChart = {
+			labels: chartDates,
+			datasets: [{
+				        label: "Average Precipitation",
+				        fillColor: "rgba(151,187,205,0.5)",
+				        strokeColor: "rgba(151,187,205,0.8)",
+				        highlightFill: "rgba(151,187,205,0.75)",
+				        highlightStroke: "rgba(151,187,205,1)",
+				        data: dataPrec
+			    	}] 
+			};
 
-			// var ctxPrec = document.getElementById("canvasPrec").getContext("2d");
-			// var precChart = new Chart(ctxPrec).Bar(precDataChart, {
-			// 	responsive : true,
-			// 	scaleShowVerticalLines: false
-			// });
+			var ctxPrec = document.getElementById("canvasPrec").getContext("2d");
+			var precChart = new Chart(ctxPrec).Bar(precDataChart, {
+				responsive : true,
+				scaleShowVerticalLines: false
+			});
 
 			/* Humidity Chart */
 			/* Visibility Chart */
