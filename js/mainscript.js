@@ -420,10 +420,10 @@ function loadForecast(cityCoords) {
 			    ]
 			};
 
-			// var ctxTemp = document.getElementById("canvasTemp").getContext("2d");
-			// var tempChart = new Chart(ctxTemp).Line(tempDataChart, {
-			// 	responsive : true,
-			// });
+			var ctxTemp = document.getElementById("canvasTemp").getContext("2d");
+			var tempChart = new Chart(ctxTemp).Line(tempDataChart, {
+				responsive : true,
+			});
 
 			/* Precipitation Chart */
 			var precDataChart = {
@@ -438,7 +438,7 @@ function loadForecast(cityCoords) {
 			    	}] 
 			};
 
-			var ctxPrec = document.getElementById("canvasTemp").getContext("2d");
+			var ctxPrec = document.getElementById("canvasPrec").getContext("2d");
 			var precChart = new Chart(ctxPrec).Bar(precDataChart, {
 				responsive : true,
 				scaleShowVerticalLines: false
