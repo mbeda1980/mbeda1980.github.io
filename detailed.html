@@ -72,5 +72,19 @@
 			<li id="moonPhase">Moon Phase: </li>
 		</ul>
 		<script src="js/mainscript.js"></script>
+		<script>
+			$(document).ready(function() {
+	
+				$.ajaxPrefilter(function(options,originalOptions,jqXHR ) {
+					options.async = true;
+				});
+			
+				loadCityDetailed("Current Location");
+
+				$("a.city").bind("click",function(){
+					loadCityDetailed($(this).html()); 
+				});
+			});	
+		</script>
 	</body> 
 </html>

@@ -147,15 +147,15 @@
 			<div data-role="navbar">
 				<ul>
 					<li><a href="#tempTab" data-theme="a" data-ajax="false" id="tempButton">Min - Max Temp.</a></li>
-					<li><a href="#rainTab" data-theme="a" data-ajax="false">Rain Chance</a></li>
-					<li><a href="#precTab" data-theme="a" data-ajax="false">Average Precip.</a></li>
-					<li><a href="#dewTab" data-theme="a" data-ajax="false">Dew Point</a></li>
-					<li><a href="#humidTab" data-theme="a" data-ajax="false">Humidity</a></li>
-					<li><a href="#windTab" data-theme="a" data-ajax="false">Wind Speed</a></li>
-					<li><a href="#visibTab" data-theme="a" data-ajax="false">Visibility</a></li>
-					<li><a href="#cloudTab" data-theme="a" data-ajax="false">Cloud Cover</a></li>
-					<li><a href="#pressTab" data-theme="a" data-ajax="false">Pressure</a></li>
-					<li><a href="#moonTab" data-theme="a" data-ajax="false">Moon Phase</a></li>
+					<li><a href="#rainTab" data-theme="a" data-ajax="false" id="rainButton">Rain Chance</a></li>
+					<li><a href="#precTab" data-theme="a" data-ajax="false" id="precButton">Average Precip.</a></li>
+					<li><a href="#dewTab" data-theme="a" data-ajax="false" id="dewButton">Dew Point</a></li>
+					<li><a href="#humidTab" data-theme="a" data-ajax="false" id="humidButton">Humidity</a></li>
+					<li><a href="#windTab" data-theme="a" data-ajax="false" id="windButton">Wind Speed</a></li>
+					<li><a href="#visibTab" data-theme="a" data-ajax="false" id="visibButton">Visibility</a></li>
+					<li><a href="#cloudTab" data-theme="a" data-ajax="false" id="cloudButton">Cloud Cover</a></li>
+					<li><a href="#pressTab" data-theme="a" data-ajax="false" id="pressButton">Pressure</a></li>
+					<li><a href="#moonTab" data-theme="a" data-ajax="false" id="moonButton">Moon Phase</a></li>
 				</ul>
 			</div>		
 			<div id="tempTab" class="ui-content">
@@ -167,7 +167,7 @@
 				<canvas id="canvasRain" class="chart"></canvas>
 			</div>
 			<div id="precTab" class="ui-content">
-				<h5>in/hr</h5>
+				<h5>milli in/hr</h5>
 				<canvas id="canvasPrec" class="chart"></canvas>
 			</div>
 			<div id="dewTab" class="ui-content">
@@ -200,5 +200,21 @@
 			</div>
 		</div>
 		<script src="js/mainscript.js"></script>
+		<script>
+			$(document).ready(function() {
+	
+				$.ajaxPrefilter(function(options,originalOptions,jqXHR ) {
+					options.async = true;
+				});
+
+				loadCityForecast("Current Location"); 
+			
+				$("a.city").bind("click",function(){
+					loadCityForecast($(this).html()); 
+				});	
+			
+				$("#precButton").trigger("click");
+			});	
+		</script>
 	</body> 
 </html>

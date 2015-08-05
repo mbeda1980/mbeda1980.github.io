@@ -58,5 +58,19 @@
 			</div>
 		</div>
 		<script src="js/mainscript.js"></script>
+		<script>
+			$(document).ready(function() {
+	
+				$.ajaxPrefilter(function(options,originalOptions,jqXHR ) {
+					options.async = true;
+				});
+			
+				loadCityBasic("Current Location"); //this is just a starting point for when the page loads, cause once I click another city in the panel that info will change, see below
+			
+				$("a.city").bind("click",function(){
+					loadCityBasic($(this).html()); //If I click a city in the panel it will update all weather info for that city
+				});
+			});	
+		</script>
 	</body> 
 </html>
