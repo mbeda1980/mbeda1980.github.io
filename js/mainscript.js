@@ -12,19 +12,6 @@ var icons = {
 	"partly-cloudy-night" : "I"
 };
 
-var recommendations = {
-	"clear-day" : "Take a bike ride downtown!", 
-	"clear-night" : "Go count the stars!", 
-	"rain" : "Bring your umbrella if you're going out!", 
-	"snow" : "Break in your snow boots!", 
-	"sleet" : "It's slippery out, watch out!", 
-	"wind" : "Make sure you bring your wind jacket!", 
-	"fog" :"Be careful while driving!", 
-	"cloudy" : "Don't worry about getting a sun tan, you won't!",
-	"partly-cloudy-day" : "Who likes partly-cloudy-days?", 
-	"partly-cloudy-night" : "Don't bother using your telescope..."
-};
-
 var cities = {	
 	"new york" 		: 	{coords: {latitude: 40.672060, longitude:-73.983898}},
 	"los angeles" 	: 	{coords: {latitude: 34.101422, longitude: -118.341224}},
@@ -124,8 +111,6 @@ function loadBasic(cityCoords) {
 			$("#wind").html(windInfo);
 			var humidLevel = Math.round(json.currently.humidity*100);
 			$("#humid").html(humidLevel + "% Humid");
-			var recommText = '"' + recommendations[json.currently.icon] + '"';
-			$("#recomm").html(recommText);
 		},
 		error: function(e) {
 			console.log(e.message);
