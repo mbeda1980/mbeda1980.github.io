@@ -210,19 +210,19 @@
 
 				loadCityForecast("Current Location"); 
 			
-				$("#tempButton").trigger("click");
+				$("#humidButton").trigger("click");
 
 				$("a.city").bind("click",function(){
 					loadCityForecast($(this).html()); 
-				});
+				});		
 
+				$("#tempButton").bind("click",function(){
+					window.location.replace("forecastTemp.html");
+				});
 				$("#precButton").bind("click",function(){
 					window.location.replace("forecastPrec.html");
-				});
-				$("#humidButton").bind("click",function(){
-					window.location.replace("forecastHumid.html");
 				});		
-			
+
 			});	
 		</script>
 	</body> 

@@ -172,14 +172,14 @@ function loadForecast(cityCoords) {
 		    ]
 
 		    var dataHumid = [
-	            Math.round((json.daily.data[0].humidity)*100),
-	            Math.round((json.daily.data[1].humidity)*100),
-	            Math.round((json.daily.data[2].humidity)*100),
-	            Math.round((json.daily.data[3].humidity)*100),
-	            Math.round((json.daily.data[4].humidity)*100),
-	            Math.round((json.daily.data[5].humidity)*100),
-	            Math.round((json.daily.data[6].humidity)*100),
-	            Math.round((json.daily.data[7].humidity)*100)
+	            ((json.daily.data[0].humidity)*100).toFixed(1),
+	            ((json.daily.data[1].humidity)*100).toFixed(1),
+	            ((json.daily.data[2].humidity)*100).toFixed(1),
+	            ((json.daily.data[3].humidity)*100).toFixed(1),
+	            ((json.daily.data[4].humidity)*100).toFixed(1),
+	            ((json.daily.data[5].humidity)*100).toFixed(1),
+	            ((json.daily.data[6].humidity)*100).toFixed(1),
+	            ((json.daily.data[7].humidity)*100).toFixed(1)
 		    ];
 
 		    var dataVisib = [
@@ -267,6 +267,28 @@ function loadForecast(cityCoords) {
 			var precChart = new Chart(ctxPrec).Line(precDataChart, {
 				responsive : true,
 			});
+
+		/* Humidity Chart */
+			var humidDataChart = {
+			    labels: chartDates,
+			    datasets: [
+			        {
+			            label: "Humidity",
+			            fillColor: "rgba(151,187,205,0.2)",
+			            strokeColor: "rgba(151,187,205,1)",
+			            pointColor: "rgba(151,187,205,1)",
+			            pointStrokeColor: "#fff",
+			            pointHighlightFill: "#fff",
+			            pointHighlightStroke: "rgba(151,187,205,1)",
+			            data: dataHumid
+			        }
+			    ]
+			};
+
+			var ctxHumid = document.getElementById("canvasHumid").getContext("2d");
+			var HumidChart = new Chart(ctxHumid).Line(humidDataChart, {
+				responsive : true,
+			});	
 					    
 		}, //end of ajax success
 
