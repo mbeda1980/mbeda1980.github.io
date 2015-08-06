@@ -199,7 +199,8 @@
 				<canvas id="canvasMoon" class="chart"></canvas>
 			</div>
 		</div>
-		<script src="js/mainscript.js"></script>
+		<script src="js/common.js"></script>
+		<script src="js/forecast.js"></script>
 		<script>
 			$(document).ready(function() {
 	
@@ -209,11 +210,16 @@
 
 				loadCityForecast("Current Location"); 
 			
+				$("#tempButton").trigger("click");
+
 				$("a.city").bind("click",function(){
 					loadCityForecast($(this).html()); 
+				});
+
+				$("#precButton").bind("click",function(){
+					window.location.replace("forecastPrec.html");
 				});	
 			
-				$("#precButton").trigger("click");
 			});	
 		</script>
 	</body> 

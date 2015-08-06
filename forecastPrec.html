@@ -1,0 +1,226 @@
+<!doctype html>
+<html>
+	<head>
+		 <meta http-equiv="Content-Type" content="text/html" charset="utf-8"/>
+		<title>Simple Weather</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="shortcut icon" href="images/icon.ico">
+		<link rel="apple-touch-icon" href="images/icon.png"/> <!-- this will set the icon if I save the bookmark as an app icon -->
+		<meta name="apple-mobile-web-app-capable" content="yes" />  <!-- this will allow the bookmark to be shown full screen, as a native app -->
+		<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css"/>
+		<script src="js/jquery-2.1.4.min.js"></script>
+		<script src="js/jquery.mobile-1.4.5.min.js"></script>
+		<script src="js/Chart.min.js"></script> <!-- For adding charts -->
+		<link rel="stylesheet" type="text/css" href="css/stylesheet.css"> <!-- this links it to the style sheet for the font of weather images -->
+		<script>
+			var page = "forecastPage";
+		</script>
+	</head>
+	<body>
+		<!-- Panel  -->
+		<div data-role="panel" id="left-panel" data-display="reveal" data-theme="a">
+		    <ul data-theme="a" data-role="listview">
+		    	<li data-icon="delete"><a href="#" data-rel="close">Close</a></li>	
+		    	<li data-role="list-divider">Select a City</li>
+	            <li ><a href="#" class="city" data-rel="close">Current Location</a></li>
+	          	<li ><a href="#" class="city" data-rel="close">Chicago</a></li>
+	          	<li ><a href="#" class="city" data-rel="close">Los Angeles</a></li>
+	          	<li ><a href="#" class="city" data-rel="close">Miami</a></li>
+	          	<li ><a href="#" class="city" data-rel="close">New York</a></li>
+	          	<li ><a href="#" class="city" data-rel="close">San Francisco</a></li>
+	          	<li ><a href="#" class="city" data-rel="close">Denver</a></li>
+		    </ul>
+		    <br><br>
+		    <input type="search" name="search" id="search" value="" placeholder="Add new city" data-theme="a">
+		</div>
+
+		<!-- Header -->
+		<div data-role="header" data-position="fixed" data-theme="a">
+			<h1>Simple Weather</h1>
+			<a href="#left-panel" data-icon="bars" data-role="button"  data-iconpos="notext" data-iconshadow="false">Menu</a>
+			<div data-role="navbar">
+				<ul>
+					<li><a href="javascript:redirectToIndex();" data-icon="eye" data-theme="a">Basic</a></li>
+					<li><a href="javascript: redirectToDetailed();" data-icon="grid" data-theme="a">Detailed</a></li>
+	            	<li><a href="#" data-icon="calendar" data-theme="a" class="ui-btn-active">Forecast</a></li>
+	            </ul>
+    		</div>
+		</div>
+		
+		<!-- Content -->
+		<div id="basic_info">
+			<h2 id="locationForecast">---</h2>
+		</div> 
+		<ul data-role="listview" data-inset="true" data-shadow="false">
+			<li data-role="collapsible" data-iconpos="right" data-inset="false">
+				<h2 data-theme="a">Today</h2>
+				<ul data-role="listview" data-theme="c">
+					<li id="summToday">...</li>
+					<li id="tempToday">Min - Max Temperature: &#176;F</li>
+					<li id="rainToday">Chance of Rain: </li>
+					<li id="precToday">Average Precipitation:  in/hr</li>
+					<li id="maxPrecToday">Max Precipitation:  in/hr at</li>
+					<li id="sunToday">Sunrise - Sunset: </li>
+				</ul>
+			</li>
+			<li data-role="collapsible" data-iconpos="right" data-inset="false">
+				<h2 data-theme="a" id="one">...</h2>
+				<ul data-role="listview" data-theme="c">
+					<li id="summ1">...</li>
+					<li id="temp1">Min - Max Temperature: &#176; F</li>
+					<li id="rain1">Chance of Rain: </li>
+					<li id="prec1">Average Precipitation:  in/hr</li>
+					<li id="maxPrec1">Max Precipitation:  in/hr at</li>
+					<li id="sun1">Sunrise - Sunset: </li>
+				</ul>
+			</li>
+			<li data-role="collapsible" data-iconpos="right" data-inset="false">
+				<h2 data-theme="a" id="two">...</h2>
+				<ul data-role="listview" data-theme="c">
+					<li id="summ2">...</li>
+					<li id="temp2">Min - Max Temperature: &#176; F</li>
+					<li id="rain2">Chance of Rain: </li>
+					<li id="prec2">Average Precipitation:  in/hr</li>
+					<li id="maxPrec2">Max Precipitation:  in/hr at</li>
+					<li id="sun2">Sunrise - Sunset: </li>
+				</ul>
+			</li>
+			<li data-role="collapsible" data-iconpos="right" data-inset="false">
+				<h2 data-theme="a" id="three">...</h2>
+				<ul data-role="listview" data-theme="c">
+					<li id="summ3">...</li>
+					<li id="temp3">Min - Max Temperature: &#176; F</li>
+					<li id="rain3">Chance of Rain: </li>
+					<li id="prec3">Average Precipitation:  in/hr</li>
+					<li id="maxPrec3">Max Precipitation:  in/hr at</li>
+					<li id="sun3">Sunrise - Sunset: </li>
+				</ul>
+			</li>
+			<li data-role="collapsible" data-iconpos="right" data-inset="false">
+				<h2 data-theme="a" id="four">...</h2>
+				<ul data-role="listview" data-theme="c">
+					<li id="summ4">...</li>
+					<li id="temp4">Min - Max Temperature: &#176; F</li>
+					<li id="rain4">Chance of Rain: </li>
+					<li id="prec4">Average Precipitation:  in/hr</li>
+					<li id="maxPrec4">Max Precipitation:  in/hr at</li>
+					<li id="sun4">Sunrise - Sunset: </li>
+				</ul>
+			</li>
+			<li data-role="collapsible" data-iconpos="right" data-inset="false">
+				<h2 data-theme="a" id="five">...</h2>
+				<ul data-role="listview" data-theme="c">
+					<li id="summ5">...</li>
+					<li id="temp5">Min - Max Temperature: &#176; F</li>
+					<li id="rain5">Chance of Rain: </li>
+					<li id="prec5">Average Precipitation:  in/hr</li>
+					<li id="maxPrec5">Max Precipitation:  in/hr at</li>
+					<li id="sun5">Sunrise - Sunset: </li>
+				</ul>
+			</li>
+			<li data-role="collapsible" data-iconpos="right" data-inset="false">
+				<h2 data-theme="a" id="six">...</h2>
+				<ul data-role="listview" data-theme="c">
+					<li id="summ6">...</li>
+					<li id="temp6">Min - Max Temperature: &#176; F</li>
+					<li id="rain6">Chance of Rain: </li>
+					<li id="prec6">Average Precipitation: in/hr</li>
+					<li id="maxPrec6">Max Precipitation:  in/hr at</li>
+					<li id="sun6">Sunrise - Sunset: </li>
+				</ul>
+			</li>
+			<li data-role="collapsible" data-iconpos="right" data-inset="false">
+				<h2 data-theme="a" id="seven">...</h2>
+				<ul data-role="listview" data-theme="c">
+					<li id="summ7">...</li>
+					<li id="temp7">Min - Max Temperature: &#176; F</li>
+					<li id="rain7">Chance of Rain: </li>
+					<li id="prec7">Average Precipitation:  in/hr</li>
+					<li id="maxPrec7">Max Precipitation:  in/hr at</li>
+					<li id="sun7">Sunrise - Sunset: </li>
+				</ul>
+			</li>
+		</ul>
+		<h4 class="title">Snapshot</h4>
+				
+		<div data-role="tabs" id="myTabs">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#tempTab" data-theme="a" data-ajax="false" id="tempButton">Min - Max Temp.</a></li>
+					<li><a href="#rainTab" data-theme="a" data-ajax="false" id="rainButton">Rain Chance</a></li>
+					<li><a href="#precTab" data-theme="a" data-ajax="false" id="precButton">Average - Max Prec.</a></li>
+					<li><a href="#dewTab" data-theme="a" data-ajax="false" id="dewButton">Dew Point</a></li>
+					<li><a href="#humidTab" data-theme="a" data-ajax="false" id="humidButton">Humidity</a></li>
+					<li><a href="#windTab" data-theme="a" data-ajax="false" id="windButton">Wind Speed</a></li>
+					<li><a href="#visibTab" data-theme="a" data-ajax="false" id="visibButton">Visibility</a></li>
+					<li><a href="#cloudTab" data-theme="a" data-ajax="false" id="cloudButton">Cloud Cover</a></li>
+					<li><a href="#pressTab" data-theme="a" data-ajax="false" id="pressButton">Pressure</a></li>
+					<li><a href="#moonTab" data-theme="a" data-ajax="false" id="moonButton">Moon Phase</a></li>
+				</ul>
+			</div>		
+			<div id="tempTab" class="ui-content">
+				<h5>&#176;F</h5>
+				<canvas id="canvasTemp" class="chart"></canvas>
+			</div>
+			<div id="rainTab" class="ui-content">
+				<h5>%</h5>
+				<canvas id="canvasRain" class="chart"></canvas>
+			</div>
+			<div id="precTab" class="ui-content">
+				<h5>milli in/h</h5>
+				<canvas id="canvasPrec" class="chart"></canvas>
+			</div>
+			<div id="dewTab" class="ui-content">
+				<h5>&#176;F</h5>
+				<canvas id="canvasDew" class="chart"></canvas>
+			</div>
+			<div id="humidTab" class="ui-content">
+				<h5>%</h5>
+				<canvas id="canvasHumid" class="chart"></canvas>
+			</div>
+			<div id="windTab" class="ui-content">
+				<h5>MPH</h5>
+				<canvas id="canvasWind" class="chart"></canvas>
+			</div>
+			<div id="visibTab" class="ui-content">
+				<h5>Miles</h5>
+				<canvas id="canvasVisib" class="chart"></canvas>
+			</div>
+			<div id="cloudTab" class="ui-content">
+				<h5>%</h5>
+				<canvas id="canvasCloud" class="chart"></canvas>
+			</div>
+			<div id="pressTab" class="ui-content">
+				<h5>mbar</h5>
+				<canvas id="canvasPress" class="chart"></canvas>
+			</div>
+			<div id="moonTab" class="ui-content">
+				<h5>%</h5>
+				<canvas id="canvasMoon" class="chart"></canvas>
+			</div>
+		</div>
+		<script src="js/common.js"></script>
+		<script src="js/forecast.js"></script>
+		<script>
+			$(document).ready(function() {
+	
+				$.ajaxPrefilter(function(options,originalOptions,jqXHR ) {
+					options.async = true;
+				});
+
+				loadCityForecast("Current Location"); 
+			
+				$("#precButton").trigger("click");
+
+				$("a.city").bind("click",function(){
+					loadCityForecast($(this).html()); 
+				});		
+
+				$("#tempButton").bind("click",function(){
+					window.location.replace("forecastTemp.html");
+				});	
+
+			});	
+		</script>
+	</body> 
+</html>
