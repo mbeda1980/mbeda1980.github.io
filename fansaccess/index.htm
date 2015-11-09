@@ -5,43 +5,41 @@
     <link href="images/favicon.png" rel="shortcut icon" />
     <link href="css/reset.css" rel="stylesheet" type="text/css" />
     <link href="css/style.css" rel="stylesheet" type="text/css" />
-	<link href="css/responsive.css" rel="stylesheet" type="text/css" />    
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>FansAccess</title>
 </head>
 
 <body>
-	<!-- Navigation Bar -->
 	<div id="header">
-		<div class="wider-flex-header">
+		
+		<div class="wider">
 			<div id="logo"></div>
 			<div id="idol-search-con">
 				<div id="search-img-btn"></div>
 				<input type="text" id="search-idol" placeholder="Buscar ídolo..." />
 				<div id="search-idol-suggest">
 					<div class="suggest">
-						<img src="images/profiles/profile3.jpg" />
+						<img src="images/profiles/profile1.jpg" />
 						<div>
 							<div class="loc">BUENOS AIRES</div><div class="artist">MALI</div>
 							<div class="cate">MÚSICA</div>
 						</div>
 					</div>
 					<div class="suggest">
-						<img src="images/profiles/profile2.jpg" />
+						<img src="images/profiles/profile1.jpg" />
 						<div>
 							<div class="loc">BUENOS AIRES</div><div class="artist">PRISCILA AHN</div>
 							<div class="cate">MÚSICA</div>
 						</div>
 					</div>
 					<div class="suggest">
-						<img src="images/profiles/profile4.jpg" />
+						<img src="images/profiles/profile1.jpg" />
 						<div>
 							<div class="loc">BUENOS AIRES</div><div class="artist">RIFF RAFF</div>
 							<div class="cate">MÚSICA</div>
 						</div>
 					</div>
 					<div class="suggest">
-						<img src="images/profiles/profile5.jpg" />
+						<img src="images/profiles/profile1.jpg" />
 						<div>
 							<div class="loc">BUENOS AIRES</div><div class="artist">NICKI MINAJ</div>
 							<div class="cate">MÚSICA</div>
@@ -56,33 +54,38 @@
 					</div>
 					<a href="#">Ver todos...</a>
 				</div>
-			</div> 
+			</div> <!-- closing of #idol-search-con -->
 			<a href="#" id="header-login-link">INICIAR</a>
-		</div> 
-	</div> 
+		</div> <!-- closing of .wider -->
+	
+	</div> <!-- closing of header -->
 
-	<!-- Top Banner -->
-	<div id="home-top-banner">
+	<div id="home-top-banner" class="wider">
 		<div id="home-top-banner-op">
 			<div id="home-top-banner-h1">Bienvenidos a <span>Fans</span>Access</div>
-			<div class="home-top-banner-h2">Un espacio para que fans como vos puedan seguir, apoyar, y disfrutar de sus personas o grupos favoritos de una manera más cercana y personal.</div>
-			<div class="flex-wider">
-				<span id="registrate_como">REGISTRATE COMO</span>
-				<div id="fan_idolo">
-					<a href="#" id="registrate_fan" class="tooltip-top">FAN<span>Si ya sabés a quién seguir</span></a>
-					<a href="#" id="registrate_idolo" class="tooltip-bottom">ÍDOLO<span>Si tenés una base de fans</span></a>
+			<div class="home-top-banner-h2">Un espacio para que fans como vos puedan seguir, apoyar, </div>
+			<div class="home-top-banner-h2">y disfrutar de sus personas o grupos favoritos de </div>
+			<div class="home-top-banner-h2">una manera más cercana y personal. </div>
+			<div id="home-top-banner-rtx">registrate como
+				<div id="rtx-border">
+					<a href="#" id="rtx-border-how">¿Como Funciona?</a>
+				</div>
+				<div id="rtx-line">
+					<a href="#" id="rtx-line-fan" data-text="Si ya sabés a quien querés seguir">FAN</a>
+					<a href="#" id="rtx-line-idolo" data-text="Si ya tenés una base de fans con los cuales querés compartir tu vida y obra">IDOLO</a>
 				</div>
 			</div>
-			<div id="registrate_line"></div>
-			<a href="#" id="como_funciona">¿CÓMO FUNCIONA?</a>		
 		</div>
 	</div>
 
-	<!-- Título de Sección de Idolos -->
-	<div id="index_titulo_idolos">ÍDOLOS DESTACADOS</div>
+	<div class="wider">
+		<div id="aconocerob">
+			<div id="aconocert">personas, artistas o grupos que deberías conocer!</div>
+			<b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b>
+		</div>
+	</div>
 
-	<!-- Sección de Idolos -->
-	<div id="index_iconos_idolos">
+	<div class="wider clear">
 		<div class="home-idol-small" style="background-image: url(images/profiles/profile1.jpg);">
 			<div class="home-idol-over"><a href="#">VISTA PREVIA</a><a href="#">Suscribirse</a></div>
 			<div class="home-idol-artist">la’ fonz</div>
@@ -91,7 +94,7 @@
 				<div>buenos aires</div>
 			</div>
 		</div>
-		<div class="home-idol-small" style="background-image: url(images/profiles/profile2.jpg);">
+		<div class="home-idol-small" style="background-image: url(images/profiles/profile2.jpg);margin:0 1px; 0 1px">
 			<div class="home-idol-over"><a href="#">VISTA PREVIA</a><a href="#">Suscribirse</a></div>
 			<div class="home-idol-artist">priscilla ahn</div>
 			<div class="home-idol-small-bar">
@@ -107,60 +110,27 @@
 				<div>buenos aires</div>
 			</div>
 		</div>
-		<div class="home-idol-small" style="background-image: url(images/profiles/profile4.jpg);">
+		<div class="home-idol-big" style="background-image: url(images/profiles/profile4.jpg);margin-right:1px;">
 			<div class="home-idol-over"><a href="#">VISTA PREVIA</a><a href="#">Suscribirse</a></div>
 			<div class="home-idol-artist">riff raff</div>
-			<div class="home-idol-small-bar">
+			<div class="home-idol-big-bar">
 				<div>música</div>
 				<div>buenos aires</div>
 			</div>
 		</div>
-		<div class="home-idol-small" style="background-image: url(images/profiles/profile5.jpg);">
+		<div class="home-idol-big" style="background-image: url(images/profiles/profile5.jpg);">
 			<div class="home-idol-over"><a href="#">VISTA PREVIA</a><a href="#">Suscribirse</a></div>
 			<div class="home-idol-artist">Nicki minaj</div>
-			<div class="home-idol-small-bar">
+			<div class="home-idol-big-bar">
 				<div>música</div>
 				<div>buenos aires</div>
 			</div>
 		</div>
-		<div class="home-idol-small" style="background-image: url(images/profiles/profile1.jpg);">
-			<div class="home-idol-over"><a href="#">VISTA PREVIA</a><a href="#">Suscribirse</a></div>
-			<div class="home-idol-artist">la’ fonz</div>
-			<div class="home-idol-small-bar">
-				<div>música</div>
-				<div>buenos aires</div>
-			</div>
-		</div>
-		<div class="home-idol-small" style="background-image: url(images/profiles/profile2.jpg);">
-			<div class="home-idol-over"><a href="#">VISTA PREVIA</a><a href="#">Suscribirse</a></div>
-			<div class="home-idol-artist">priscilla ahn</div>
-			<div class="home-idol-small-bar">
-				<div>música</div>
-				<div>buenos aires</div>
-			</div>
-		</div>
-		<div class="home-idol-small" style="background-image: url(images/profiles/profile3.jpg);">
-			<div class="home-idol-over"><a href="#">VISTA PREVIA</a><a href="#">Suscribirse</a></div>
-			<div class="home-idol-artist">mali</div>
-			<div class="home-idol-small-bar">
-				<div>música</div>
-				<div>buenos aires</div>
-			</div>
-		</div>
-		<div class="home-idol-small" style="background-image: url(images/profiles/profile4.jpg);">
-			<div class="home-idol-over"><a href="#">VISTA PREVIA</a><a href="#">Suscribirse</a></div>
-			<div class="home-idol-artist">riff raff</div>
-			<div class="home-idol-small-bar">
-				<div>música</div>
-				<div>buenos aires</div>
-			</div>
-		</div>
-	</div>	
-	<!-- Footer -->
+	</div>
+
 	<div id="footer">
-		<div class="wider-flex-footer">
+		<div class="wider">
 			<a href="#">Contacto</a>
-			<a href="#">Preguntas Frecuentes</a>			
 			<a href="#">Términos y Privacidad</a>
 			<a href="#">Phagocyt SA</a>
 		</div>

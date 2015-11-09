@@ -55,7 +55,6 @@ a {
     font-family: "Open Sans","Trebuchet MS", Helvetica, sans-serif;
     font-weight:700;    
 }
-
 .wider {
     width:980px;
     max-width:980px;
@@ -79,7 +78,7 @@ a {
     background-color:#00041B;
     height:29px;
     width:100%;   
-    margin-top:20px; 
+    margin-top:2px; 
     text-align:right;
     bottom:0;
     z-index:99;
@@ -90,9 +89,9 @@ a {
     font-size:12px;
     text-decoration:none;
     color:#98D3CD;
-    margin: auto 15px;
+    margin-top:8px;
+    margin-right: 20px;
     display:inline-block;
-    text-align: center;
 }
 #footer a:hover{
     color:white;
@@ -112,13 +111,13 @@ a {
     height:29px;
 }
 #search-idol {
-    width:357px;
+    width:307px;
     height:29px;
     margin:0;
     padding:0;
     border:none;
     outline:none;
-  /*  margin-left: 50px;*/
+    margin-left: 50px;
     padding-left:21px;
     color:#448D8F;
     font-family: "Open Sans","Trebuchet MS", Helvetica, sans-serif;
@@ -210,7 +209,7 @@ background-color:#F4F7F8;
     display:inline-block;
     text-align: center;
     line-height:27px;
-    /*float:right;*/
+    float:right;
     text-decoration:none;
     color:#2A5859;
     font-family: "Oswald","Trebuchet MS", Helvetica, sans-serif;
@@ -268,7 +267,9 @@ background-color:#F4F7F8;
     text-overflow:ellipsis;
     white-space:nowrap; 
     overflow:hidden;
+    
 }
+
 
 #home-top-banner {
     height:397px;
@@ -276,49 +277,37 @@ background-color:#F4F7F8;
     background-repeat: no-repeat;
     background-position:center center;
     z-index:0;
-    overflow: hidden;
 }
-
 #home-top-banner-op {
-    background-color:rgba(0,4,27,.65);
+    background-color:rgba(0,4,27,.7);
     height:397px;
     width:100%;
     z-index:0;
 }
-
-#registrate_line {
-    width: 100%;
-    height: 1px;
-    background: white;
-    z-index: 1;
-    position: relative;
-    bottom: 10px;
-}
-
 #home-top-banner-h1 {
-    padding: 28px 5px 16px 5px;
+    padding-top:28px;
+    padding-bottom:16px;
     font-family: "Oswald","Trebuchet MS", Helvetica, sans-serif;
     font-weight:700;
     color:white;
     font-size:41.77px;
-   /* padding-left:60px;*/
-   text-align: center;
+    padding-left:60px;
 }
 #home-top-banner-h1 span{
     color:#B2F7F1;
 }
 .home-top-banner-h2 {
-    /*background-color:rgba(0,4,27,.3);*/
+    background-color:rgba(0,4,27,.3);
     font-family: "Oswald","Trebuchet MS", Helvetica, sans-serif;
     font-weight:400;
     color:#B2F7F1;
     font-size:22px;
-    padding: 0 10px;
-    display:block;
-    margin:0 auto 0 auto;
-    line-height:40px;
-    text-align: center;
-    max-width: 550px;
+    padding-left:60px;
+    display:inline-block;
+    margin-bottom:8px;
+    margin-right:100px;
+    padding-right:10px;
+    line-height:29px;
 }
 #home-top-banner-rtx {
     font-family: "Oswald","Trebuchet MS", Helvetica, sans-serif;
@@ -326,7 +315,7 @@ background-color:#F4F7F8;
     font-size:35px;
     color:white;
     text-transform:uppercase;
-    /*margin-left:60px;*/
+    margin-left:60px;
     margin-top:23px;
     display:inline-block;
     margin-right:300px;
@@ -350,11 +339,10 @@ background-color:#F4F7F8;
 #rtx-border-how:hover{color:white;}
 #rtx-line {
     position:absolute;
-    /*width:980px;*/
-    width: 100%;
+    width:980px;
     height:1px;
     background:white;
-   /* margin-left:-60px;*/
+    margin-left:-60px;
     z-index:1;
 }
 #rtx-line-fan {
@@ -469,13 +457,11 @@ background-color:#F4F7F8;
 }
 
 .home-idol-small {
-    min-width: 326px;
     width:326px;
     height:240px;
     display: inline-block;
     background-position:center center;
     position:relative;
-    margin: 1px;
 }
 .home-idol-small-bar {
     width:326px;
@@ -790,7 +776,7 @@ form.desactivar {
 .idolhead .cover .title {
     height:89px;
     width:980px;    
-    background-color:rgba(0,4,27,.65);
+    background-color:rgba(0,4,27,.7);
     border-bottom:solid 1px white;
 }
 .idolhead .cover .title > a {
@@ -1416,7 +1402,7 @@ form.desactivar {
 .userhead .cover .title {
     height:89px;
     width:980px;    
-    background-color:rgba(0,4,27,.65);
+    background-color:rgba(0,4,27,.7);
     border-bottom:solid 1px white;
 }
 .userhead .cover .title > a {
@@ -1831,220 +1817,3 @@ form.desactivar {
     cursor:pointer;
 }
 
-/***Ultimos cambios en el index***/
-#registrate_como {
-    font-family: "Oswald","Trebuchet MS", Helvetica, sans-serif;
-    font-weight:700;
-    color:white;
-    font-size: 35px;
-    margin-right: 15%;
-    display: inline-block;
-    border-bottom: 10px solid #448D8F;
-    z-index: 10;
-    padding-top: 60px;
-}
-
-#registrate_fan {
-    display: block;
-    font-family: "Oswald","Trebuchet MS", Helvetica, sans-serif;
-    font-weight:700;
-    color:white;
-    font-size: 41px;   
-}
-
-#registrate_fan:after {
-    content:" ";
-    background-image: url(../images/reg-fan-arrow.png);
-    background-repeat:no-repeat;
-    width:13px;
-    height:15px;
-    position:absolute;
-    margin-left:-79px;
-    margin-top:14px;
-}
-
-#registrate_idolo {
-    display: inline-block;
-    font-family: "Oswald","Trebuchet MS", Helvetica, sans-serif;
-    font-weight:700;
-    color:#B2F7F1;
-    font-size: 41px;
-    margin-top: 23px;    
-}
-
-#registrate_idolo:after {
-    content:" ";
-    background-image: url(../images/reg-idolo-arrow.png);
-    background-repeat:no-repeat;
-    width:13px;
-    height:15px;
-    position:absolute;
-    margin-left:-116px;
-    margin-top:14px;   
-}
-
-#fan_idolo {
-    position: relative;
-    top: 49px;
-}
-
-#como_funciona {
-    color:#98D3CD;
-    font-size:13px;
-    font-family: "Open Sans","Trebuchet MS", Helvetica, sans-serif;
-    font-weight: 300;
-    margin: 22px 0 0 25%;
-    display: inline-block;
-}
-
-#como_funciona:hover {
-    color: white;
-}
-
-.flex-wider {
-    width:50%;
-    margin:-10px auto 0 auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-#index_titulo_idolos {
-    text-align: center;
-    font-size:31px;
-    font-family: "Oswald","Trebuchet MS", Helvetica, sans-serif;
-    color: #2A5859;
-    font-weight: 700;
-    margin:30px auto;
-}
-
-/*** Iconos de ídolos en index en forma fluida ***/
-#index_iconos_idolos {
-    width: 90%;
-    max-width: 1000px;
-    margin-left: auto;
-    margin-right: auto;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-
-}
-
-/*** Header ***/
-.wider-flex-header {
-    width: 90%;
-    margin: 0 auto;
-    max-width: 980px;
-    display: flex;
-    justify-content: space-between;
-}
-
-/*** Footer ***/
-.wider-flex-footer {
-    width: 90%;
-    height: 29px;
-    margin: 0 auto;
-    max-width: 980px;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-}
-
-/***Tooltip para FAN en index ***/ 
-a.tooltip-top {
-  position: relative;
-  display: inline;
-}
-a.tooltip-top span {
-  position: absolute;
-  width:140px;
-  color: #FFFFFF;
-  background: #000000;
-  border: 2px solid #FFFFFF;
-  height: 45px;
-  line-height: 56px;
-  text-align: center;
-  visibility: hidden;
-  border-radius: 6px;
-  font-size: 13px;
-}
-a.tooltip-top span:before {
-  content: '';
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  margin-left: -12px;
-  width: 0; height: 0;
-  border-top: 12px solid #FFFFFF;
-  border-right: 12px solid transparent;
-  border-left: 12px solid transparent;
-}
-a.tooltip-top span:after {
-  content: '';
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  margin-left: -8px;
-  width: 0; height: 0;
-  border-top: 8px solid #000000;
-  border-right: 8px solid transparent;
-  border-left: 8px solid transparent;
-}
-a:hover.tooltip-top span {
-  visibility: visible;
-  opacity: 1;
-  bottom: 30px;
-  left: 50%;
-  margin-left: -76px;
-  z-index: 999;
-}
-
-/***Tooltip para IDOLO en index***/
-a.tooltip-bottom {
-  position: relative;
-  display: inline;
-}
-a.tooltip-bottom span {
-  position: absolute;
-  width:140px;
-  color: #FFFFFF;
-  background: #000000;
-  border: 2px solid #FFFFFF;
-  height: 45px;
-  line-height: 56px;
-  text-align: center;
-  visibility: hidden;
-  border-radius: 6px;
-  font-size: 13px;
-}
-a.tooltip-bottom span:before {
-  content: '';
-  position: absolute;
-  bottom: 100%;
-  left: 50%;
-  margin-left: -12px;
-  width: 0; height: 0;
-  border-bottom: 12px solid #FFFFFF;
-  border-right: 12px solid transparent;
-  border-left: 12px solid transparent;
-}
-a.tooltip-bottom span:after {
-  content: '';
-  position: absolute;
-  bottom: 100%;
-  left: 50%;
-  margin-left: -8px;
-  width: 0; height: 0;
-  border-bottom: 8px solid #000000;
-  border-right: 8px solid transparent;
-  border-left: 8px solid transparent;
-}
-a:hover.tooltip-bottom span {
-  visibility: visible;
-  opacity: 1;
-  top: 30px;
-  left: 50%;
-  margin-left: -76px;
-  z-index: 999;
-}
