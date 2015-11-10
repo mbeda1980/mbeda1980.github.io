@@ -1,0 +1,529 @@
+@media screen and (max-width: 374px) { /*Mientras que h1 sea dos líneas*/
+	.home-top-banner-h2 {
+		font-size: 19px;
+		line-height: 33px;
+	}
+
+	#home-top-banner-h1 {
+		font-size: 35px;
+	}
+
+	#registrate_como {
+		font-size: 30px;
+		padding-top: 30px;
+		text-align: center;
+	}
+
+	.flex-wider {
+		width: 85%;
+	}
+
+	#registrate_fan, #registrate_idolo {
+		font-size: 32px;
+	}
+
+	#registrate_idolo {
+		margin-top: 10px;
+	}
+
+	#registrate_idolo:after {
+		margin-left: -94px;
+		margin-top: 8px;
+	}
+
+	#registrate_fan:after {
+		margin-left: -65px;
+		margin-top: 8px;	
+	}
+
+	#registrate_line {
+		display: none;
+	}
+
+	#fan_idolo {
+		top: 29px;
+	}
+
+	#como_funciona {
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+		display: block;
+	}
+
+	#index_titulo_idolos {
+		font-size: 25px;
+	}
+
+	.home-idol-small-bar, .home-idol-small {
+		width: 100%;
+	}
+
+	.home-idol-small {
+		min-width: 0;
+	}
+
+	a.tooltip-top span, a.tooltip-bottom span {
+		font-size: 12px;
+		width:130px;
+	}
+
+	#search-idol {
+		width: 250px;
+		padding-left: 10px;
+	}
+
+	#idol-search-con {
+		width: 260px;
+		display: none;
+	}
+
+	#search-img-btn {
+		margin-left: 235px;
+	}
+
+	.wider-flex-header {
+		width: 95%;
+	}
+	
+	#header-login-link {
+		width: 100px;
+	}
+
+	#footer a {
+		margin-right: 5px;
+		margin-left: 5px;
+	}
+
+}
+
+@media screen and (min-width: 375px) and (max-width: 385px) { /*Mientras que h1 sea dos líneas*/
+	.home-top-banner-h2 {
+		font-size: 19px;
+		line-height: 33px;
+	}
+
+	#home-top-banner-h1 {
+		font-size: 35px;
+	}
+
+	#registrate_como {
+		font-size: 30px;
+		padding-top: 30px;
+		text-align: center;
+	}
+
+	.flex-wider {
+		width: 85%;
+	}
+
+	#registrate_fan, #registrate_idolo {
+		font-size: 32px;
+	}
+
+	#registrate_idolo {
+		margin-top: 10px;
+	}
+
+	#registrate_idolo:after {
+		margin-left: -94px;
+		margin-top: 8px;
+	}
+
+	#registrate_fan:after {
+		margin-left: -65px;
+		margin-top: 8px;	
+	}
+
+	#registrate_line {
+		display: none;
+	}
+
+	#fan_idolo {
+		top: 29px;
+	}
+
+	#como_funciona {
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+		display: block;
+	}
+
+	#index_titulo_idolos {
+		font-size: 25px;
+	}
+
+	a.tooltip-top span, a.tooltip-bottom span {
+		font-size: 12px;
+		width:130px;
+	}
+
+	#search-idol {
+		width: 250px;
+		padding-left: 10px;
+	}
+
+	#idol-search-con {
+		width: 260px;
+		display: none;
+	}
+
+	#search-img-btn {
+		margin-left: 235px;
+	}
+
+	.wider-flex-header {
+		width: 95%;
+	}
+	
+	#header-login-link {
+		width: 100px;
+	}
+
+	#footer a {
+		margin-right: 5px;
+		margin-left: 5px;
+	}
+
+}
+
+
+@media screen and (min-width: 386px) and (max-width: 408px) { /* h1 una línea h2 4 líneas*/
+	.home-top-banner-h2 {
+		font-size: 19px;
+		line-height: 33px;
+		margin-top: 10px;
+	}
+
+	#home-top-banner-h1 {
+		font-size: 35px;
+	}
+
+	#registrate_como {
+		font-size: 30px;
+		padding-top: 30px;
+		text-align: center;
+	}
+
+	.flex-wider {
+		width: 85%;
+		margin-top: 0px;
+	}
+
+	#registrate_fan, #registrate_idolo {
+		font-size: 32px;
+	}
+
+	#registrate_idolo {
+		margin-top: 10px;
+	}
+
+	#registrate_idolo:after {
+		margin-left: -94px;
+		margin-top: 8px;
+	}
+
+	#registrate_fan:after {
+		margin-left: -65px;
+		margin-top: 8px;	
+	}
+
+	#registrate_line {
+		display: none;
+	}
+
+	#fan_idolo {
+		top: 29px;
+	}
+
+	#como_funciona {
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+		display: block;
+	}
+
+	#index_titulo_idolos {
+		font-size: 25px;
+	}
+
+	#search-idol {
+		width: 250px;
+		padding-left: 10px;
+	}
+
+	#idol-search-con {
+		width: 260px;
+		display: none;
+	}
+
+	#search-img-btn {
+		margin-left: 235px;
+	}
+	
+
+	.wider-flex-header {
+		width: 95%;
+	}
+	
+	#header-login-link {
+		width: 100px;
+	}
+
+	#footer a {
+		margin-right: 5px;
+		margin-left: 5px;
+	}
+
+}
+
+@media screen and (min-width: 409px) and (max-width: 435px) { /* h1 una línea, h2 3 líneas, REGISTRATE COMO 2 líneas*/
+	.home-top-banner-h2 {
+		font-size: 19px;
+		line-height: 33px;
+		margin-top: 20px;
+	}
+
+	#home-top-banner-h1 {
+		font-size: 35px;
+	}
+
+	#registrate_como {
+		font-size: 30px;
+		padding-top: 30px;
+		text-align: center;
+	}
+
+	.flex-wider {
+		width: 85%;
+		margin-top: 20px;
+	}
+
+	#registrate_fan, #registrate_idolo {
+		font-size: 32px;
+	}
+
+	#registrate_idolo {
+		margin-top: 10px;
+	}
+
+	#registrate_idolo:after {
+		margin-left: -94px;
+		margin-top: 8px;
+	}
+
+	#registrate_fan:after {
+		margin-left: -65px;
+		margin-top: 8px;	
+	}
+
+	#registrate_line {
+		display: none;
+	}
+
+	#fan_idolo {
+		top: 29px;
+	}
+
+	#como_funciona {
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 30px;
+		text-align: center;
+		display: block;
+	}
+	
+	#index_titulo_idolos {
+		font-size: 25px;
+	}
+
+	#search-idol {
+		width: 250px;
+		padding-left: 10px;
+	}
+
+	#idol-search-con {
+		width: 260px;
+		display: none;
+	}
+
+	#search-img-btn {
+		margin-left: 235px;
+	}
+
+	.wider-flex-header {
+		width: 95%;
+	}
+	
+	#header-login-link {
+		width: 100px;
+	}
+
+}
+
+@media screen and (min-width: 436px) and (max-width: 574px) { /* h1 una línea, h2 3 líneas, REGISTRATE COMO 1 líneas*/
+	.home-top-banner-h2 {
+		font-size: 19px;
+		line-height: 33px;
+		margin-top: 20px;
+	}
+
+	#home-top-banner-h1 {
+		font-size: 35px;
+	}
+
+	#registrate_como {
+		font-size: 30px;
+		padding-top: 30px;
+		text-align: center;
+	}
+
+	.flex-wider {
+		width: 85%;
+		margin-top: 20px;
+	}
+
+	#registrate_fan, #registrate_idolo {
+		font-size: 32px;
+	}
+
+	#registrate_idolo {
+		margin-top: 10px;
+	}
+
+	#registrate_idolo:after {
+		margin-left: -94px;
+		margin-top: 8px;
+	}
+
+	#registrate_fan:after {
+		margin-left: -65px;
+		margin-top: 8px;	
+	}
+
+	#registrate_line {
+		/*display: none;*/
+	}
+
+	#fan_idolo {
+		top: 32px;
+	}
+
+	#como_funciona {
+		margin-left: 7.5%;
+		/*margin-right: auto;*/
+		margin-top: 13px;
+		
+		display: block;
+	}
+	
+	#index_titulo_idolos {
+		font-size: 25px;
+	}
+
+	#search-idol {
+		width: 250px;
+		padding-left: 10px;
+	}
+
+	#idol-search-con {
+		width: 260px;
+		display: none;
+	}
+
+	#search-img-btn {
+		margin-left: 235px;
+	}
+
+	.wider-flex-header {
+		width: 95%;
+	}
+	
+	#header-login-link {
+		width: 100px;
+	}
+
+}
+
+@media screen and (min-width: 575px) and (max-width: 870px) { /* h1 una línea, h2 2 líneas, REGISTRATE COMO 1 líneas*/
+	.home-top-banner-h2 {
+		font-size: 19px;
+		line-height: 33px;
+		margin-top: 20px;
+	}
+
+	#home-top-banner-h1 {
+		font-size: 35px;
+	}
+
+	#registrate_como {
+		font-size: 30px;
+		padding-top: 30px;
+		text-align: center;
+	}
+
+	.flex-wider {
+		margin-top: 20px;
+		width: 75%;
+	}
+
+	#registrate_fan, #registrate_idolo {
+		font-size: 32px;
+	}
+
+	#registrate_idolo {
+		margin-top: 10px;
+	}
+
+	#registrate_idolo:after {
+		margin-left: -94px;
+		margin-top: 8px;
+	}
+
+	#registrate_fan:after {
+		margin-left: -65px;
+		margin-top: 8px;	
+	}
+
+	#registrate_line {
+		/*display: none;*/
+	}
+
+	#fan_idolo {
+		top: 32px;
+	}
+
+	#como_funciona {
+		margin-left: 12.5%;
+		/*margin-right: auto;*/
+		margin-top: 13px;
+		
+		display: block;
+	}
+
+	#index_titulo_idolos {
+		font-size: 25px;
+	}
+
+	#search-idol {
+		width: 250px;
+		padding-left: 10px;
+	}
+
+	#idol-search-con {
+		width: 260px;
+	}
+
+	#search-img-btn {
+		margin-left: 235px;
+	}
+
+	.wider-flex-header {
+		width: 95%;
+	}
+	
+	#header-login-link {
+		width: 100px;
+	}
+}
